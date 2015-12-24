@@ -1,6 +1,7 @@
 'use strict';
 const electron = require('electron');
 const app = electron.app;
+const globalShortcut = electron.globalShortcut;
 
 // report crashes to the Electron project
 require('crash-reporter').start();
@@ -43,4 +44,7 @@ app.on('activate', () => {
 
 app.on('ready', () => {
 	mainWindow = createMainWindow();
+  globalShortcut.register('ctrl+n',() => {
+    console.log('ctrl+n pushed!');
+  });
 });
