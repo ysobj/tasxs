@@ -7,56 +7,17 @@
     <link rel="stylesheet" href="node_modules/photon/dist/css/photon.css">
   </head>
   <body>
-    <div class="container">
-      <header>
-      <h1>Electron boilerplate</h1>
-      </header>
-      <section class="main">
-      <div class="tab-group">
-        <div class="tab-item active">
-          <span class="icon icon-cancel icon-close-tab"></span>
-          Today
-        </div>
-        <div class="tab-item">
-          <span class="icon icon-cancel icon-close-tab"></span>
-          Tommorrow
-        </div>
-        <div class="tab-item">
-          <span class="icon icon-cancel icon-close-tab"></span>
-          Tab
-        </div>
-        <div class="tab-item tab-item-fixed">
-          <span class="icon icon-plus"></span>
-        </div>
-      </div>
-      <table>
-        <tr>
-          <th>task</th>
-          <th>type</th>
-          <th>estimate</th>
-          <th>actual</th>
-          <th>from</th>
-          <th>to</th>
-        </tr>
-        <tr>
-          <td>勤怠</td>
-          <td>作業</td>
-          <td>15</td>
-          <td>3</td>
-          <td>10:30</td>
-          <td>10:33</td>
-        </tr>
-        <tr>
-          <td><input type="text" value="勤怠"></td>
-          <td><select><option>作業</option></select></td>
-          <td>15</td>
-          <td>3</td>
-          <td><input type="text" value="10:30"></td>
-          <td><input type="text" value="10:33"></td>
-        </tr>
-      </table>
-      </section>
-      <footer></footer>
+    <div id="container"  class="container">
     </div>
+    <script>
+      window.onload = function(){
+        require('babel-register')({plugins: "transform-react-jsx"});
+        const React = require('react');
+        const ReactDom = require('react-dom');
+        const Tasxs = require("./tasxs")
+        const root = document.getElementById('container');
+        ReactDom.render(React.createElement(Tasxs.Tasxs), root);
+      }
+    </script>
   </body>
 </html>
