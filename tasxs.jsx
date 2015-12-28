@@ -31,19 +31,43 @@ class Tasxs extends React.Component {
 class TaskList extends React.Component{
   constructor(){
     super();
-    this.x = [1,2,3];
-    this.props = {
-      tasks : [1,2,3]
+    //this.x = [1,2,3];
+
+    this.x = [
+    {
+      estimate: 15,
+      fromDate: new Date(0),
+      toDate: new Date(14400),
+      desc: '勤怠入力',
+      type: '作業'
+    },
+    {
+      estimate: 20,
+      fromDate: new Date(0),
+      toDate: new Date(14400),
+      desc: 'ほげ機能の設計',
+      type: '設計'
+    },
+    {
+      estimate: 45,
+      fromDate: new Date(0),
+      toDate: new Date(14400),
+      desc: '単体テスト',
+      type: 'テスト'
     }
+      ];
+//    this.props = {
+//      tasks : [1,2,3]
+//    }
   }
-  handleOnChangeFocus(){
-    console.log('handleOnChangeFocus');
+  handleOnChangeFocus(e){
+    console.log('handleOnChangeFocus',e);
   }
   render() {
     console.log(this);
-    var createTask = function(){
+    var createTask = function(data){
       return (
-          <Task onChangeFocus={this.handleOnChangeFocus.bind(this)}/>
+          <Task onChangeFocus={this.handleOnChangeFocus.bind(this)} data={data}/>
           );
     };
     return <table>
@@ -67,45 +91,48 @@ class TaskList extends React.Component{
   }
 }
 class Task extends React.Component{
-  constructor(prop){
-    super(prop);
+  constructor(props){
+    console.log(props);
+    super(props);
     this.state = {
-      focused : false
+      focused : props.focused
     };
   }
   handleClick(){
     this.setState({focused : !this.state.focused});
     this.props.onChangeFocus(this);
   }
-  renderFocused(){
+  renderFocused(data){
     return(
-          <tr onClick={this.handleClick.bind(this)}>
-            <td><input type="text" defaultValue="勤怠" /></td>
+          <tr>
+            <td><input type="text" defaultValue="勤怠" value={data.desc} /></td>
             <td><select><option>作業</option></select></td>
-            <td>15</td>
-            <td>3</td>
-            <td><input type="text" defaultValue="10:30"/></td>
-            <td><input type="text" defaultValue="10:33"/></td>
+            <td>{data.estimate}</td>
+            <td>{data.actual}</td>
+            <td><input type="text" defaultValue="10:30" value={data.fromDate.toString()}/></td>
+            <td><input type="text" defaultValue="10:33" value={data.toDate.toString()}/></td>
           </tr>
      );
   }
-  renderUnfocused(){
+  renderUnfocused(data){
     return (
           <tr onClick={this.handleClick.bind(this)}>
-            <td>勤怠</td>
-            <td>作業</td>
-            <td>15</td>
-            <td>3</td>
-            <td>10:30</td>
-            <td>10:33</td>
+            <td>{data.desc}</td>
+            <td>{data.type}</td>
+            <td>{data.estimate}</td>
+            <td>{data.actual}</td>
+            <td>{data.fromDate.toString()}</td>
+            <td>{data.toDate.toString()}</td>
           </tr>
         );
   }
   render() {
+    var data = this.props.data;
+    data.actual =  ( data.toDate.getTime() - data.fromDate.getTime() ) / (1000 * 60);
     if(this.state.focused){
-      return this.renderFocused();
+      return this.renderFocused(data);
     }else{
-      return this.renderUnfocused();
+      return this.renderUnfocused(data);
     }
   }
 }
