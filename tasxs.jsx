@@ -1,7 +1,7 @@
 "use strict";
-const React = require("react");
-class Tasxs extends React.Component {
-  render() {
+var React = require("react");
+var Tasks = React.createClass({
+  render: function() {
     return <section className="main">
       <div>
         <span>now</span><span>10:40</span>
@@ -27,13 +27,13 @@ class Tasxs extends React.Component {
       <TaskList />
       </section>;
   }
-}
-class TaskList extends React.Component{
-  constructor(){
-    super();
+});
+var TaskList = React.createClass({
+  getInitialState: function(){
+    //super();
     //this.x = [1,2,3];
 
-    this.x = [
+    var x = [
     {
       estimate: 15,
       fromDate: new Date(0),
@@ -59,15 +59,16 @@ class TaskList extends React.Component{
 //    this.props = {
 //      tasks : [1,2,3]
 //    }
-  }
-  handleOnChangeFocus(e){
+    return {x : x};
+  },
+    handleOnChangeFocus: function(e){
     console.log('handleOnChangeFocus',e);
-  }
-  render() {
+  },
+    render: function() {
     console.log(this);
     var createTask = function(data){
       return (
-          <Task onChangeFocus={this.handleOnChangeFocus.bind(this)} data={data}/>
+          <Task onChangeFocus={this.handleOnChangeFocus} data={data}/>
           );
     };
     return <table>
@@ -82,41 +83,49 @@ class TaskList extends React.Component{
           </tr>
         </thead>
         <tbody>
-          {this.x.map(createTask,this)}
+          {this.state.x.map(createTask,this)}
         </tbody>
       </table>;
-  }
-  componentDidMount(){
+  },
+  componentDidMount: function(){
     console.log('componentDidMount');
-  }
-}
-class Task extends React.Component{
-  constructor(props){
-    console.log(props);
-    super(props);
-    this.state = {
-      focused : props.focused
+  },
+});
+var Task = React.createClass({
+  getInitialState: function(props){
+    return {
+      focused : false
     };
-  }
-  handleClick(){
+  },
+  handleOnClick: function(){
     this.setState({focused : !this.state.focused});
     this.props.onChangeFocus(this);
-  }
-  renderFocused(data){
+  },
+  handleChangeDesc: function(e){
+    console.log('handleChangeDesc',e.target.value);
+    this.setState({data:{desc: e.target.value}});
+  },
+  handleChangeFromDate: function(e){
+    this.setState({fromDate: e.target.value});
+  },
+  handleChangeToDate: function(e){
+    this.setState({toDate: e.target.value});
+  },
+  renderFocused : function(data){
     return(
           <tr>
-            <td><input type="text" defaultValue="勤怠" value={data.desc} /></td>
+            <td><input type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
             <td><select><option>作業</option></select></td>
             <td>{data.estimate}</td>
             <td>{data.actual}</td>
-            <td><input type="text" defaultValue="10:30" value={data.fromDate.toString()}/></td>
-            <td><input type="text" defaultValue="10:33" value={data.toDate.toString()}/></td>
+            <td><input type="text" defaultValue="10:30" value={data.fromDate.toString()} onChange={this.handleChangeFromDate}/></td>
+            <td><input type="text" defaultValue="10:33" value={data.toDate.toString()} onChange={this.handleChangeToDate}/></td>
           </tr>
      );
-  }
-  renderUnfocused(data){
+  },
+  renderUnfocused: function(data){
     return (
-          <tr onClick={this.handleClick.bind(this)}>
+          <tr onClick={this.handleOnClick}>
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>
@@ -125,8 +134,8 @@ class Task extends React.Component{
             <td>{data.toDate.toString()}</td>
           </tr>
         );
-  }
-  render() {
+  },
+  render : function() {
     var data = this.props.data;
     data.actual =  ( data.toDate.getTime() - data.fromDate.getTime() ) / (1000 * 60);
     if(this.state.focused){
@@ -135,5 +144,6 @@ class Task extends React.Component{
       return this.renderUnfocused(data);
     }
   }
-}
-exports.Tasxs = Tasxs;
+});
+//exports.Tasxs = Tasxs;
+module.exports = Tasks;
