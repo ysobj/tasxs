@@ -35,40 +35,48 @@ var TaskList = React.createClass({
 
     var x = [
     {
+      taskId: 1,
       estimate: 15,
       fromDate: new Date(0),
-      toDate: new Date(14400),
+      toDate: new Date(1000 * 60 * 15),
       desc: '勤怠入力',
       type: '作業'
     },
     {
+      taskId: 2,
       estimate: 20,
       fromDate: new Date(0),
-      toDate: new Date(14400),
+      toDate: new Date(1000 * 60 * 30),
       desc: 'ほげ機能の設計',
       type: '設計'
     },
     {
+      taskId: 3,
       estimate: 45,
       fromDate: new Date(0),
-      toDate: new Date(14400),
+      toDate: new Date(1000 * 60 * 45),
       desc: '単体テスト',
       type: 'テスト'
     }
-      ];
-//    this.props = {
-//      tasks : [1,2,3]
-//    }
+    ];
     return {x : x};
   },
     handleOnChangeFocus: function(e){
     console.log('handleOnChangeFocus',e);
+    console.log(this);
+    debugger;
   },
     render: function() {
-    console.log(this);
     var createTask = function(data){
       return (
-          <Task onChangeFocus={this.handleOnChangeFocus} data={data}/>
+          <Task onChangeFocus={this.handleOnChangeFocus}
+            key={data.taskId}
+            desc={data.desc}
+            type={data.type}
+            estimate={data.estimate}
+            fromDate={data.fromDate}
+            toDate={data.toDate}
+          />
           );
     };
     return <table>
@@ -93,7 +101,15 @@ var TaskList = React.createClass({
 });
 var Task = React.createClass({
   getInitialState: function(props){
+    var fromDate = this.props.fromDate;
+    var toDate = this.props.toDate;
     return {
+      desc: this.props.desc,
+      fromDate: fromDate,
+      toDate: toDate,
+      type: this.props.type,
+      estimate: this.props.estimate,
+      elapsed: this.calcElapsed(fromDate,toDate),
       focused : false
     };
   },
@@ -103,13 +119,24 @@ var Task = React.createClass({
   },
   handleChangeDesc: function(e){
     console.log('handleChangeDesc',e.target.value);
-    this.setState({data:{desc: e.target.value}});
+    this.setState({desc: e.target.value});
   },
   handleChangeFromDate: function(e){
-    this.setState({fromDate: e.target.value});
+    var fromDate = e.target.value;
+    var toDate = this.state.toDate;
+    var elapsed = this.calcElapsed(fromDate,toDate);
+    this.setState({fromDate: fromDate});
+    this.setState({elapsed: elapsed});
   },
   handleChangeToDate: function(e){
-    this.setState({toDate: e.target.value});
+    var fromDate = this.state.fromDate;
+    var toDate = e.target.value;
+    var elapsed = this.calcElapsed(fromDate,toDate);
+    this.setState({toDate: toDate});
+    this.setState({elapsed: elapsed});
+  },
+  calcElapsed: function(fromDate,toDate){
+    return ( toDate.getTime() - fromDate.getTime() ) / (1000 * 60);
   },
   renderFocused : function(data){
     return(
@@ -117,7 +144,7 @@ var Task = React.createClass({
             <td><input type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
             <td><select><option>作業</option></select></td>
             <td>{data.estimate}</td>
-            <td>{data.actual}</td>
+            <td>{data.elapsed}</td>
             <td><input type="text" defaultValue="10:30" value={data.fromDate.toString()} onChange={this.handleChangeFromDate}/></td>
             <td><input type="text" defaultValue="10:33" value={data.toDate.toString()} onChange={this.handleChangeToDate}/></td>
           </tr>
@@ -129,15 +156,14 @@ var Task = React.createClass({
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>
-            <td>{data.actual}</td>
+            <td>{data.elapsed}</td>
             <td>{data.fromDate.toString()}</td>
             <td>{data.toDate.toString()}</td>
           </tr>
         );
   },
   render : function() {
-    var data = this.props.data;
-    data.actual =  ( data.toDate.getTime() - data.fromDate.getTime() ) / (1000 * 60);
+    var data = this.state;
     if(this.state.focused){
       return this.renderFocused(data);
     }else{
@@ -145,5 +171,4 @@ var Task = React.createClass({
     }
   }
 });
-//exports.Tasxs = Tasxs;
 module.exports = Tasks;
