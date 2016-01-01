@@ -30,17 +30,15 @@ var Tasks = React.createClass({
 });
 var TaskList = React.createClass({
   getInitialState: function(){
-    //super();
-    //this.x = [1,2,3];
-
-    var x = [
+    var taskList = [
     {
       taskId: 1,
       estimate: 15,
       fromDate: new Date(0),
       toDate: new Date(1000 * 60 * 15),
       desc: '勤怠入力',
-      type: '作業'
+      type: '作業',
+      focused: false
     },
     {
       taskId: 2,
@@ -48,7 +46,8 @@ var TaskList = React.createClass({
       fromDate: new Date(0),
       toDate: new Date(1000 * 60 * 30),
       desc: 'ほげ機能の設計',
-      type: '設計'
+      type: '設計',
+      focused: false
     },
     {
       taskId: 3,
@@ -56,26 +55,31 @@ var TaskList = React.createClass({
       fromDate: new Date(0),
       toDate: new Date(1000 * 60 * 45),
       desc: '単体テスト',
-      type: 'テスト'
+      type: 'テスト',
+      focused: false
     }
     ];
-    return {x : x};
+    return {taskList : taskList};
   },
-    handleOnChangeFocus: function(e){
-    console.log('handleOnChangeFocus',e);
-    console.log(this);
-    debugger;
+  handleOnChangeFocus: function(e){
+    var taskList = this.state.taskList.map(function(data,i){
+      data.focused = (e == i);
+      return data;
+    });
+    this.setState({taskList: taskList});
   },
     render: function() {
-    var createTask = function(data){
+
+    var createTask = function(data,i){
       return (
-          <Task onChangeFocus={this.handleOnChangeFocus}
+          <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
             key={data.taskId}
             desc={data.desc}
             type={data.type}
             estimate={data.estimate}
             fromDate={data.fromDate}
             toDate={data.toDate}
+            focused={data.focused}
           />
           );
     };
@@ -91,12 +95,11 @@ var TaskList = React.createClass({
           </tr>
         </thead>
         <tbody>
-          {this.state.x.map(createTask,this)}
+          {this.state.taskList.map(createTask,this)}
         </tbody>
       </table>;
   },
   componentDidMount: function(){
-    console.log('componentDidMount');
   },
 });
 var Task = React.createClass({
@@ -110,64 +113,67 @@ var Task = React.createClass({
       type: this.props.type,
       estimate: this.props.estimate,
       elapsed: this.calcElapsed(fromDate,toDate),
-      focused : false
+      focused : this.props.focused
     };
   },
   handleOnClick: function(){
-    this.setState({focused : !this.state.focused});
     this.props.onChangeFocus(this);
   },
   handleChangeDesc: function(e){
-    console.log('handleChangeDesc',e.target.value);
     this.setState({desc: e.target.value});
   },
   handleChangeFromDate: function(e){
     var fromDate = e.target.value;
     var toDate = this.state.toDate;
     var elapsed = this.calcElapsed(fromDate,toDate);
-    this.setState({fromDate: fromDate});
-    this.setState({elapsed: elapsed});
+    this.setState({
+      fromDate: fromDate,
+      elapsed: elapsed
+    });
   },
   handleChangeToDate: function(e){
     var fromDate = this.state.fromDate;
     var toDate = e.target.value;
     var elapsed = this.calcElapsed(fromDate,toDate);
-    this.setState({toDate: toDate});
-    this.setState({elapsed: elapsed});
+    this.setState({
+      toDate: toDate,
+      elapsed: elapsed
+    });
   },
   calcElapsed: function(fromDate,toDate){
     return ( toDate.getTime() - fromDate.getTime() ) / (1000 * 60);
   },
-  renderFocused : function(data){
+  renderFocused : function(data,elapsed){
     return(
           <tr>
             <td><input type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
             <td><select><option>作業</option></select></td>
             <td>{data.estimate}</td>
-            <td>{data.elapsed}</td>
+            <td>{elapsed}</td>
             <td><input type="text" defaultValue="10:30" value={data.fromDate.toString()} onChange={this.handleChangeFromDate}/></td>
             <td><input type="text" defaultValue="10:33" value={data.toDate.toString()} onChange={this.handleChangeToDate}/></td>
           </tr>
      );
   },
-  renderUnfocused: function(data){
+  renderUnfocused: function(data,elapsed){
     return (
           <tr onClick={this.handleOnClick}>
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>
-            <td>{data.elapsed}</td>
+            <td>{elapsed}</td>
             <td>{data.fromDate.toString()}</td>
             <td>{data.toDate.toString()}</td>
           </tr>
         );
   },
   render : function() {
-    var data = this.state;
-    if(this.state.focused){
-      return this.renderFocused(data);
+    var data = this.props;
+    var elapsed = this.calcElapsed(data.fromDate,data.toDate);
+    if(data.focused){
+      return this.renderFocused(data,elapsed);
     }else{
-      return this.renderUnfocused(data);
+      return this.renderUnfocused(data,elapsed);
     }
   }
 });
