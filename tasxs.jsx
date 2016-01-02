@@ -98,12 +98,13 @@ var TaskList = React.createClass({
           {this.state.taskList.map(createTask,this)}
         </tbody>
       </table>;
-  },
-  componentDidMount: function(){
-  },
+  }
 });
 var Task = React.createClass({
-  getInitialState: function(props){
+  componentWillReceiveProps: function(nextProps){
+    this.setState({focused: nextProps.focused});
+  },
+  getInitialState: function(){
     var fromDate = this.props.fromDate;
     var toDate = this.props.toDate;
     return {
@@ -140,6 +141,9 @@ var Task = React.createClass({
       elapsed: elapsed
     });
   },
+  handleChangeEstimate: function(e){
+    this.setState({estimate: e.target.value})
+  },
   calcElapsed: function(fromDate,toDate){
     return ( toDate.getTime() - fromDate.getTime() ) / (1000 * 60);
   },
@@ -148,7 +152,7 @@ var Task = React.createClass({
           <tr>
             <td><input type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
             <td><select><option>作業</option></select></td>
-            <td>{data.estimate}</td>
+            <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td>{elapsed}</td>
             <td><input type="text" defaultValue="10:30" value={data.fromDate.toString()} onChange={this.handleChangeFromDate}/></td>
             <td><input type="text" defaultValue="10:33" value={data.toDate.toString()} onChange={this.handleChangeToDate}/></td>
@@ -168,7 +172,7 @@ var Task = React.createClass({
         );
   },
   render : function() {
-    var data = this.props;
+    var data = this.state;
     var elapsed = this.calcElapsed(data.fromDate,data.toDate);
     if(data.focused){
       return this.renderFocused(data,elapsed);
