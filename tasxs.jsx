@@ -1,10 +1,17 @@
 "use strict";
 var React = require("react");
 var Tasks = React.createClass({
+  formatTime: function(date){
+    var str = ("0" + date.getHours()).slice(-2);
+    str += ":";
+    str += ("0" + date.getHours()).slice(-2);
+    return str;
+  },
   render: function() {
+    var currentTime = this.formatTime(new Date());
     return <section className="main">
       <div>
-        <span>now</span><span>10:40</span>
+        <span>now</span><span>{currentTime}</span>
         <span>finish</span><span>10:40</span>
       </div>
       <div className="tab-group">
