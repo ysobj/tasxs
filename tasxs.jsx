@@ -4,7 +4,7 @@ var Tasks = React.createClass({
   formatTime: function(date){
     var str = ("0" + date.getHours()).slice(-2);
     str += ":";
-    str += ("0" + date.getHours()).slice(-2);
+    str += ("0" + date.getMinutes()).slice(-2);
     return str;
   },
   render: function() {
