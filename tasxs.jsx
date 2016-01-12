@@ -1,14 +1,29 @@
 "use strict";
 var React = require("react");
-var Tasks = React.createClass({
+var utils = {
   formatTime: function(date){
     var str = ("0" + date.getHours()).slice(-2);
     str += ":";
     str += ("0" + date.getMinutes()).slice(-2);
     return str;
   },
+  getMidnight: function(date){
+    var tmp = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    return tmp;
+  },
+  getDateFromHourAndMinute: function(hour, minute, midnight){
+    if(midnight == null){
+      midnight = getMidnight(new Date());
+    }
+    var timeInMs = midnight.getTime();
+    timeInMs += hour * 60 * 60 * 1000;
+    timeInMs += minute * 60 * 1000;
+    return new Date(timeInMs);
+  }
+};
+var Tasks = React.createClass({
   render: function() {
-    var currentTime = this.formatTime(new Date());
+    var currentTime = utils.formatTime(new Date());
     return <section className="main">
       <div>
         <span>now</span><span>{currentTime}</span>
@@ -161,8 +176,8 @@ var Task = React.createClass({
             <td><select><option>作業</option></select></td>
             <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td>{elapsed}</td>
-            <td><input type="text" defaultValue="10:30" value={data.fromDate.toString()} onChange={this.handleChangeFromDate}/></td>
-            <td><input type="text" defaultValue="10:33" value={data.toDate.toString()} onChange={this.handleChangeToDate}/></td>
+            <td><input type="text" defaultValue="10:30" value={utils.formatTime(data.fromDate)} onChange={this.handleChangeFromDate}/></td>
+            <td><input type="text" defaultValue="10:33" value={utils.formatTime(data.toDate)} onChange={this.handleChangeToDate}/></td>
           </tr>
      );
   },
@@ -173,8 +188,8 @@ var Task = React.createClass({
             <td>{data.type}</td>
             <td>{data.estimate}</td>
             <td>{elapsed}</td>
-            <td>{data.fromDate.toString()}</td>
-            <td>{data.toDate.toString()}</td>
+            <td>{utils.formatTime(data.fromDate)}</td>
+            <td>{utils.formatTime(data.toDate)}</td>
           </tr>
         );
   },
