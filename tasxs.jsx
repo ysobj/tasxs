@@ -13,7 +13,7 @@ var utils = {
   },
   getDateFromHourAndMinute: function(hour, minute, midnight){
     if(midnight == null){
-      midnight = getMidnight(new Date());
+      midnight = utils.getMidnight(new Date());
     }
     var timeInMs = midnight.getTime();
     timeInMs += hour * 60 * 60 * 1000;
@@ -21,6 +21,7 @@ var utils = {
     return new Date(timeInMs);
   }
 };
+var today = utils.getMidnight(new Date());
 var Tasks = React.createClass({
   render: function() {
     var currentTime = utils.formatTime(new Date());
@@ -56,8 +57,8 @@ var TaskList = React.createClass({
     {
       taskId: 1,
       estimate: 15,
-      fromDate: new Date(0),
-      toDate: new Date(1000 * 60 * 15),
+      fromDate: utils.getDateFromHourAndMinute(9,0),
+      toDate: utils.getDateFromHourAndMinute(9,15),
       desc: '勤怠入力',
       type: '作業',
       focused: false
@@ -65,8 +66,8 @@ var TaskList = React.createClass({
     {
       taskId: 2,
       estimate: 20,
-      fromDate: new Date(0),
-      toDate: new Date(1000 * 60 * 30),
+      fromDate: utils.getDateFromHourAndMinute(9,15),
+      toDate: utils.getDateFromHourAndMinute(9,33),
       desc: 'ほげ機能の設計',
       type: '設計',
       focused: false
@@ -74,8 +75,8 @@ var TaskList = React.createClass({
     {
       taskId: 3,
       estimate: 45,
-      fromDate: new Date(0),
-      toDate: new Date(1000 * 60 * 45),
+      fromDate: utils.getDateFromHourAndMinute(9,33),
+      toDate: utils.getDateFromHourAndMinute(9,45),
       desc: '単体テスト',
       type: 'テスト',
       focused: false
@@ -146,7 +147,8 @@ var Task = React.createClass({
     this.setState({desc: e.target.value});
   },
   handleChangeFromDate: function(e){
-    var fromDate = e.target.value;
+    var tmp = e.target.value.split(":");
+    var fromDate = utils.getDateFromHourAndMinute(tmp[0],tmp[1]);
     var toDate = this.state.toDate;
     var elapsed = this.calcElapsed(fromDate,toDate);
     this.setState({
@@ -156,7 +158,8 @@ var Task = React.createClass({
   },
   handleChangeToDate: function(e){
     var fromDate = this.state.fromDate;
-    var toDate = e.target.value;
+    var tmp = e.target.value.split(":");
+    var toDate = utils.getDateFromHourAndMinute(tmp[0],tmp[1]);
     var elapsed = this.calcElapsed(fromDate,toDate);
     this.setState({
       toDate: toDate,
@@ -169,25 +172,25 @@ var Task = React.createClass({
   calcElapsed: function(fromDate,toDate){
     return ( toDate.getTime() - fromDate.getTime() ) / (1000 * 60);
   },
-  renderFocused : function(data,elapsed){
+  renderFocused : function(data,elapsed,actualClassName){
     return(
           <tr>
             <td><input type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
             <td><select><option>作業</option></select></td>
             <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
-            <td>{elapsed}</td>
+            <td><span className={actualClassName}>{elapsed}</span></td>
             <td><input type="text" defaultValue="10:30" value={utils.formatTime(data.fromDate)} onChange={this.handleChangeFromDate}/></td>
             <td><input type="text" defaultValue="10:33" value={utils.formatTime(data.toDate)} onChange={this.handleChangeToDate}/></td>
           </tr>
      );
   },
-  renderUnfocused: function(data,elapsed){
+  renderUnfocused: function(data,elapsed,actualClassName){
     return (
           <tr onClick={this.handleOnClick}>
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>
-            <td>{elapsed}</td>
+            <td><span className={actualClassName}>{elapsed}</span></td>
             <td>{utils.formatTime(data.fromDate)}</td>
             <td>{utils.formatTime(data.toDate)}</td>
           </tr>
@@ -196,10 +199,14 @@ var Task = React.createClass({
   render : function() {
     var data = this.state;
     var elapsed = this.calcElapsed(data.fromDate,data.toDate);
+    var actualClassName = '' ;
+    if(data.estimate < elapsed){
+      actualClassName = 'overtime';
+    }
     if(data.focused){
-      return this.renderFocused(data,elapsed);
+      return this.renderFocused(data,elapsed,actualClassName);
     }else{
-      return this.renderUnfocused(data,elapsed);
+      return this.renderUnfocused(data,elapsed,actualClassName);
     }
   }
 });
