@@ -91,11 +91,16 @@ var TaskList = React.createClass({
     });
     this.setState({taskList: taskList});
   },
+  handleOnUpdateTimeFrom: function(e){
+    console.log('handleOnUpdateTimeFrom',e);
+  },
     render: function() {
 
     var createTask = function(data,i){
       return (
           <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
+                onUpdateTimeFrom={this.handleOnUpdateTimeFrom.bind(this,i)}
+            order={i}
             key={data.taskId}
             desc={data.desc}
             type={data.type}
@@ -172,6 +177,11 @@ var Task = React.createClass({
   calcElapsed: function(fromDate,toDate){
     return ( toDate.getTime() - fromDate.getTime() ) / (1000 * 60);
   },
+  handleOnKeyDownAtFrom: function(e){
+    if(e.keyCode == 84 && e.ctrlKey){
+      this.props.onUpdateTimeFrom(this);
+    }
+  },
   renderFocused : function(data,elapsed,actualClassName){
     return(
           <tr>
@@ -179,7 +189,7 @@ var Task = React.createClass({
             <td><select><option>作業</option></select></td>
             <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
-            <td><input type="text" defaultValue="10:30" value={utils.formatTime(data.fromDate)} onChange={this.handleChangeFromDate}/></td>
+            <td><input type="text" defaultValue="10:30" value={utils.formatTime(data.fromDate)} onChange={this.handleChangeFromDate} onKeyDown={this.handleOnKeyDownAtFrom}/></td>
             <td><input type="text" defaultValue="10:33" value={utils.formatTime(data.toDate)} onChange={this.handleChangeToDate}/></td>
           </tr>
      );
