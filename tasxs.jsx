@@ -2,9 +2,13 @@
 var React = require("react");
 var utils = {
   formatTime: function(date){
+                console.log(date);
     var str = ("0" + date.getHours()).slice(-2);
     str += ":";
-    str += ("0" + date.getMinutes()).slice(-2);
+    var min = date.getMinutes();
+    console.log(min);
+    str += ("0" + min).slice(-2);
+    console.log(str);
     return str;
   },
   getMidnight: function(date){
@@ -182,6 +186,13 @@ var Task = React.createClass({
       this.props.onUpdateTimeFrom(this);
     }
   },
+  handleOnKeyDownAtTo: function(e){
+    if(e.keyCode == 84 && e.ctrlKey){
+      var now = new Date();
+      console.log(now);
+      this.setState({toDate: now});
+    }
+  },
   renderFocused : function(data,elapsed,actualClassName){
     return(
           <tr>
@@ -190,7 +201,7 @@ var Task = React.createClass({
             <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
             <td><input type="text" defaultValue="10:30" value={utils.formatTime(data.fromDate)} onChange={this.handleChangeFromDate} onKeyDown={this.handleOnKeyDownAtFrom}/></td>
-            <td><input type="text" defaultValue="10:33" value={utils.formatTime(data.toDate)} onChange={this.handleChangeToDate}/></td>
+            <td><input type="text" defaultValue="10:33" value={utils.formatTime(data.toDate)} onChange={this.handleChangeToDate} onKeyDown={this.handleOnKeyDownAtTo}/></td>
           </tr>
      );
   },
