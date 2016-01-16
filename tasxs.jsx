@@ -2,18 +2,19 @@
 var React = require("react");
 var utils = {
   formatTime: function(date){
-                console.log(date);
     var str = ("0" + date.getHours()).slice(-2);
     str += ":";
     var min = date.getMinutes();
-    console.log(min);
     str += ("0" + min).slice(-2);
-    console.log(str);
     return str;
   },
   getMidnight: function(date){
     var tmp = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     return tmp;
+  },
+  getDateFromHourAndMinuteStr: function(str, midnight){
+    var tmp = str.split(":");
+    return utils.getDateFromHourAndMinute(tmp[0],tmp[1],midnight);
   },
   getDateFromHourAndMinute: function(hour, minute, midnight){
     if(midnight == null){
@@ -96,7 +97,6 @@ var TaskList = React.createClass({
     this.setState({taskList: taskList});
   },
   handleOnUpdateTimeFrom: function(e){
-    console.log('handleOnUpdateTimeFrom',e);
   },
     render: function() {
 
@@ -139,10 +139,14 @@ var Task = React.createClass({
   getInitialState: function(){
     var fromDate = this.props.fromDate;
     var toDate = this.props.toDate;
+    var fromDateStr = utils.formatTime(fromDate);
+    var toDateStr = utils.formatTime(toDate);
     return {
       desc: this.props.desc,
-      fromDate: fromDate,
-      toDate: toDate,
+      fromDate: this.props.fromDate,
+      fromDateStr: fromDateStr,
+      toDate: this.props.toDate,
+      toDateStr: toDateStr,
       type: this.props.type,
       estimate: this.props.estimate,
       elapsed: this.calcElapsed(fromDate,toDate),
@@ -155,25 +159,11 @@ var Task = React.createClass({
   handleChangeDesc: function(e){
     this.setState({desc: e.target.value});
   },
-  handleChangeFromDate: function(e){
-    var tmp = e.target.value.split(":");
-    var fromDate = utils.getDateFromHourAndMinute(tmp[0],tmp[1]);
-    var toDate = this.state.toDate;
-    var elapsed = this.calcElapsed(fromDate,toDate);
-    this.setState({
-      fromDate: fromDate,
-      elapsed: elapsed
-    });
+  handleChangeFromDateStr: function(e){
+    this.setState({fromDateStr: e.target.value});
   },
-  handleChangeToDate: function(e){
-    var fromDate = this.state.fromDate;
-    var tmp = e.target.value.split(":");
-    var toDate = utils.getDateFromHourAndMinute(tmp[0],tmp[1]);
-    var elapsed = this.calcElapsed(fromDate,toDate);
-    this.setState({
-      toDate: toDate,
-      elapsed: elapsed
-    });
+  handleChangeToDateStr: function(e){
+    this.setState({toDateStr: e.target.value});
   },
   handleChangeEstimate: function(e){
     this.setState({estimate: e.target.value})
@@ -181,17 +171,30 @@ var Task = React.createClass({
   calcElapsed: function(fromDate,toDate){
     return ( toDate.getTime() - fromDate.getTime() ) / (1000 * 60);
   },
-  handleOnKeyDownAtFrom: function(e){
+  handleOnKeyDownAtFromDate: function(e){
     if(e.keyCode == 84 && e.ctrlKey){
       this.props.onUpdateTimeFrom(this);
     }
   },
-  handleOnKeyDownAtTo: function(e){
+  handleOnKeyDownAtToDate: function(e){
     if(e.keyCode == 84 && e.ctrlKey){
-      var now = new Date();
-      console.log(now);
-      this.setState({toDate: now});
+      var now = utils.formatTime(new Date());
+      this.setState({toDateStr: now});
     }
+  },
+  handleOnBlurAtFromDate: function(e){
+    var toDate = this.state.toDate;
+    var tmp = this.state.fromDateStr;
+    var fromDate = utils.getDateFromHourAndMinuteStr(tmp);
+    var elapsed = this.calcElapsed(fromDate,toDate);
+    this.setState({fromDate: fromDate, elapsed: elapsed});
+  },
+  handleOnBlurAtToDate: function(e){
+    var fromDate = this.state.fromDate;
+    var tmp = this.state.toDateStr;
+    var toDate = utils.getDateFromHourAndMinuteStr(tmp);
+    var elapsed = this.calcElapsed(fromDate,toDate);
+    this.setState({toDate: toDate, elapsed: elapsed});
   },
   renderFocused : function(data,elapsed,actualClassName){
     return(
@@ -200,8 +203,8 @@ var Task = React.createClass({
             <td><select><option>作業</option></select></td>
             <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
-            <td><input type="text" defaultValue="10:30" value={utils.formatTime(data.fromDate)} onChange={this.handleChangeFromDate} onKeyDown={this.handleOnKeyDownAtFrom}/></td>
-            <td><input type="text" defaultValue="10:33" value={utils.formatTime(data.toDate)} onChange={this.handleChangeToDate} onKeyDown={this.handleOnKeyDownAtTo}/></td>
+            <td><input type="text" defaultValue="10:30" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlurAtFromDate}/></td>
+            <td><input type="text" defaultValue="10:33" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlurAtToDate}/></td>
           </tr>
      );
   },
