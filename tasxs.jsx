@@ -97,10 +97,40 @@ var TaskList = React.createClass({
     this.setState({taskList: taskList});
   },
   handleOnUpdateTimeFrom: function(e){
+    var tmpToDate = new Date();
+    var taskList = this.state.taskList.map(function(data,i){
+      if(i == e-1){
+        tmpToDate = data.toDate;
+      }else if(i == e){
+        data.fromDate = tmpToDate;
+      }
+      return data;
+    });
+    this.setState({taskList: taskList});
   },
-    render: function() {
-
+  handleCreate: function(e){
+    var taskList = this.state.taskList;
+    var taskId = 0;
+    taskList.forEach(function(e){
+      if(taskId < e.taskId){
+        taskId = e.taskId;
+      }
+    });
+    taskId++;
+    taskList.push({
+      taskId: taskId,
+      estimate: 45,
+      fromDate: utils.getDateFromHourAndMinute(9,33),
+      toDate: utils.getDateFromHourAndMinute(9,45),
+      desc: '単体テスト',
+      type: 'テスト',
+      focused: false
+    });
+    this.setState({taskList: taskList});
+  },
+  render: function() {
     var createTask = function(data,i){
+      console.log('createTask',i);
       return (
           <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
                 onUpdateTimeFrom={this.handleOnUpdateTimeFrom.bind(this,i)}
@@ -118,6 +148,7 @@ var TaskList = React.createClass({
     return <table>
         <thead>
           <tr>
+            <th></th>
             <th>task</th>
             <th>type</th>
             <th>estimate</th>
@@ -128,13 +159,21 @@ var TaskList = React.createClass({
         </thead>
         <tbody>
           {this.state.taskList.map(createTask,this)}
+          <tr><td><button onClick={this.handleCreate}>create</button></td></tr>
         </tbody>
       </table>;
   }
 });
 var Task = React.createClass({
   componentWillReceiveProps: function(nextProps){
-    this.setState({focused: nextProps.focused});
+    var fromDate = nextProps.fromDate;
+    var fromDateStr = utils.formatTime(fromDate);
+    console.log('componentWillReceiveProps',fromDate, fromDateStr);
+    this.setState({
+      focused: nextProps.focused,
+      fromDate: fromDate,
+      fromDateStr: fromDateStr
+    });
   },
   getInitialState: function(){
     var fromDate = this.props.fromDate;
@@ -174,12 +213,14 @@ var Task = React.createClass({
   handleOnKeyDownAtFromDate: function(e){
     if(e.keyCode == 84 && e.ctrlKey){
       this.props.onUpdateTimeFrom(this);
+      e.preventDefault();
     }
   },
   handleOnKeyDownAtToDate: function(e){
     if(e.keyCode == 84 && e.ctrlKey){
       var now = utils.formatTime(new Date());
       this.setState({toDateStr: now});
+      e.preventDefault();
     }
   },
   handleOnBlurAtFromDate: function(e){
@@ -199,6 +240,7 @@ var Task = React.createClass({
   renderFocused : function(data,elapsed,actualClassName){
     return(
           <tr>
+            <td><input type="checkbox" disabled/></td>
             <td><input type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
             <td><select><option>作業</option></select></td>
             <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
@@ -211,6 +253,7 @@ var Task = React.createClass({
   renderUnfocused: function(data,elapsed,actualClassName){
     return (
           <tr onClick={this.handleOnClick}>
+            <td><input type="checkbox" disabled/></td>
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>
