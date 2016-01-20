@@ -40,27 +40,27 @@ var utils = {
 var today = utils.getMidnight(new Date());
 var Tasks = React.createClass({
   render: function() {
-    var currentTime = utils.formatTime(new Date());
     return <section className="main">
-      <div>
-        <span>now</span><span>{currentTime}</span>
-        <span>finish</span><span>10:40</span>
-      </div>
       <div className="tab-group">
+        <div className="tab-item tab-item-fixed">
+          <span></span>
+          &lt;&lt;
+        </div>
+        <div className="tab-item">
+          <span></span>
+          Yesterday
+        </div>
         <div className="tab-item active">
-          <span className="icon icon-cancel icon-close-tab"></span>
+          <span></span>
           Today
         </div>
         <div className="tab-item">
-          <span className="icon icon-cancel icon-close-tab"></span>
-          Tommorrow
-        </div>
-        <div className="tab-item">
-          <span className="icon icon-cancel icon-close-tab"></span>
-          Tab
+          <span></span>
+          Tomorrow
         </div>
         <div className="tab-item tab-item-fixed">
-          <span className="icon icon-plus"></span>
+          <span></span>
+          &gt;&gt;
         </div>
       </div>
       <TaskList />
@@ -141,7 +141,19 @@ var TaskList = React.createClass({
     });
     this.setState({taskList: taskList});
   },
+  calcElapsed: function(){
+    var elapsed = 0;
+    this.state.taskList.forEach(function(e){
+      if(e.toDate == null && isFinite(e.estimate)){
+        elapsed += e.estimate;
+      }
+    });
+    return elapsed;
+  },
   render: function() {
+    var now = new Date();
+    var nowStr = utils.formatTime(now);
+    var finishStr = utils.formatTime( new Date( now.getTime() + (this.calcElapsed() * 1000 * 60)));
     var createTask = function(data,i){
       return (
           <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
@@ -159,23 +171,29 @@ var TaskList = React.createClass({
           />
           );
     };
-    return <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>task</th>
-            <th>type</th>
-            <th>estimate</th>
-            <th>actual</th>
-            <th>from</th>
-            <th>to</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.taskList.map(createTask,this)}
-          <tr><td><button onClick={this.handleCreate}>create</button></td></tr>
-        </tbody>
-      </table>;
+    return <div>
+        <div>
+          <span>now</span><span>{nowStr}</span>
+          <span>finish</span><span>{finishStr}</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>task</th>
+              <th>type</th>
+              <th>estimate</th>
+              <th>actual</th>
+              <th>from</th>
+              <th>to</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.taskList.map(createTask,this)}
+            <tr><td><button onClick={this.handleCreate}>create</button></td></tr>
+          </tbody>
+        </table>
+      </div>;
   }
 });
 var Task = React.createClass({
