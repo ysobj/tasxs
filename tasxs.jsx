@@ -1,9 +1,11 @@
 "use strict";
 var React = require("react");
 var ReactDOM = require("react-dom");
-console.log(ReactDOM);
 var utils = {
   formatTime: function(date){
+    if(date == null){
+      return null;
+    }
     var str = ("0" + date.getHours()).slice(-2);
     str += ":";
     var min = date.getMinutes();
@@ -15,6 +17,9 @@ var utils = {
     return tmp;
   },
   getDateFromHourAndMinuteStr: function(str, midnight){
+    if(str == null){
+      return null;
+    }
     var tmp = str.split(":");
     return utils.getDateFromHourAndMinute(tmp[0],tmp[1],midnight);
   },
@@ -25,7 +30,11 @@ var utils = {
     var timeInMs = midnight.getTime();
     timeInMs += hour * 60 * 60 * 1000;
     timeInMs += minute * 60 * 1000;
-    return new Date(timeInMs);
+    var tmp = new Date(timeInMs);
+    if(tmp.toString() === "Invalid Date"){
+      return null;
+    }
+    return tmp;
   }
 };
 var today = utils.getMidnight(new Date());
@@ -121,10 +130,6 @@ var TaskList = React.createClass({
     taskId++;
     taskList.push({
       taskId: taskId,
-      estimate: 45,
-      fromDate: utils.getDateFromHourAndMinute(9,33),
-      toDate: utils.getDateFromHourAndMinute(9,45),
-      desc: '単体テスト',
       type: 'テスト',
       focused: false
     });
@@ -217,6 +222,9 @@ var Task = React.createClass({
     this.setState({estimate: e.target.value})
   },
   calcElapsed: function(fromDate,toDate){
+    if(fromDate == null || toDate == null){
+      return null;
+    }
     return ( toDate.getTime() - fromDate.getTime() ) / (1000 * 60);
   },
   handleOnKeyDownAtFromDate: function(e){
@@ -252,12 +260,12 @@ var Task = React.createClass({
     return(
           <tr>
             <td><input type="checkbox" disabled/></td>
-            <td><input ref="descInput" type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
+            <td><input ref="descInput" type="text" value={data.desc} onChange={this.handleChangeDesc}/></td>
             <td><select><option>作業</option></select></td>
-            <td><input ref="estimateInput" type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
+            <td><input ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
-            <td><input ref="fromDateInput" type="text" defaultValue="10:30" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
-            <td><input ref="toDateInput" type="text" defaultValue="10:33" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
+            <td><input ref="fromDateInput" type="text" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
+            <td><input ref="toDateInput" type="text" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
           </tr>
      );
   },
