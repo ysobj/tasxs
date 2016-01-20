@@ -1,6 +1,7 @@
 "use strict";
 var React = require("react");
 var ReactDOM = require("react-dom");
+var fs = require("fs");
 var utils = {
   formatTime: function(date){
     if(date == null){
@@ -69,35 +70,13 @@ var Tasks = React.createClass({
 });
 var TaskList = React.createClass({
   getInitialState: function(){
-    var taskList = [
-    {
-      taskId: 1,
-      estimate: 15,
-      fromDate: utils.getDateFromHourAndMinute(9,0),
-      toDate: utils.getDateFromHourAndMinute(9,15),
-      desc: '勤怠入力',
-      type: '作業',
-      focused: false
-    },
-    {
-      taskId: 2,
-      estimate: 20,
-      fromDate: utils.getDateFromHourAndMinute(9,15),
-      toDate: utils.getDateFromHourAndMinute(9,33),
-      desc: 'ほげ機能の設計',
-      type: '設計',
-      focused: false
-    },
-    {
-      taskId: 3,
-      estimate: 45,
-      fromDate: utils.getDateFromHourAndMinute(9,33),
-      toDate: utils.getDateFromHourAndMinute(9,45),
-      desc: '単体テスト',
-      type: 'テスト',
-      focused: false
-    }
-    ];
+    var jsonStr = fs.readFileSync('taskList.json','utf-8');
+    var taskList = JSON.parse(jsonStr);
+    taskList.forEach(function(e){
+      e.fromDate = new Date(e.fromDate);
+      e.toDate = new Date(e.toDate);
+    });
+
     return {taskList : taskList};
   },
   handleOnChangeFocus: function(e){
