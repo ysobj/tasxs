@@ -1,5 +1,7 @@
 "use strict";
 var React = require("react");
+var ReactDOM = require("react-dom");
+console.log(ReactDOM);
 var utils = {
   formatTime: function(date){
     var str = ("0" + date.getHours()).slice(-2);
@@ -250,12 +252,12 @@ var Task = React.createClass({
     return(
           <tr>
             <td><input type="checkbox" disabled/></td>
-            <td><input type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
+            <td><input ref="descInput" type="text" defaultValue="勤怠" value={data.desc} onChange={this.handleChangeDesc}/></td>
             <td><select><option>作業</option></select></td>
-            <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
+            <td><input ref="estimateInput" type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
-            <td><input type="text" defaultValue="10:30" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
-            <td><input type="text" defaultValue="10:33" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
+            <td><input ref="fromDateInput" type="text" defaultValue="10:30" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
+            <td><input ref="toDateInput" type="text" defaultValue="10:33" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
           </tr>
      );
   },
@@ -271,6 +273,24 @@ var Task = React.createClass({
             <td>{utils.formatTime(data.toDate)}</td>
           </tr>
         );
+  },
+  componentDidUpdate: function(e){
+    if(this.props.focused){
+      if(this.state.desc == ''){
+        ReactDOM.findDOMNode(this.refs.descInput).focus(); 
+        return;
+      }
+      if(this.state.estimate == ''){
+        ReactDOM.findDOMNode(this.refs.estimateInput).focus(); 
+        return ;
+      }
+      if(this.state.fromDateStr == ''){
+        ReactDOM.findDOMNode(this.refs.fromDateInput).focus(); 
+      }
+      if(this.state.toDateStr == ''){
+        ReactDOM.findDOMNode(this.refs.toDateInput).focus(); 
+      }
+    }
   },
   render : function() {
     var data = this.state;
