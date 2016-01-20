@@ -99,7 +99,7 @@ var TaskList = React.createClass({
   handleOnUpdateTimeFrom: function(e){
     var tmpToDate = new Date();
     var taskList = this.state.taskList.map(function(data,i){
-      if(i == e-1){
+      if(i == (e-1)){
         tmpToDate = data.toDate;
       }else if(i == e){
         data.fromDate = tmpToDate;
@@ -128,14 +128,21 @@ var TaskList = React.createClass({
     });
     this.setState({taskList: taskList});
   },
+  handleUpdate: function(e){
+    var taskList = this.state.taskList.map(function(data,i){
+      return (data.taskId == e.taskId) ? e : data;
+    });
+    this.setState({taskList: taskList});
+  },
   render: function() {
     var createTask = function(data,i){
-      console.log('createTask',i);
       return (
           <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
                 onUpdateTimeFrom={this.handleOnUpdateTimeFrom.bind(this,i)}
+                onUpdate={this.handleUpdate}
             order={i}
             key={data.taskId}
+            taskId={data.taskId}
             desc={data.desc}
             type={data.type}
             estimate={data.estimate}
@@ -168,7 +175,6 @@ var Task = React.createClass({
   componentWillReceiveProps: function(nextProps){
     var fromDate = nextProps.fromDate;
     var fromDateStr = utils.formatTime(fromDate);
-    console.log('componentWillReceiveProps',fromDate, fromDateStr);
     this.setState({
       focused: nextProps.focused,
       fromDate: fromDate,
@@ -181,6 +187,7 @@ var Task = React.createClass({
     var fromDateStr = utils.formatTime(fromDate);
     var toDateStr = utils.formatTime(toDate);
     return {
+      taskId: this.props.taskId,
       desc: this.props.desc,
       fromDate: this.props.fromDate,
       fromDateStr: fromDateStr,
@@ -223,19 +230,21 @@ var Task = React.createClass({
       e.preventDefault();
     }
   },
-  handleOnBlurAtFromDate: function(e){
-    var toDate = this.state.toDate;
-    var tmp = this.state.fromDateStr;
-    var fromDate = utils.getDateFromHourAndMinuteStr(tmp);
+  handleOnBlur: function(e){
+    var fromDate = utils.getDateFromHourAndMinuteStr(this.state.fromDateStr);
+    var toDate = utils.getDateFromHourAndMinuteStr(this.state.toDateStr);
     var elapsed = this.calcElapsed(fromDate,toDate);
-    this.setState({fromDate: fromDate, elapsed: elapsed});
-  },
-  handleOnBlurAtToDate: function(e){
-    var fromDate = this.state.fromDate;
-    var tmp = this.state.toDateStr;
-    var toDate = utils.getDateFromHourAndMinuteStr(tmp);
-    var elapsed = this.calcElapsed(fromDate,toDate);
-    this.setState({toDate: toDate, elapsed: elapsed});
+    var param = {
+      taskId: this.state.taskId,
+      fromDate: fromDate,
+      toDate: toDate,
+      elapsed: elapsed,
+      desc: this.state.desc,
+      type: this.state.type,
+      estimate: this.state.estimate
+    };
+    this.setState(param);
+    this.props.onUpdate(param);
   },
   renderFocused : function(data,elapsed,actualClassName){
     return(
@@ -245,8 +254,8 @@ var Task = React.createClass({
             <td><select><option>作業</option></select></td>
             <td><input type="text" defaultValue="0" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
-            <td><input type="text" defaultValue="10:30" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlurAtFromDate}/></td>
-            <td><input type="text" defaultValue="10:33" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlurAtToDate}/></td>
+            <td><input type="text" defaultValue="10:30" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
+            <td><input type="text" defaultValue="10:33" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
           </tr>
      );
   },
