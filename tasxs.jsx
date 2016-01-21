@@ -70,11 +70,16 @@ var Tasks = React.createClass({
 });
 var TaskList = React.createClass({
   getInitialState: function(){
-    var jsonStr = fs.readFileSync('taskList.json','utf-8');
+    var jsonStr;
+    try{
+      jsonStr = fs.readFileSync('taskList.json','utf-8');
+    }catch(e){
+      jsonStr = "";
+    }
     var taskList = JSON.parse(jsonStr);
     taskList.forEach(function(e){
-      e.fromDate = new Date(e.fromDate);
-      e.toDate = new Date(e.toDate);
+      e.fromDate = e.fromDate != null ? new Date(e.fromDate) : null;
+      e.toDate = e.toDate != null ? new Date(e.toDate) : null;
     });
 
     return {taskList : taskList};
@@ -118,13 +123,22 @@ var TaskList = React.createClass({
     var taskList = this.state.taskList.map(function(data,i){
       return (data.taskId == e.taskId) ? e : data;
     });
+    fs.writeFileSync('taskList.json',JSON.stringify(taskList),'utf-8');
     this.setState({taskList: taskList});
+  },
+  createFileName: function(date){
+     var fileName = 'taskList';
+     fileName += date.getFullYear();
+     fileName += ("0" + date.getMonth()).slice(-2);
+     fileName += ("0" + date.getDate()).slice(-2);
+     fileName += ".json";
+     return fileName;
   },
   calcElapsed: function(){
     var elapsed = 0;
     this.state.taskList.forEach(function(e){
       if(e.toDate == null && isFinite(e.estimate)){
-        elapsed += e.estimate;
+        elapsed += parseInt(e.estimate,10);
       }
     });
     return elapsed;
