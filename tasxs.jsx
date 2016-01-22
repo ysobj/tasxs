@@ -72,9 +72,9 @@ var TaskList = React.createClass({
   getInitialState: function(){
     var jsonStr;
     try{
-      jsonStr = fs.readFileSync('taskList.json','utf-8');
+      jsonStr = fs.readFileSync(this.createFileName(new Date()),'utf-8');
     }catch(e){
-      jsonStr = "";
+      jsonStr = "[]";
     }
     var taskList = JSON.parse(jsonStr);
     taskList.forEach(function(e){
@@ -123,13 +123,13 @@ var TaskList = React.createClass({
     var taskList = this.state.taskList.map(function(data,i){
       return (data.taskId == e.taskId) ? e : data;
     });
-    fs.writeFileSync('taskList.json',JSON.stringify(taskList),'utf-8');
+    fs.writeFileSync(this.createFileName(new Date()),JSON.stringify(taskList),'utf-8');
     this.setState({taskList: taskList});
   },
   createFileName: function(date){
      var fileName = 'taskList';
      fileName += date.getFullYear();
-     fileName += ("0" + date.getMonth()).slice(-2);
+     fileName += ("0" + (date.getMonth() + 1)).slice(-2);
      fileName += ("0" + date.getDate()).slice(-2);
      fileName += ".json";
      return fileName;
@@ -271,7 +271,7 @@ var Task = React.createClass({
     return(
           <tr>
             <td><input type="checkbox" disabled/></td>
-            <td><input ref="descInput" type="text" value={data.desc} onChange={this.handleChangeDesc}/></td>
+            <td><input ref="descInput" type="text" value={data.desc} onChange={this.handleChangeDesc} onBlur={this.handleOnBlur}/></td>
             <td><select><option>作業</option></select></td>
             <td><input ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
