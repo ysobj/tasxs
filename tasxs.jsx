@@ -39,15 +39,22 @@ var utils = {
   }
 };
 var today = utils.getMidnight(new Date());
-var Tasks = React.createClass({
-  render: function() {
-    return <section className="main">
-      <div className="tab-group">
-        <div className="tab-item tab-item-fixed">
+var yesterday = utils.getMidnight(new Date(today.getTime()-1));
+var tomorrow = utils.getMidnight(new Date(today.getTime()+86400000));
+var DateBar = React.createClass({
+  getInitialState: function(){
+    return {targetDate: today};
+  },
+  clickTab: function(e){
+    console.log('clicked at DateBar',e);
+  },
+  render: function(){
+    return <div className="tab-group">
+        <div className="tab-item tab-item-fixed" onClick={this.clickTab}>
           <span></span>
           &lt;&lt;
         </div>
-        <div className="tab-item">
+        <div className="tab-item" onClick={this.clickTab}>
           <span></span>
           Yesterday
         </div>
@@ -55,16 +62,23 @@ var Tasks = React.createClass({
           <span></span>
           Today
         </div>
-        <div className="tab-item">
+        <div className="tab-item" onClick={this.clickTab}>
           <span></span>
           Tomorrow
         </div>
-        <div className="tab-item tab-item-fixed">
+        <div className="tab-item tab-item-fixed" onClick={this.clickTab}>
           <span></span>
           &gt;&gt;
         </div>
-      </div>
-      <TaskList />
+      </div>;
+
+  }
+});
+var Tasks = React.createClass({
+  render: function() {
+    return <section className="main">
+            <DateBar />
+            <TaskList />
       </section>;
   }
 });
