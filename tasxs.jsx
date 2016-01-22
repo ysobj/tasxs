@@ -43,30 +43,62 @@ var yesterday = utils.getMidnight(new Date(today.getTime()-1));
 var tomorrow = utils.getMidnight(new Date(today.getTime()+86400000));
 var DateBar = React.createClass({
   getInitialState: function(){
-    return {targetDate: today};
+    return {
+      before: yesterday,
+      targetDate: today,
+      after: tomorrow
+    };
   },
-  clickTab: function(e){
-    console.log('clicked at DateBar',e);
+  next: function(){
+    var after = new Date(this.state.after.getTime() + 86400000);
+    this.setState({
+      before: this.state.targetDate,
+      targetDate: this.state.after,
+      after: after
+    });
+  },
+  prev: function(){
+    var before = new Date(this.state.before.getTime() - 86400000);
+    this.setState({
+      before: before,
+      targetDate: this.state.before,
+      after: this.state.targetDate
+    });
+  },
+  formatDate: function(date){
+     if(date === today){
+       return "Today";
+     }
+     if(date === yesterday){
+       return "Yesterday";
+     }
+     if(date === tomorrow){
+       return "Tomorrow";
+     }
+     var str = ("0"+(date.getMonth() + 1)).slice(-2);
+     str += "/";
+     str += ("0"+(date.getDate() + 1)).slice(-2);
+     return str;
   },
   render: function(){
     return <div className="tab-group">
-        <div className="tab-item tab-item-fixed" onClick={this.clickTab}>
+        <div className="tab-item tab-item-fixed" onClick={this.prev}>
           <span></span>
           &lt;&lt;
         </div>
-        <div className="tab-item" onClick={this.clickTab}>
+        <div className="tab-item" onClick={this.prev}>
           <span></span>
-          Yesterday
+          {this.formatDate(this.state.before)}
         </div>
         <div className="tab-item active">
           <span></span>
-          Today
+          {this.formatDate(this.state.targetDate)}
         </div>
-        <div className="tab-item" onClick={this.clickTab}>
+        <div className="tab-item" onClick={this.next}>
           <span></span>
-          Tomorrow
+          {this.formatDate(this.state.after)}
         </div>
-        <div className="tab-item tab-item-fixed" onClick={this.clickTab}>
+        <div className="tab-item tab-item-fixed" onClick={this.next}>
           <span></span>
           &gt;&gt;
         </div>
