@@ -57,6 +57,14 @@ var DateBar = React.createClass({
       after: after
     });
   },
+  nextWeek: function(){
+    var tmp = 86400000 * 7;
+    this.setState({
+      before: new Date(this.state.before.getTime() + tmp),
+      targetDate: new Date(this.state.targetDate.getTime() + tmp),
+      after: new Date(this.state.after.getTime() + tmp)
+    });
+  },
   prev: function(){
     var before = new Date(this.state.before.getTime() - 86400000);
     this.setState({
@@ -65,24 +73,32 @@ var DateBar = React.createClass({
       after: this.state.targetDate
     });
   },
+  prevWeek: function(){
+    var tmp = 86400000 * 7;
+    this.setState({
+      before: new Date(this.state.before.getTime() - tmp),
+      targetDate: new Date(this.state.targetDate.getTime() - tmp),
+      after: new Date(this.state.after.getTime() - tmp)
+    });
+  },
   formatDate: function(date){
-     if(date === today){
+     if(date.getTime() === today.getTime()){
        return "Today";
      }
-     if(date === yesterday){
+     if(date.getTime() === yesterday.getTime()){
        return "Yesterday";
      }
-     if(date === tomorrow){
+     if(date.getTime() === tomorrow.getTime()){
        return "Tomorrow";
      }
      var str = ("0"+(date.getMonth() + 1)).slice(-2);
      str += "/";
-     str += ("0"+(date.getDate() + 1)).slice(-2);
+     str += ("0"+date.getDate()).slice(-2);
      return str;
   },
   render: function(){
     return <div className="tab-group">
-        <div className="tab-item tab-item-fixed" onClick={this.prev}>
+        <div className="tab-item tab-item-fixed" onClick={this.prevWeek}>
           <span></span>
           &lt;&lt;
         </div>
@@ -98,7 +114,7 @@ var DateBar = React.createClass({
           <span></span>
           {this.formatDate(this.state.after)}
         </div>
-        <div className="tab-item tab-item-fixed" onClick={this.next}>
+        <div className="tab-item tab-item-fixed" onClick={this.nextWeek}>
           <span></span>
           &gt;&gt;
         </div>
