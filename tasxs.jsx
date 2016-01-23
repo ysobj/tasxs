@@ -132,7 +132,6 @@ var TaskList = React.createClass({
     };
   },
   componentWillReceiveProps: function(nextProps){
-                               console.log('componentWillReceiveProps', this.props.targetDate, nextProps.targetDate);
     if(this.props.targetDate){
       this.writeToFile();
     }
@@ -153,17 +152,16 @@ var TaskList = React.createClass({
     }
   },
   getTaskListFromFile: function(date){
-    console.log('getTaskListFromFile',date);
-    var jsonStr;
+    var taskList;
     try{
-      jsonStr = fs.readFileSync(this.createFileName(date),'utf-8');
+      taskList = JSON.parse(fs.readFileSync(this.createFileName(date),'utf-8'));
     }catch(e){
-      jsonStr = "[]";
+      taskList = [];
     }
-    var taskList = JSON.parse(jsonStr);
     taskList.forEach(function(e){
       e.fromDate = e.fromDate != null ? new Date(e.fromDate) : null;
       e.toDate = e.toDate != null ? new Date(e.toDate) : null;
+      e.focused = false;
     });
     return taskList;
   },
@@ -227,6 +225,7 @@ var TaskList = React.createClass({
     return elapsed;
   },
   render: function() {
+    console.table(this.state.taskList);
     var startingPoint,label;
     if(this.props.targetDate === today){
       startingPoint = new Date();
@@ -283,10 +282,19 @@ var Task = React.createClass({
   componentWillReceiveProps: function(nextProps){
     var fromDate = nextProps.fromDate;
     var fromDateStr = utils.formatTime(fromDate);
+    var toDate = nextProps.toDate;
+    var toDateStr = utils.formatTime(toDate);
     this.setState({
-      focused: nextProps.focused,
+      taskId: nextProps.taskId,
+      desc: nextProps.desc,
       fromDate: fromDate,
-      fromDateStr: fromDateStr
+      fromDateStr: fromDateStr,
+      toDate: toDate,
+      toDateStr: toDateStr,
+      type: nextProps.type,
+      estimate: nextProps.estimate,
+      elapsed: this.calcElapsed(fromDate,toDate),
+      focused: nextProps.focused
     });
   },
   getInitialState: function(){
@@ -354,7 +362,7 @@ var Task = React.createClass({
       type: this.state.type,
       estimate: this.state.estimate
     };
-    this.setState(param);
+//    this.setState(param);
     this.props.onUpdate(param);
   },
   renderFocused : function(data,elapsed,actualClassName){
