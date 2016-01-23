@@ -153,7 +153,7 @@ var TaskList = React.createClass({
     }
   },
   getTaskListFromFile: function(date){
-                         console.log('getTaskListFromFile',date);
+    console.log('getTaskListFromFile',date);
     var jsonStr;
     try{
       jsonStr = fs.readFileSync(this.createFileName(date),'utf-8');
@@ -227,15 +227,16 @@ var TaskList = React.createClass({
     return elapsed;
   },
   render: function() {
-    var startingPoint;
+    var startingPoint,label;
     if(this.props.targetDate === today){
       startingPoint = new Date();
+      label = 'now';
     }else{
       startingPoint = new Date(this.props.targetDate.getTime() + 630 * 60 * 1000);
+      label = 'base';
     }
-    var now = new Date();
     var nowStr = utils.formatTime(startingPoint);
-    var finishStr = utils.formatTime( new Date( now.getTime() + (this.calcElapsed() * 1000 * 60)));
+    var finishStr = utils.formatTime( new Date( startingPoint.getTime() + (this.calcElapsed() * 1000 * 60)));
     var createTask = function(data,i){
       return (
           <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
@@ -255,7 +256,7 @@ var TaskList = React.createClass({
     };
     return <div>
         <div>
-          <span>now</span><span>{utils.formatTime(startingPoint)}</span>
+          <span>{label}</span><span>{utils.formatTime(startingPoint)}</span>
           <span>finish</span><span>{finishStr}</span>
         </div>
         <table>
