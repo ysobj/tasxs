@@ -42,44 +42,31 @@ var today = utils.getMidnight(new Date());
 var yesterday = utils.getMidnight(new Date(today.getTime()-1));
 var tomorrow = utils.getMidnight(new Date(today.getTime()+86400000));
 var DateBar = React.createClass({
-  getInitialState: function(){
-    return {
-      before: yesterday,
-      targetDate: today,
-      after: tomorrow
-    };
+  addDay: function(date,amount){
+    if(!amount){
+      amount = 1;
+    }
+    return new Date(date.getTime() + 86400000 * amount);
   },
   next: function(){
-    var after = new Date(this.state.after.getTime() + 86400000);
-    this.setState({
-      before: this.state.targetDate,
-      targetDate: this.state.after,
-      after: after
-    });
+    this.props.onChangeTargetDate(
+      this.addDay(this.props.targetDate)
+    );
   },
   nextWeek: function(){
-    var tmp = 86400000 * 7;
-    this.setState({
-      before: new Date(this.state.before.getTime() + tmp),
-      targetDate: new Date(this.state.targetDate.getTime() + tmp),
-      after: new Date(this.state.after.getTime() + tmp)
-    });
+    this.props.onChangeTargetDate(
+      this.addDay(this.props.targetDate,7)
+    );
   },
   prev: function(){
-    var before = new Date(this.state.before.getTime() - 86400000);
-    this.setState({
-      before: before,
-      targetDate: this.state.before,
-      after: this.state.targetDate
-    });
+    this.props.onChangeTargetDate(
+      this.addDay(this.props.targetDate,-1)
+    );
   },
   prevWeek: function(){
-    var tmp = 86400000 * 7;
-    this.setState({
-      before: new Date(this.state.before.getTime() - tmp),
-      targetDate: new Date(this.state.targetDate.getTime() - tmp),
-      after: new Date(this.state.after.getTime() - tmp)
-    });
+    this.props.onChangeTargetDate(
+      this.addDay(this.props.targetDate,-7)
+    );
   },
   formatDate: function(date){
      if(date.getTime() === today.getTime()){
@@ -97,6 +84,8 @@ var DateBar = React.createClass({
      return str;
   },
   render: function(){
+    var before = this.addDay(this.props.targetDate, -1);
+    var after = this.addDay(this.props.targetDate);
     return <div className="tab-group">
         <div className="tab-item tab-item-fixed" onClick={this.prevWeek}>
           <span></span>
@@ -104,15 +93,15 @@ var DateBar = React.createClass({
         </div>
         <div className="tab-item" onClick={this.prev}>
           <span></span>
-          {this.formatDate(this.state.before)}
+          {this.formatDate(before)}
         </div>
         <div className="tab-item active">
           <span></span>
-          {this.formatDate(this.state.targetDate)}
+          {this.formatDate(this.props.targetDate)}
         </div>
         <div className="tab-item" onClick={this.next}>
           <span></span>
-          {this.formatDate(this.state.after)}
+          {this.formatDate(after)}
         </div>
         <div className="tab-item tab-item-fixed" onClick={this.nextWeek}>
           <span></span>
@@ -123,9 +112,15 @@ var DateBar = React.createClass({
   }
 });
 var Tasks = React.createClass({
+  getInitialState: function(e){
+    return {targetDate: today};
+  },
+  handleChangeTargetDate: function(e){
+    this.setState({targetDate: e})
+  },
   render: function() {
     return <section className="main">
-            <DateBar />
+            <DateBar targetDate={this.state.targetDate} onChangeTargetDate={this.handleChangeTargetDate}/>
             <TaskList />
       </section>;
   }
