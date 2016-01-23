@@ -29,3 +29,10 @@ header h1 {
 .overtime {
   color:red
 }
+
+.timeInput{
+  width: 45px;
+}
+.descInput{
+  width: 250px;
+}

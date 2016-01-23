@@ -369,12 +369,12 @@ var Task = React.createClass({
     return(
           <tr>
             <td><input type="checkbox" disabled/></td>
-            <td><input ref="descInput" type="text" value={data.desc} onChange={this.handleChangeDesc} onBlur={this.handleOnBlur}/></td>
+            <td><input className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChangeDesc} onBlur={this.handleOnBlur}/></td>
             <td><select><option>作業</option></select></td>
-            <td><input ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
+            <td><input className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
-            <td><input ref="fromDateInput" type="text" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
-            <td><input ref="toDateInput" type="text" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
+            <td><input className="timeInput" ref="fromDateInput" type="text" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
+            <td><input className="timeInput" ref="toDateInput" type="text" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
           </tr>
      );
   },
