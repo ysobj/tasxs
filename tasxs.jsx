@@ -121,15 +121,42 @@ var Tasks = React.createClass({
   render: function() {
     return <section className="main">
             <DateBar targetDate={this.state.targetDate} onChangeTargetDate={this.handleChangeTargetDate}/>
-            <TaskList />
+            <TaskList targetDate={this.state.targetDate} />
       </section>;
   }
 });
 var TaskList = React.createClass({
   getInitialState: function(){
+    return {
+      taskList : this.getTaskListFromFile(this.props.targetDate)
+    };
+  },
+  componentWillReceiveProps: function(nextProps){
+                               console.log('componentWillReceiveProps', this.props.targetDate, nextProps.targetDate);
+    if(this.props.targetDate){
+      this.writeToFile();
+    }
+    this.setState({
+      taskList : this.getTaskListFromFile(nextProps.targetDate)
+    });
+  },
+  writeToFile: function(){
+    var fileName = this.createFileName(this.props.targetDate);
+    if(this.state.taskList.length === 0){
+      fs.access(fileName, fs.F_OK, function(err){
+        if(!err){
+          fs.unlink(fileName,function(){});
+        }
+      });
+    }else{
+      fs.writeFileSync(fileName,JSON.stringify(this.state.taskList),'utf-8');
+    }
+  },
+  getTaskListFromFile: function(date){
+                         console.log('getTaskListFromFile',date);
     var jsonStr;
     try{
-      jsonStr = fs.readFileSync(this.createFileName(new Date()),'utf-8');
+      jsonStr = fs.readFileSync(this.createFileName(date),'utf-8');
     }catch(e){
       jsonStr = "[]";
     }
@@ -138,8 +165,7 @@ var TaskList = React.createClass({
       e.fromDate = e.fromDate != null ? new Date(e.fromDate) : null;
       e.toDate = e.toDate != null ? new Date(e.toDate) : null;
     });
-
-    return {taskList : taskList};
+    return taskList;
   },
   handleOnChangeFocus: function(e){
     var taskList = this.state.taskList.map(function(data,i){
@@ -180,7 +206,7 @@ var TaskList = React.createClass({
     var taskList = this.state.taskList.map(function(data,i){
       return (data.taskId == e.taskId) ? e : data;
     });
-    fs.writeFileSync(this.createFileName(new Date()),JSON.stringify(taskList),'utf-8');
+    this.writeToFile();
     this.setState({taskList: taskList});
   },
   createFileName: function(date){
@@ -201,8 +227,14 @@ var TaskList = React.createClass({
     return elapsed;
   },
   render: function() {
+    var startingPoint;
+    if(this.props.targetDate === today){
+      startingPoint = new Date();
+    }else{
+      startingPoint = new Date(this.props.targetDate.getTime() + 630 * 60 * 1000);
+    }
     var now = new Date();
-    var nowStr = utils.formatTime(now);
+    var nowStr = utils.formatTime(startingPoint);
     var finishStr = utils.formatTime( new Date( now.getTime() + (this.calcElapsed() * 1000 * 60)));
     var createTask = function(data,i){
       return (
@@ -223,7 +255,7 @@ var TaskList = React.createClass({
     };
     return <div>
         <div>
-          <span>now</span><span>{nowStr}</span>
+          <span>now</span><span>{utils.formatTime(startingPoint)}</span>
           <span>finish</span><span>{finishStr}</span>
         </div>
         <table>
