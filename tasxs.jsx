@@ -2,6 +2,17 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 var fs = require("fs");
+var Modal = require('react-modal');
+const customStyles = {
+  content : {
+    top        : '50%',
+    left       : '50%',
+    right      : 'auto',
+    bottom     : 'auto',
+    marginRight: '-50%',
+    transform  : 'translate(-50%, -50%)'
+  }
+};
 var utils = {
   formatTime: function(date){
     if(date == null){
@@ -113,13 +124,15 @@ var DateBar = React.createClass({
 });
 var Tasks = React.createClass({
   getInitialState: function(e){
-    return {targetDate: today};
+    return {targetDate: today, modalIsOpen: false};
   },
   handleChangeTargetDate: function(e){
     this.setState({targetDate: e})
   },
   render: function() {
     return <section className="main">
+      <button onClick={this.openModal}>Open Modal</button>
+
             <DateBar targetDate={this.state.targetDate} onChangeTargetDate={this.handleChangeTargetDate}/>
             <TaskList targetDate={this.state.targetDate} />
       </section>;
@@ -128,7 +141,8 @@ var Tasks = React.createClass({
 var TaskList = React.createClass({
   getInitialState: function(){
     return {
-      taskList : this.getTaskListFromFile(this.props.targetDate)
+      taskList : this.getTaskListFromFile(this.props.targetDate),
+      isOpen: false
     };
   },
   componentWillReceiveProps: function(nextProps){
@@ -224,10 +238,27 @@ var TaskList = React.createClass({
     });
     return elapsed;
   },
+  openModal: function(e){
+    this.setState({
+      modalIsOpen: true,
+      targetTaskId: e
+    });
+  },
+  closeModal: function() {
+    this.setState({modalIsOpen: false});
+  },
+  deleteTask: function() {
+    var taskList = this.state.taskList.filter(function(task){
+      return task.taskId != this.state.targetTaskId;
+    },this);
+    this.setState({
+      modalIsOpen: false,
+      taskList: taskList
+    });
+  },
   render: function() {
-    console.table(this.state.taskList);
     var startingPoint,label;
-    if(this.props.targetDate === today){
+    if(this.props.targetDate.getTime() === today.getTime()){
       startingPoint = new Date();
       label = 'now';
     }else{
@@ -241,6 +272,7 @@ var TaskList = React.createClass({
           <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
                 onUpdateTimeFrom={this.handleOnUpdateTimeFrom.bind(this,i)}
                 onUpdate={this.handleUpdate}
+                onContextMenu={this.openModal}
             order={i}
             key={data.taskId}
             taskId={data.taskId}
@@ -275,6 +307,15 @@ var TaskList = React.createClass({
             <tr><td><button onClick={this.handleCreate}>create</button></td></tr>
           </tbody>
         </table>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles} >
+
+          <h2>削除しますか?</h2>
+          <button onClick={this.closeModal}>Cancel</button>
+          <button onClick={this.deleteTask}>DELETE</button>
+        </Modal>
       </div>;
   }
 });
@@ -365,9 +406,12 @@ var Task = React.createClass({
 //    this.setState(param);
     this.props.onUpdate(param);
   },
+  handleOnContextMenu: function(){
+    this.props.onContextMenu(this.state.taskId);
+  },
   renderFocused : function(data,elapsed,actualClassName){
     return(
-          <tr>
+          <tr onContextMenu={this.handleOnContextMenu}>
             <td><input type="checkbox" disabled/></td>
             <td><input className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChangeDesc} onBlur={this.handleOnBlur}/></td>
             <td><select><option>作業</option></select></td>
