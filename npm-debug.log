@@ -1,0 +1,2256 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/4.1.1/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.1
+4 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/package.json
+5 warn package.json Dependency 'react' exists in both dependencies and devDependencies, using 'react@^0.14.3' from dependencies
+6 warn package.json Dependency 'react-dom' exists in both dependencies and devDependencies, using 'react-dom@^0.14.6' from dependencies
+7 verbose install where, deps [ '/Users/administrator/Work/tasxs',
+7 verbose install   [ 'babel',
+7 verbose install     'electron-debug',
+7 verbose install     'install',
+7 verbose install     'npm',
+7 verbose install     'photon',
+7 verbose install     'react',
+7 verbose install     'react-dom',
+7 verbose install     'react-modal',
+7 verbose install     'babel-plugin-transform-react-jsx',
+7 verbose install     'babel-register',
+7 verbose install     'electron-packager',
+7 verbose install     'electron-prebuilt',
+7 verbose install     'xo' ] ]
+8 verbose install where, peers [ '/Users/administrator/Work/tasxs', [] ]
+9 verbose installManyTop reading for lifecycle /Users/administrator/Work/tasxs/package.json
+10 info preinstall tasxs@0.0.0
+11 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/babel/package.json
+12 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/babel-plugin-transform-react-jsx/package.json
+13 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/babel-register/package.json
+14 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/electron-debug/package.json
+15 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/electron-packager/package.json
+16 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/electron-prebuilt/package.json
+17 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/install/package.json
+18 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/npm/package.json
+19 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/photon/package.json
+20 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/react/package.json
+21 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/react-dom/package.json
+22 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/react-intl/package.json
+23 verbose installManyTop reading scoped package data from /Users/administrator/Work/tasxs/node_modules/xo/package.json
+24 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/package.json
+25 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/babel/package.json
+26 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/babel-plugin-transform-react-jsx/package.json
+27 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/babel-register/package.json
+28 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/electron-debug/package.json
+29 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/electron-packager/package.json
+30 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/electron-prebuilt/package.json
+31 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/install/package.json
+32 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/npm/package.json
+33 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/photon/package.json
+34 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/react/package.json
+35 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/react-dom/package.json
+36 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/react-intl/package.json
+37 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/xo/package.json
+38 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/babel/package.json
+39 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/babel-external-helpers/package.json
+40 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/babel-node/package.json
+41 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/electron/package.json
+42 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/electron-packager/package.json
+43 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/npm/package.json
+44 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/xo/package.json
+45 verbose already installed skipping babel@^6.3.13 /Users/administrator/Work/tasxs
+46 verbose already installed skipping electron-debug@^0.5.0 /Users/administrator/Work/tasxs
+47 verbose already installed skipping install@^0.4.1 /Users/administrator/Work/tasxs
+48 verbose already installed skipping npm@^3.5.2 /Users/administrator/Work/tasxs
+49 silly cache add args [ 'photon@git+https://github.com/connors/photon.git', null ]
+50 verbose cache add spec photon@git+https://github.com/connors/photon.git
+51 verbose already installed skipping react@^0.14.3 /Users/administrator/Work/tasxs
+52 silly cache add args [ 'react-dom@^0.14.6', null ]
+53 verbose cache add spec react-dom@^0.14.6
+54 silly cache add parsed spec Result {
+54 silly cache add   raw: 'react-dom@^0.14.6',
+54 silly cache add   scope: null,
+54 silly cache add   name: 'react-dom',
+54 silly cache add   rawSpec: '^0.14.6',
+54 silly cache add   spec: '>=0.14.6 <0.15.0',
+54 silly cache add   type: 'range' }
+55 silly addNamed react-dom@>=0.14.6 <0.15.0
+56 verbose addNamed ">=0.14.6 <0.15.0" is a valid semver range for react-dom
+57 silly addNameRange { name: 'react-dom', range: '>=0.14.6 <0.15.0', hasData: false }
+58 silly mapToRegistry name react-dom
+59 silly mapToRegistry using default registry
+60 silly mapToRegistry registry https://registry.npmjs.org/
+61 silly mapToRegistry uri https://registry.npmjs.org/react-dom
+62 verbose addNameRange registry:https://registry.npmjs.org/react-dom not in flight; fetching
+63 silly cache add args [ 'react-modal@^0.6.1', null ]
+64 verbose cache add spec react-modal@^0.6.1
+65 silly cache add parsed spec Result {
+65 silly cache add   raw: 'react-modal@^0.6.1',
+65 silly cache add   scope: null,
+65 silly cache add   name: 'react-modal',
+65 silly cache add   rawSpec: '^0.6.1',
+65 silly cache add   spec: '>=0.6.1 <0.7.0',
+65 silly cache add   type: 'range' }
+66 silly addNamed react-modal@>=0.6.1 <0.7.0
+67 verbose addNamed ">=0.6.1 <0.7.0" is a valid semver range for react-modal
+68 silly addNameRange { name: 'react-modal', range: '>=0.6.1 <0.7.0', hasData: false }
+69 silly mapToRegistry name react-modal
+70 silly mapToRegistry using default registry
+71 silly mapToRegistry registry https://registry.npmjs.org/
+72 silly mapToRegistry uri https://registry.npmjs.org/react-modal
+73 verbose addNameRange registry:https://registry.npmjs.org/react-modal not in flight; fetching
+74 silly cache add parsed spec Result {
+74 silly cache add   raw: 'photon@git+https://github.com/connors/photon.git',
+74 silly cache add   scope: null,
+74 silly cache add   name: 'photon',
+74 silly cache add   rawSpec: 'git+https://github.com/connors/photon.git',
+74 silly cache add   spec: 'git+https://github.com/connors/photon.git',
+74 silly cache add   type: 'hosted',
+74 silly cache add   hosted:
+74 silly cache add    { type: 'github',
+74 silly cache add      ssh: 'git@github.com:connors/photon.git',
+74 silly cache add      sshUrl: 'git+ssh://git@github.com/connors/photon.git',
+74 silly cache add      httpsUrl: 'git+https://github.com/connors/photon.git',
+74 silly cache add      gitUrl: 'git://github.com/connors/photon.git',
+74 silly cache add      shortcut: 'github:connors/photon',
+74 silly cache add      directUrl: 'https://raw.githubusercontent.com/connors/photon/master/package.json' } }
+75 verbose addRemoteGit caching git+https://github.com/connors/photon.git
+76 verbose addRemoteGit git+https://github.com/connors/photon.git is a repository hosted by github
+77 silly tryClone cloning git+https://github.com/connors/photon.git via git+https://github.com/connors/photon.git
+78 verbose tryClone https-github-com-connors-photon-git-a4ef96ec not in flight; caching
+79 verbose request uri https://registry.npmjs.org/react-modal
+80 verbose request no auth needed
+81 info attempt registry request try #1 at 12:29:29
+82 verbose request id a9f0fb9a25ab1788
+83 http request GET https://registry.npmjs.org/react-modal
+84 verbose already installed skipping babel-plugin-transform-react-jsx@^6.3.13 /Users/administrator/Work/tasxs
+85 verbose already installed skipping babel-register@^6.3.13 /Users/administrator/Work/tasxs
+86 verbose already installed skipping electron-packager@^5.0.0 /Users/administrator/Work/tasxs
+87 verbose already installed skipping electron-prebuilt@^0.36.0 /Users/administrator/Work/tasxs
+88 verbose already installed skipping xo@^0.12.0 /Users/administrator/Work/tasxs
+89 verbose request uri https://registry.npmjs.org/react-dom
+90 verbose request no auth needed
+91 info attempt registry request try #1 at 12:29:29
+92 verbose etag "DU5E4BQKHN43887S4TBUUAOAP"
+93 http request GET https://registry.npmjs.org/react-dom
+94 info git [ 'config', '--get', 'remote.origin.url' ]
+95 silly validateExistingRemote git+https://github.com/connors/photon.git remote.origin.url: https://github.com/connors/photon.git
+96 verbose validateExistingRemote git+https://github.com/connors/photon.git is updating existing cached remote /Users/administrator/.npm/_git-remotes/https-github-com-connors-photon-git-a4ef96ec
+97 info git [ 'fetch', '-a', 'origin' ]
+98 http 200 https://registry.npmjs.org/react-dom
+99 silly get cb [ 200,
+99 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+99 silly get     etag: '"B5Z0JCS04ULQK7UO5C7Z5RGRS"',
+99 silly get     'content-type': 'application/json',
+99 silly get     'cache-control': 'max-age=300',
+99 silly get     'content-length': '15711',
+99 silly get     'accept-ranges': 'bytes',
+99 silly get     date: 'Mon, 25 Jan 2016 03:29:26 GMT',
+99 silly get     via: '1.1 varnish',
+99 silly get     age: '169',
+99 silly get     connection: 'keep-alive',
+99 silly get     'x-served-by': 'cache-nrt6130-NRT',
+99 silly get     'x-cache': 'HIT',
+99 silly get     'x-cache-hits': '1',
+99 silly get     'x-timer': 'S1453692566.925455,VS0,VE0',
+99 silly get     vary: 'Accept' } ]
+100 verbose get saving react-dom to /Users/administrator/.npm/registry.npmjs.org/react-dom/.cache.json
+101 silly addNameRange number 2 { name: 'react-dom', range: '>=0.14.6 <0.15.0', hasData: true }
+102 silly addNameRange versions [ 'react-dom',
+102 silly addNameRange   [ '0.1.0',
+102 silly addNameRange     '0.14.0-beta1',
+102 silly addNameRange     '0.14.0-beta2',
+102 silly addNameRange     '0.14.0-beta3',
+102 silly addNameRange     '0.14.0-rc1',
+102 silly addNameRange     '0.14.0',
+102 silly addNameRange     '0.14.1',
+102 silly addNameRange     '0.14.2',
+102 silly addNameRange     '0.14.3',
+102 silly addNameRange     '0.14.4',
+102 silly addNameRange     '0.14.5',
+102 silly addNameRange     '0.14.6',
+102 silly addNameRange     '0.15.0-alpha.1' ] ]
+103 silly addNamed react-dom@0.14.6
+104 verbose addNamed "0.14.6" is a plain semver version for react-dom
+105 silly mapToRegistry name react-dom
+106 silly mapToRegistry using default registry
+107 silly mapToRegistry registry https://registry.npmjs.org/
+108 silly mapToRegistry uri https://registry.npmjs.org/react-dom
+109 verbose addRemoteTarball https://registry.npmjs.org/react-dom/-/react-dom-0.14.6.tgz not in flight; adding
+110 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-dom/-/react-dom-0.14.6.tgz',
+110 verbose addRemoteTarball   '46d4e3243884f277e89ce8759131e8a16ac23e65' ]
+111 info retry fetch attempt 1 at 12:29:29
+112 info attempt registry request try #1 at 12:29:29
+113 http fetch GET https://registry.npmjs.org/react-dom/-/react-dom-0.14.6.tgz
+114 http fetch 200 https://registry.npmjs.org/react-dom/-/react-dom-0.14.6.tgz
+115 silly fetchAndShaCheck shasum 46d4e3243884f277e89ce8759131e8a16ac23e65
+116 verbose addTmpTarball /var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/registry.npmjs.org/react-dom/-/react-dom-0.14.6.tgz not in flight; adding
+117 verbose addTmpTarball already have metadata; skipping unpack for react-dom@0.14.6
+118 silly cache afterAdd react-dom@0.14.6
+119 verbose afterAdd /Users/administrator/.npm/react-dom/0.14.6/package/package.json not in flight; writing
+120 verbose afterAdd /Users/administrator/.npm/react-dom/0.14.6/package/package.json written
+121 http 200 https://registry.npmjs.org/react-modal
+122 silly get cb [ 200,
+122 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+122 silly get     etag: '"BO13AM0QQBOUHGOJ1HDZN376"',
+122 silly get     'content-type': 'application/json',
+122 silly get     'cache-control': 'max-age=300',
+122 silly get     'content-length': '28696',
+122 silly get     'accept-ranges': 'bytes',
+122 silly get     date: 'Mon, 25 Jan 2016 03:29:27 GMT',
+122 silly get     via: '1.1 varnish',
+122 silly get     age: '0',
+122 silly get     connection: 'keep-alive',
+122 silly get     'x-served-by': 'cache-nrt6129-NRT',
+122 silly get     'x-cache': 'HIT',
+122 silly get     'x-cache-hits': '1',
+122 silly get     'x-timer': 'S1453692566.929565,VS0,VE173',
+122 silly get     vary: 'Accept' } ]
+123 verbose get saving react-modal to /Users/administrator/.npm/registry.npmjs.org/react-modal/.cache.json
+124 silly addNameRange number 2 { name: 'react-modal', range: '>=0.6.1 <0.7.0', hasData: true }
+125 silly addNameRange versions [ 'react-modal',
+125 silly addNameRange   [ '0.0.0',
+125 silly addNameRange     '0.0.1',
+125 silly addNameRange     '0.0.2',
+125 silly addNameRange     '0.0.3',
+125 silly addNameRange     '0.0.4',
+125 silly addNameRange     '0.0.5',
+125 silly addNameRange     '0.0.6',
+125 silly addNameRange     '0.0.7',
+125 silly addNameRange     '0.1.0',
+125 silly addNameRange     '0.1.1',
+125 silly addNameRange     '0.2.0',
+125 silly addNameRange     '0.3.0',
+125 silly addNameRange     '0.5.0',
+125 silly addNameRange     '0.6.0',
+125 silly addNameRange     '0.6.1' ] ]
+126 silly addNamed react-modal@0.6.1
+127 verbose addNamed "0.6.1" is a plain semver version for react-modal
+128 silly mapToRegistry name react-modal
+129 silly mapToRegistry using default registry
+130 silly mapToRegistry registry https://registry.npmjs.org/
+131 silly mapToRegistry uri https://registry.npmjs.org/react-modal
+132 verbose addRemoteTarball https://registry.npmjs.org/react-modal/-/react-modal-0.6.1.tgz not in flight; adding
+133 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-modal/-/react-modal-0.6.1.tgz',
+133 verbose addRemoteTarball   '286444d80f3ae8a0aceba970371c9c73aa812849' ]
+134 info retry fetch attempt 1 at 12:29:29
+135 info attempt registry request try #1 at 12:29:29
+136 http fetch GET https://registry.npmjs.org/react-modal/-/react-modal-0.6.1.tgz
+137 http fetch 200 https://registry.npmjs.org/react-modal/-/react-modal-0.6.1.tgz
+138 silly fetchAndShaCheck shasum 286444d80f3ae8a0aceba970371c9c73aa812849
+139 verbose addTmpTarball /var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/registry.npmjs.org/react-modal/-/react-modal-0.6.1.tgz not in flight; adding
+140 verbose addTmpTarball already have metadata; skipping unpack for react-modal@0.6.1
+141 silly cache afterAdd react-modal@0.6.1
+142 verbose afterAdd /Users/administrator/.npm/react-modal/0.6.1/package/package.json not in flight; writing
+143 verbose afterAdd /Users/administrator/.npm/react-modal/0.6.1/package/package.json written
+144 verbose updateRemote git fetch -a origin (https://github.com/connors/photon.git)
+145 verbose setPermissions git+https://github.com/connors/photon.git set permissions on /Users/administrator/.npm/_git-remotes/https-github-com-connors-photon-git-a4ef96ec
+146 verbose resolveHead git+https://github.com/connors/photon.git original treeish: master
+147 info git [ 'rev-list', '-n1', 'master' ]
+148 silly resolveHead git+https://github.com/connors/photon.git resolved treeish: 7205ad5deb70fceac715a83541eb89b7e1e4981e
+149 verbose resolveHead git+https://github.com/connors/photon.git resolved Git URL: git+https://github.com/connors/photon.git#7205ad5deb70fceac715a83541eb89b7e1e4981e
+150 silly resolveHead Git working directory: /var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/git-cache-0dce57779050/7205ad5deb70fceac715a83541eb89b7e1e4981e
+151 info git [ 'clone',
+151 info git   '/Users/administrator/.npm/_git-remotes/https-github-com-connors-photon-git-a4ef96ec',
+151 info git   '/var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/git-cache-0dce57779050/7205ad5deb70fceac715a83541eb89b7e1e4981e' ]
+152 verbose cloneResolved git+https://github.com/connors/photon.git clone Cloning into '/var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/git-cache-0dce57779050/7205ad5deb70fceac715a83541eb89b7e1e4981e'...
+152 verbose cloneResolved done.
+153 info git [ 'checkout', '7205ad5deb70fceac715a83541eb89b7e1e4981e' ]
+154 verbose checkoutTreeish git+https://github.com/connors/photon.git checkout Note: checking out '7205ad5deb70fceac715a83541eb89b7e1e4981e'.
+154 verbose checkoutTreeish
+154 verbose checkoutTreeish You are in 'detached HEAD' state. You can look around, make experimental
+154 verbose checkoutTreeish changes and commit them, and you can discard any commits you make in this
+154 verbose checkoutTreeish state without impacting any branches by performing another checkout.
+154 verbose checkoutTreeish
+154 verbose checkoutTreeish If you want to create a new branch to retain commits you create, you may
+154 verbose checkoutTreeish do so (now or later) by using -b with the checkout command again. Example:
+154 verbose checkoutTreeish
+154 verbose checkoutTreeish   git checkout -b <new-branch-name>
+154 verbose checkoutTreeish
+154 verbose checkoutTreeish HEAD is now at 7205ad5... link it up
+155 verbose addLocalDirectory /Users/administrator/.npm/photon/0.1.2/package.tgz not in flight; packing
+156 verbose tar pack [ '/Users/administrator/.npm/photon/0.1.2/package.tgz',
+156 verbose tar pack   '/var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/git-cache-0dce57779050/7205ad5deb70fceac715a83541eb89b7e1e4981e' ]
+157 verbose tarball /Users/administrator/.npm/photon/0.1.2/package.tgz
+158 verbose folder /var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/git-cache-0dce57779050/7205ad5deb70fceac715a83541eb89b7e1e4981e
+159 verbose addLocalTarball adding from inside cache /Users/administrator/.npm/photon/0.1.2/package.tgz
+160 verbose addRemoteGit data._from: git+https://github.com/connors/photon.git
+161 verbose addRemoteGit data._resolved: git+https://github.com/connors/photon.git#7205ad5deb70fceac715a83541eb89b7e1e4981e
+162 silly cache afterAdd photon@0.1.2
+163 verbose afterAdd /Users/administrator/.npm/photon/0.1.2/package/package.json not in flight; writing
+164 verbose afterAdd /Users/administrator/.npm/photon/0.1.2/package/package.json written
+165 silly install resolved [ { name: 'react-dom',
+165 silly install resolved     version: '0.14.6',
+165 silly install resolved     description: 'React package for working with the DOM.',
+165 silly install resolved     main: 'index.js',
+165 silly install resolved     repository:
+165 silly install resolved      { type: 'git',
+165 silly install resolved        url: 'git+https://github.com/facebook/react.git' },
+165 silly install resolved     keywords: [ 'react' ],
+165 silly install resolved     license: 'BSD-3-Clause',
+165 silly install resolved     bugs: { url: 'https://github.com/facebook/react/issues' },
+165 silly install resolved     homepage: 'https://github.com/facebook/react/tree/master/npm-react-dom',
+165 silly install resolved     peerDependencies: { react: '^0.14.6' },
+165 silly install resolved     scripts: { start: 'node server.js' },
+165 silly install resolved     _id: 'react-dom@0.14.6',
+165 silly install resolved     _shasum: '46d4e3243884f277e89ce8759131e8a16ac23e65',
+165 silly install resolved     _resolved: 'https://registry.npmjs.org/react-dom/-/react-dom-0.14.6.tgz',
+165 silly install resolved     _from: 'react-dom@>=0.14.6 <0.15.0',
+165 silly install resolved     _npmVersion: '2.14.15',
+165 silly install resolved     _nodeVersion: '4.2.2',
+165 silly install resolved     _npmUser: { name: 'zpao', email: 'paul@oshannessy.com' },
+165 silly install resolved     maintainers: [ [Object], [Object] ],
+165 silly install resolved     dist:
+165 silly install resolved      { shasum: '46d4e3243884f277e89ce8759131e8a16ac23e65',
+165 silly install resolved        tarball: 'http://registry.npmjs.org/react-dom/-/react-dom-0.14.6.tgz' },
+165 silly install resolved     directories: {} },
+165 silly install resolved   { name: 'react-modal',
+165 silly install resolved     version: '0.6.1',
+165 silly install resolved     description: 'Accessible modal dialog component for React.JS',
+165 silly install resolved     main: './lib/index',
+165 silly install resolved     repository:
+165 silly install resolved      { type: 'git',
+165 silly install resolved        url: 'git+https://github.com/rackt/react-modal.git' },
+165 silly install resolved     homepage: 'https://github.com/rackt/react-modal',
+165 silly install resolved     bugs: { url: 'https://github.com/rackt/react-modal/issues' },
+165 silly install resolved     directories: { example: 'examples' },
+165 silly install resolved     scripts:
+165 silly install resolved      { test: 'scripts/test --browsers Firefox --single-run',
+165 silly install resolved        start: 'scripts/dev-examples' },
+165 silly install resolved     authors: [ 'Ryan Florence' ],
+165 silly install resolved     license: 'MIT',
+165 silly install resolved     devDependencies:
+165 silly install resolved      { browserify: '11.1.0',
+165 silly install resolved        'browserify-shim': '3.8.10',
+165 silly install resolved        envify: '3.4.0',
+165 silly install resolved        expect: '1.10.0',
+165 silly install resolved        'jsx-loader': '0.13.2',
+165 silly install resolved        karma: '0.13.10',
+165 silly install resolved        'karma-browserify': '^4.2.1',
+165 silly install resolved        'karma-chrome-launcher': '0.2.0',
+165 silly install resolved        'karma-cli': '0.1.0',
+165 silly install resolved        'karma-firefox-launcher': '0.1.6',
+165 silly install resolved        'karma-mocha': '0.2.0',
+165 silly install resolved        'karma-safari-launcher': '^0.1.1',
+165 silly install resolved        mocha: '2.3.3',
+165 silly install resolved        'react-addons-test-utils': '^0.14.0',
+165 silly install resolved        'react-dom': '^0.14.0',
+165 silly install resolved        react: '^0.14.0',
+165 silly install resolved        reactify: '^1.1.1',
+165 silly install resolved        'rf-release': '0.4.0',
+165 silly install resolved        'uglify-js': '2.4.24',
+165 silly install resolved        'webpack-dev-server': '1.11.0' },
+165 silly install resolved     dependencies:
+165 silly install resolved      { 'element-class': '^0.2.0',
+165 silly install resolved        exenv: '1.2.0',
+165 silly install resolved        'lodash.assign': '^3.2.0' },
+165 silly install resolved     peerDependencies: { react: '^0.14.0' },
+165 silly install resolved     tags: [ 'react', 'modal', 'dialog' ],
+165 silly install resolved     keywords: [ 'react', 'react-component', 'modal', 'dialog' ],
+165 silly install resolved     'browserify-shim': { react: 'global:React', 'react-dom': 'global:ReactDOM' },
+165 silly install resolved     gitHead: '1a0a069a7f91aa660433bdfa410636d4e3d81fcf',
+165 silly install resolved     _id: 'react-modal@0.6.1',
+165 silly install resolved     _shasum: '286444d80f3ae8a0aceba970371c9c73aa812849',
+165 silly install resolved     _from: 'react-modal@>=0.6.1 <0.7.0',
+165 silly install resolved     _npmVersion: '2.14.3',
+165 silly install resolved     _nodeVersion: '3.3.1',
+165 silly install resolved     _npmUser: { name: 'mzabriskie', email: 'mzabriskie@gmail.com' },
+165 silly install resolved     maintainers: [ [Object], [Object] ],
+165 silly install resolved     dist:
+165 silly install resolved      { shasum: '286444d80f3ae8a0aceba970371c9c73aa812849',
+165 silly install resolved        tarball: 'http://registry.npmjs.org/react-modal/-/react-modal-0.6.1.tgz' },
+165 silly install resolved     _resolved: 'https://registry.npmjs.org/react-modal/-/react-modal-0.6.1.tgz' },
+165 silly install resolved   { name: 'photon',
+165 silly install resolved     version: '0.1.2',
+165 silly install resolved     author: { name: 'Connor Sears' },
+165 silly install resolved     keywords: [ 'photon', 'html', 'css', 'electron' ],
+165 silly install resolved     style: 'dist/css/photon.css',
+165 silly install resolved     sass: 'sass/photon.scss',
+165 silly install resolved     repository:
+165 silly install resolved      { type: 'git',
+165 silly install resolved        url: 'git+https://github.com/connors/photon.git' },
+165 silly install resolved     bugs: { url: 'https://github.com/connors/photon/issues' },
+165 silly install resolved     scripts: { start: 'electron dist/template-app' },
+165 silly install resolved     license: 'MIT',
+165 silly install resolved     devDependencies:
+165 silly install resolved      { 'electron-prebuilt': '^0.33.3',
+165 silly install resolved        grunt: '~0.4.5',
+165 silly install resolved        'grunt-banner': '~0.5.0',
+165 silly install resolved        'grunt-contrib-clean': '~0.6.0',
+165 silly install resolved        'grunt-contrib-compress': '~0.13.0',
+165 silly install resolved        'grunt-contrib-concat': '~0.5.1',
+165 silly install resolved        'grunt-contrib-connect': '~0.11.2',
+165 silly install resolved        'grunt-contrib-copy': '~0.8.0',
+165 silly install resolved        'grunt-contrib-cssmin': '~0.13.0',
+165 silly install resolved        'grunt-contrib-sass': '~0.9.2',
+165 silly install resolved        'grunt-contrib-watch': '~0.6.1',
+165 silly install resolved        'grunt-html': '~5.0.0',
+165 silly install resolved        'grunt-jekyll': '~0.4.2',
+165 silly install resolved        'grunt-sed': 'github:twbs/grunt-sed#v0.2.0',
+165 silly install resolved        'load-grunt-tasks': '~3.2.0',
+165 silly install resolved        'time-grunt': '~1.2.0' },
+165 silly install resolved     gitHead: '7205ad5deb70fceac715a83541eb89b7e1e4981e',
+165 silly install resolved     readme: '# [Photon](http://photonkit.com/)\n\n[![Build Status](https://img.shields.io/travis/connors/photon/master.svg)](https://travis-ci.org/connors/photon)\n\nUI toolkit for building desktop apps with Electron.\n\n## Getting started\n\n* Clone the repo with `git clone https://github.com/connors/photon.git`\n* [Read the docs](http://photonkit.com) to learn about the components and how to get your new application started\n\nTake note that our master branch is our active, unstable development branch and that if you\'re looking to download a stable copy of the repo, check the [tagged downloads](https://github.com/connors/photon/tags).\n\n### What\'s included\n\nWithin the download you\'ll find the following directories and files, logically grouping common assets. You\'ll see something like this:\n\n```\nphoton/\n├── css/\n│   ├── photon.css\n├── fonts/\n│   ├── photon-entypo.eot\n│   ├── photon-entypo.svg\n│   ├── photon-entypo.ttf\n│   └── photon-entypo.woff\n└── template-app/\n    ├── js/\n    │   └── menu.js\n    ├── app.js\n    ├── index.html\n    └── package.json\n```\n\nWe provide compiled CSS (`photon.*`). We also include the Entypo fonts and a template Electron application for you to quickly get started.\n\n## Documentation\n\nPhoton\'s documentation is built with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://photonkit.com>. The docs may also be run locally.\n\n### Running documentation locally\n\n1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) (requires v2.5.x).\n  * **Windows users:** Read [this unofficial guide](http://jekyll-windows.juthilo.com/) to get Jekyll up and running without problems.\n2. Install the Ruby-based syntax highlighter, [Rouge](https://github.com/jneen/rouge), with `gem install rouge`.\n3. From the root `/photon` directory, run `jekyll serve` in the command line.\n4. Open <http://localhost:4000> in your browser, and boom!\n\nLearn more about using Jekyll by reading its [documentation](http://jekyllrb.com/docs/home/).\n\n## Contributing\n\nPlease file a GitHub issue to [report a bug](https://github.com/connors/photon/issues). When reporting a bug, be sure to follow the [contributor guidelines](https://github.com/connors/photon/blob/master/CONTRIBUTING.md).\n\n\n## Development\n\n1. Install node dependencies: `npm install`.\n2. Open the example app: `npm start`.\n\nModifying source Sass files? Open a second Terminal tab and run `grunt` to kick off a build the compiled `photon.css`.\n\n## Versioning\n\nFor transparency into our release cycle and in striving to maintain backward compatibility, Photon is maintained under the Semantic Versioning guidelines. Sometimes we screw up, but we\'ll adhere to these rules whenever possible.\n\nReleases will be numbered with the following format:\n\n`<major>.<minor>.<patch>`\n\nAnd constructed with the following guidelines:\n\n* Breaking backward compatibility **bumps the major** while resetting minor and patch\n* New additions without breaking backward compatibility **bumps the minor** while resetting the patch\n* Bug fixes and misc changes **bumps only the patch**\n\nFor more information on SemVer, please visit <http://semver.org/>.\n\n## Maintainers\n\nConnor Sears\n\n* <https://twitter.com/connors>\n* <https://github.com/connors>\n\n## License\n\nCopyright @connors. Released under MIT.\n',
+165 silly install resolved     readmeFilename: 'README.md',
+165 silly install resolved     description: '[![Build Status](https://img.shields.io/travis/connors/photon/master.svg)](https://travis-ci.org/connors/photon)',
+165 silly install resolved     homepage: 'https://github.com/connors/photon#readme',
+165 silly install resolved     _id: 'photon@0.1.2',
+165 silly install resolved     _shasum: '6839adf35bef0708342ed6133def9f5ee7e671c6',
+165 silly install resolved     _from: 'git+https://github.com/connors/photon.git',
+165 silly install resolved     _resolved: 'git+https://github.com/connors/photon.git#7205ad5deb70fceac715a83541eb89b7e1e4981e' } ]
+166 info install react-dom@0.14.6 into /Users/administrator/Work/tasxs
+167 info install react-modal@0.6.1 into /Users/administrator/Work/tasxs
+168 info install photon@0.1.2 into /Users/administrator/Work/tasxs
+169 info installOne react-dom@0.14.6
+170 verbose installOne of react-dom to /Users/administrator/Work/tasxs not in flight; installing
+171 info installOne react-modal@0.6.1
+172 verbose installOne of react-modal to /Users/administrator/Work/tasxs not in flight; installing
+173 info installOne photon@0.1.2
+174 verbose installOne of photon to /Users/administrator/Work/tasxs not in flight; installing
+175 verbose lock using /Users/administrator/.npm/_locks/react-dom-18f94b86d4f46bce.lock for /Users/administrator/Work/tasxs/node_modules/react-dom
+176 verbose lock using /Users/administrator/.npm/_locks/react-modal-7f8ea0c3aa5c8501.lock for /Users/administrator/Work/tasxs/node_modules/react-modal
+177 silly install write writing react-modal 0.6.1 to /Users/administrator/Work/tasxs/node_modules/react-modal
+178 verbose lock using /Users/administrator/.npm/_locks/photon-cb92b234e1dbaf0d.lock for /Users/administrator/Work/tasxs/node_modules/photon
+179 silly install write writing react-dom 0.14.6 to /Users/administrator/Work/tasxs/node_modules/react-dom
+180 silly install write writing photon 0.1.2 to /Users/administrator/Work/tasxs/node_modules/photon
+181 verbose unbuild node_modules/react-modal
+182 verbose unbuild node_modules/react-dom
+183 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal is being purged from base /Users/administrator/Work/tasxs
+184 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal
+185 verbose unbuild node_modules/photon
+186 verbose tar unpack /Users/administrator/.npm/react-modal/0.6.1/package.tgz
+187 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal
+188 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal is being purged
+189 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal
+190 silly gunzTarPerm modes [ '755', '644' ]
+191 info preuninstall react-dom@0.14.3
+192 info uninstall react-dom@0.14.3
+193 info preuninstall photon@0.1.2
+194 verbose unbuild rmStuff react-dom@0.14.3 from /Users/administrator/Work/tasxs/node_modules
+195 info postuninstall react-dom@0.14.3
+196 info uninstall photon@0.1.2
+197 silly gunzTarPerm extractEntry package.json
+198 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-dom is being purged from base /Users/administrator/Work/tasxs
+199 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-dom
+200 verbose unbuild rmStuff photon@0.1.2 from /Users/administrator/Work/tasxs/node_modules
+201 info postuninstall photon@0.1.2
+202 silly vacuum-fs purging /Users/administrator/Work/tasxs/node_modules/react-dom
+203 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/photon is being purged from base /Users/administrator/Work/tasxs
+204 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/photon
+205 silly gunzTarPerm extractEntry .npmignore
+206 silly gunzTarPerm extractEntry README.md
+207 silly vacuum-fs purging /Users/administrator/Work/tasxs/node_modules/photon
+208 silly gunzTarPerm extractEntry LICENSE
+209 silly vacuum-fs quitting because other entries in /Users/administrator/Work/tasxs/node_modules
+210 verbose tar unpack /Users/administrator/.npm/react-dom/0.14.6/package.tgz
+211 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-dom
+212 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-dom is being purged
+213 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-dom
+214 silly gunzTarPerm modes [ '755', '644' ]
+215 silly gunzTarPerm extractEntry package.json
+216 silly gunzTarPerm extractEntry webpack.config.js
+217 silly gunzTarPerm extractEntry .travis.yml
+218 silly gunzTarPerm extractEntry README.md
+219 silly gunzTarPerm extractEntry LICENSE
+220 silly vacuum-fs quitting because other entries in /Users/administrator/Work/tasxs/node_modules
+221 verbose tar unpack /Users/administrator/.npm/photon/0.1.2/package.tgz
+222 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/photon
+223 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/photon is being purged
+224 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/photon
+225 silly gunzTarPerm extractEntry UPGRADE_GUIDE.md
+226 silly gunzTarPerm extractEntry CHANGELOG.md
+227 silly gunzTarPerm modes [ '755', '644' ]
+228 silly gunzTarPerm extractEntry index.js
+229 silly gunzTarPerm extractEntry server.js
+230 silly gunzTarPerm extractEntry package.json
+231 silly gunzTarPerm extractEntry eslint.json
+232 silly gunzTarPerm extractEntry lib/index.js
+233 silly gunzTarPerm extractEntry .npmignore
+234 silly gunzTarPerm extractEntry README.md
+235 silly gunzTarPerm extractEntry PATENTS
+236 silly gunzTarPerm extractEntry dist/react-dom-server.js
+237 silly gunzTarPerm extractEntry dist/react-dom-server.min.js
+238 silly gunzTarPerm extractEntry dist/react-dom.js
+239 silly gunzTarPerm extractEntry dist/react-dom.min.js
+240 silly gunzTarPerm extractEntry lib/components/Modal.js
+241 silly gunzTarPerm extractEntry lib/components/ModalPortal.js
+242 silly gunzTarPerm extractEntry LICENSE
+243 silly gunzTarPerm extractEntry Gruntfile.js
+244 silly gunzTarPerm extractEntry CONTRIBUTING.md
+245 silly gunzTarPerm extractEntry lib/helpers/ariaAppHider.js
+246 silly gunzTarPerm extractEntry lib/helpers/defaultStyles.js
+247 silly gunzTarPerm extractEntry .travis.yml
+248 silly gunzTarPerm extractEntry lib/helpers/focusManager.js
+249 silly gunzTarPerm extractEntry lib/helpers/scopeTab.js
+250 silly gunzTarPerm extractEntry _config.yml
+251 silly gunzTarPerm extractEntry dist/css/photon.css
+252 silly gunzTarPerm extractEntry lib/helpers/tabbable.js
+253 silly gunzTarPerm extractEntry scripts/build
+254 silly gunzTarPerm extractEntry dist/fonts/photon-entypo.eot
+255 silly gunzTarPerm extractEntry dist/fonts/photon-entypo.svg
+256 silly gunzTarPerm extractEntry scripts/dev-examples
+257 silly gunzTarPerm extractEntry scripts/preview-release
+258 silly gunzTarPerm extractEntry dist/fonts/photon-entypo.ttf
+259 silly gunzTarPerm extractEntry scripts/release
+260 silly gunzTarPerm extractEntry scripts/test
+261 silly gunzTarPerm extractEntry dist/fonts/photon-entypo.woff
+262 silly gunzTarPerm extractEntry dist/template-app/package.json
+263 silly gunzTarPerm extractEntry dist/template-app/app.js
+264 silly gunzTarPerm extractEntry dist/template-app/index.html
+265 silly gunzTarPerm extractEntry dist/react-modal.js
+266 silly gunzTarPerm extractEntry dist/react-modal.min.js
+267 silly gunzTarPerm extractEntry dist/template-app/js/menu.js
+268 silly gunzTarPerm extractEntry docs/LICENSE
+269 silly gunzTarPerm extractEntry docs/_includes/footer.html
+270 silly gunzTarPerm extractEntry docs/_includes/header.html
+271 silly gunzTarPerm extractEntry docs/_includes/javascript.html
+272 silly gunzTarPerm extractEntry docs/_includes/nav.html
+273 silly gunzTarPerm extractEntry docs/_layouts/default.html
+274 silly gunzTarPerm extractEntry docs/assets/css/docs.css
+275 silly gunzTarPerm extractEntry docs/assets/css/docs.min.css
+276 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-dom/package.json
+277 info preinstall react-dom@0.14.6
+278 silly gunzTarPerm extractEntry docs/assets/css/normalize.css
+279 silly gunzTarPerm extractEntry docs/assets/css/pygments-manni.css
+280 silly gunzTarPerm extractEntry docs/assets/img/avatar.jpg
+281 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-dom/package.json
+282 silly gunzTarPerm extractEntry docs/assets/img/avatar2.png
+283 silly gunzTarPerm extractEntry docs/assets/img/avatar3.jpg
+284 silly prepareForInstallMany adding react@^0.14.6 from react-dom peerDependencies
+285 warn peerDependencies The peer dependency react@^0.14.6 included from react-dom will no
+286 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+287 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+288 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-dom/package.json
+289 silly gunzTarPerm extractEntry docs/assets/img/avatar4.jpg
+290 silly gunzTarPerm extractEntry docs/assets/img/avatar5.png
+291 silly install resolved []
+292 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-dom
+293 info build /Users/administrator/Work/tasxs/node_modules/react-dom
+294 info linkStuff react-dom@0.14.6
+295 silly linkStuff react-dom@0.14.6 has /Users/administrator/Work/tasxs/node_modules as its parent node_modules
+296 verbose linkBins react-dom@0.14.6
+297 verbose linkMans react-dom@0.14.6
+298 verbose rebuildBundles react-dom@0.14.6
+299 info install react-dom@0.14.6
+300 info postinstall react-dom@0.14.6
+301 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/package.json
+302 silly gunzTarPerm extractEntry docs/assets/img/avatar6.jpg
+303 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/babel/package.json
+304 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/babel-plugin-transform-react-jsx/package.json
+305 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/babel-register/package.json
+306 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/electron-debug/package.json
+307 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/electron-packager/package.json
+308 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/electron-prebuilt/package.json
+309 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/install/package.json
+310 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/npm/package.json
+311 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/photon/package.json
+312 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/react/package.json
+313 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/react-dom/package.json
+314 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/react-intl/package.json
+315 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/react-modal/package.json
+316 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/xo/package.json
+317 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/babel/package.json
+318 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/babel-external-helpers/package.json
+319 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/babel-node/package.json
+320 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/electron/package.json
+321 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/electron-packager/package.json
+322 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/npm/package.json
+323 verbose targetResolver reading package data from /Users/administrator/Work/tasxs/node_modules/.bin/xo/package.json
+324 silly gunzTarPerm extractEntry docs/assets/img/avatar7.jpg
+325 silly gunzTarPerm extractEntry docs/assets/img/photo-couch.png
+326 verbose already installed skipping react@^0.14.6 /Users/administrator/Work/tasxs
+327 silly install resolved []
+328 verbose unlock done using /Users/administrator/.npm/_locks/react-dom-18f94b86d4f46bce.lock for /Users/administrator/Work/tasxs/node_modules/react-dom
+329 silly gunzTarPerm extractEntry docs/assets/js/docs.js
+330 silly gunzTarPerm extractEntry docs/assets/js/jq.js
+331 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/package.json
+332 silly gunzTarPerm extractEntry docs/assets/js/sticky.js
+333 info preinstall react-modal@0.6.1
+334 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/package.json
+335 silly gunzTarPerm extractEntry docs/components/buttons.html
+336 silly gunzTarPerm extractEntry docs/components/bars-actions.html
+337 silly gunzTarPerm extractEntry docs/components/bars.html
+338 silly gunzTarPerm extractEntry docs/components/basic-sidebar.html
+339 silly prepareForInstallMany adding element-class@^0.2.0 from react-modal dependencies
+340 silly prepareForInstallMany adding exenv@1.2.0 from react-modal dependencies
+341 silly prepareForInstallMany adding lodash.assign@^3.2.0 from react-modal dependencies
+342 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/package.json
+343 silly gunzTarPerm extractEntry docs/components/basic-window.html
+344 silly gunzTarPerm extractEntry docs/components/button-groups.html
+345 silly cache add args [ 'element-class@^0.2.0', null ]
+346 verbose cache add spec element-class@^0.2.0
+347 silly cache add args [ 'exenv@1.2.0', null ]
+348 verbose cache add spec exenv@1.2.0
+349 silly cache add parsed spec Result {
+349 silly cache add   raw: 'element-class@^0.2.0',
+349 silly cache add   scope: null,
+349 silly cache add   name: 'element-class',
+349 silly cache add   rawSpec: '^0.2.0',
+349 silly cache add   spec: '>=0.2.0 <0.3.0',
+349 silly cache add   type: 'range' }
+350 silly addNamed element-class@>=0.2.0 <0.3.0
+351 verbose addNamed ">=0.2.0 <0.3.0" is a valid semver range for element-class
+352 silly addNameRange { name: 'element-class',
+352 silly addNameRange   range: '>=0.2.0 <0.3.0',
+352 silly addNameRange   hasData: false }
+353 silly mapToRegistry name element-class
+354 silly mapToRegistry using default registry
+355 silly mapToRegistry registry https://registry.npmjs.org/
+356 silly mapToRegistry uri https://registry.npmjs.org/element-class
+357 verbose addNameRange registry:https://registry.npmjs.org/element-class not in flight; fetching
+358 silly cache add parsed spec Result {
+358 silly cache add   raw: 'exenv@1.2.0',
+358 silly cache add   scope: null,
+358 silly cache add   name: 'exenv',
+358 silly cache add   rawSpec: '1.2.0',
+358 silly cache add   spec: '1.2.0',
+358 silly cache add   type: 'version' }
+359 silly addNamed exenv@1.2.0
+360 verbose addNamed "1.2.0" is a plain semver version for exenv
+361 silly mapToRegistry name exenv
+362 silly mapToRegistry using default registry
+363 silly mapToRegistry registry https://registry.npmjs.org/
+364 silly mapToRegistry uri https://registry.npmjs.org/exenv
+365 verbose addNameVersion registry:https://registry.npmjs.org/exenv not in flight; fetching
+366 silly cache add args [ 'lodash.assign@^3.2.0', null ]
+367 verbose cache add spec lodash.assign@^3.2.0
+368 silly cache add parsed spec Result {
+368 silly cache add   raw: 'lodash.assign@^3.2.0',
+368 silly cache add   scope: null,
+368 silly cache add   name: 'lodash.assign',
+368 silly cache add   rawSpec: '^3.2.0',
+368 silly cache add   spec: '>=3.2.0 <4.0.0',
+368 silly cache add   type: 'range' }
+369 silly addNamed lodash.assign@>=3.2.0 <4.0.0
+370 verbose addNamed ">=3.2.0 <4.0.0" is a valid semver range for lodash.assign
+371 silly addNameRange { name: 'lodash.assign',
+371 silly addNameRange   range: '>=3.2.0 <4.0.0',
+371 silly addNameRange   hasData: false }
+372 silly mapToRegistry name lodash.assign
+373 silly mapToRegistry using default registry
+374 silly mapToRegistry registry https://registry.npmjs.org/
+375 silly mapToRegistry uri https://registry.npmjs.org/lodash.assign
+376 verbose addNameRange registry:https://registry.npmjs.org/lodash.assign not in flight; fetching
+377 verbose request uri https://registry.npmjs.org/element-class
+378 verbose request no auth needed
+379 info attempt registry request try #1 at 12:29:31
+380 http request GET https://registry.npmjs.org/element-class
+381 verbose request uri https://registry.npmjs.org/exenv
+382 verbose request no auth needed
+383 info attempt registry request try #1 at 12:29:31
+384 http request GET https://registry.npmjs.org/exenv
+385 verbose request uri https://registry.npmjs.org/lodash.assign
+386 verbose request no auth needed
+387 info attempt registry request try #1 at 12:29:31
+388 verbose etag "27VSB51I0ODU2KNPSZ4C5WZPN"
+389 http request GET https://registry.npmjs.org/lodash.assign
+390 silly gunzTarPerm extractEntry docs/components/buttons-large.html
+391 silly gunzTarPerm extractEntry docs/components/buttons-mini.html
+392 silly gunzTarPerm extractEntry docs/components/bars-tabs.html
+393 silly gunzTarPerm extractEntry docs/components/common-layout.html
+394 silly gunzTarPerm extractEntry docs/components/forms.html
+395 silly gunzTarPerm extractEntry docs/components/icons.html
+396 silly gunzTarPerm extractEntry docs/components/lists.html
+397 silly gunzTarPerm extractEntry docs/components/mini-sidebar.html
+398 silly gunzTarPerm extractEntry docs/components/navs.html
+399 silly gunzTarPerm extractEntry docs/components/tables.html
+400 silly gunzTarPerm extractEntry docs/components/three-paned.html
+401 silly gunzTarPerm extractEntry docs/components.html
+402 silly gunzTarPerm extractEntry docs/demo-app.html
+403 silly gunzTarPerm extractEntry docs/dist/css/photon.css
+404 silly gunzTarPerm extractEntry docs/dist/fonts/photon-entypo.eot
+405 http 200 https://registry.npmjs.org/exenv
+406 silly get cb [ 200,
+406 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+406 silly get     etag: '"CNPE45OXJHXZ5UFAHR36P9FVP"',
+406 silly get     'content-type': 'application/json',
+406 silly get     'cache-control': 'max-age=300',
+406 silly get     'content-length': '5178',
+406 silly get     'accept-ranges': 'bytes',
+406 silly get     date: 'Mon, 25 Jan 2016 03:29:29 GMT',
+406 silly get     via: '1.1 varnish',
+406 silly get     age: '150',
+406 silly get     connection: 'keep-alive',
+406 silly get     'x-served-by': 'cache-nrt6132-NRT',
+406 silly get     'x-cache': 'HIT',
+406 silly get     'x-cache-hits': '1',
+406 silly get     'x-timer': 'S1453692569.600887,VS0,VE0',
+406 silly get     vary: 'Accept' } ]
+407 verbose get saving exenv to /Users/administrator/.npm/registry.npmjs.org/exenv/.cache.json
+408 silly gunzTarPerm extractEntry docs/dist/fonts/photon-entypo.svg
+409 silly gunzTarPerm extractEntry docs/dist/fonts/photon-entypo.ttf
+410 http 200 https://registry.npmjs.org/lodash.assign
+411 silly get cb [ 200,
+411 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+411 silly get     etag: '"ENW6UA48IOQJZ438PN2ZPW0BG"',
+411 silly get     'content-type': 'application/json',
+411 silly get     'cache-control': 'max-age=300',
+411 silly get     'content-length': '19612',
+411 silly get     'accept-ranges': 'bytes',
+411 silly get     date: 'Mon, 25 Jan 2016 03:29:29 GMT',
+411 silly get     via: '1.1 varnish',
+411 silly get     age: '242',
+411 silly get     connection: 'keep-alive',
+411 silly get     'x-served-by': 'cache-nrt6121-NRT',
+411 silly get     'x-cache': 'HIT',
+411 silly get     'x-cache-hits': '5',
+411 silly get     'x-timer': 'S1453692569.600454,VS0,VE0',
+411 silly get     vary: 'Accept' } ]
+412 verbose get saving lodash.assign to /Users/administrator/.npm/registry.npmjs.org/lodash.assign/.cache.json
+413 silly gunzTarPerm extractEntry docs/dist/fonts/photon-entypo.woff
+414 silly mapToRegistry name exenv
+415 silly mapToRegistry using default registry
+416 silly mapToRegistry registry https://registry.npmjs.org/
+417 silly mapToRegistry uri https://registry.npmjs.org/exenv
+418 verbose addRemoteTarball https://registry.npmjs.org/exenv/-/exenv-1.2.0.tgz not in flight; adding
+419 verbose addRemoteTarball [ 'https://registry.npmjs.org/exenv/-/exenv-1.2.0.tgz',
+419 verbose addRemoteTarball   '3835f127abf075bfe082d0aed4484057c78e3c89' ]
+420 silly gunzTarPerm extractEntry docs/dist/template-app/package.json
+421 silly gunzTarPerm extractEntry docs/dist/template-app/app.js
+422 silly gunzTarPerm extractEntry docs/dist/template-app/images/avatar.jpg
+423 info retry fetch attempt 1 at 12:29:31
+424 info attempt registry request try #1 at 12:29:31
+425 http fetch GET https://registry.npmjs.org/exenv/-/exenv-1.2.0.tgz
+426 silly addNameRange number 2 { name: 'lodash.assign', range: '>=3.2.0 <4.0.0', hasData: true }
+427 silly addNameRange versions [ 'lodash.assign',
+427 silly addNameRange   [ '2.0.0',
+427 silly addNameRange     '2.1.0',
+427 silly addNameRange     '2.2.0',
+427 silly addNameRange     '2.2.1',
+427 silly addNameRange     '2.3.0',
+427 silly addNameRange     '2.4.0',
+427 silly addNameRange     '2.4.1',
+427 silly addNameRange     '3.0.0',
+427 silly addNameRange     '3.1.0',
+427 silly addNameRange     '3.2.0',
+427 silly addNameRange     '4.0.0' ] ]
+428 silly addNamed lodash.assign@3.2.0
+429 verbose addNamed "3.2.0" is a plain semver version for lodash.assign
+430 silly gunzTarPerm extractEntry docs/dist/template-app/images/avatar2.png
+431 silly cache afterAdd lodash.assign@3.2.0
+432 verbose afterAdd /Users/administrator/.npm/lodash.assign/3.2.0/package/package.json not in flight; writing
+433 silly gunzTarPerm extractEntry docs/dist/template-app/images/avatar3.jpg
+434 silly gunzTarPerm extractEntry docs/dist/template-app/images/avatar4.jpg
+435 silly gunzTarPerm extractEntry docs/dist/template-app/images/avatar5.png
+436 verbose afterAdd /Users/administrator/.npm/lodash.assign/3.2.0/package/package.json written
+437 silly gunzTarPerm extractEntry docs/dist/template-app/images/avatar6.jpg
+438 silly gunzTarPerm extractEntry docs/dist/template-app/images/avatar7.jpg
+439 silly gunzTarPerm extractEntry docs/dist/template-app/index.html
+440 silly gunzTarPerm extractEntry docs/dist/template-app/js/index.js
+441 silly gunzTarPerm extractEntry docs/dist/template-app/js/menu.js
+442 silly gunzTarPerm extractEntry docs/getting-started.html
+443 silly gunzTarPerm extractEntry docs/index.html
+444 http fetch 200 https://registry.npmjs.org/exenv/-/exenv-1.2.0.tgz
+445 silly gunzTarPerm extractEntry fonts/photon-entypo.eot
+446 silly fetchAndShaCheck shasum 3835f127abf075bfe082d0aed4484057c78e3c89
+447 silly gunzTarPerm extractEntry fonts/photon-entypo.svg
+448 verbose addTmpTarball /var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/registry.npmjs.org/exenv/-/exenv-1.2.0.tgz not in flight; adding
+449 verbose addTmpTarball already have metadata; skipping unpack for exenv@1.2.0
+450 silly gunzTarPerm extractEntry fonts/photon-entypo.ttf
+451 silly gunzTarPerm extractEntry fonts/photon-entypo.woff
+452 silly gunzTarPerm extractEntry CNAME
+453 silly cache afterAdd exenv@1.2.0
+454 verbose afterAdd /Users/administrator/.npm/exenv/1.2.0/package/package.json not in flight; writing
+455 silly gunzTarPerm extractEntry sass/lists.scss
+456 silly gunzTarPerm extractEntry sass/bars.scss
+457 verbose afterAdd /Users/administrator/.npm/exenv/1.2.0/package/package.json written
+458 silly gunzTarPerm extractEntry sass/button-groups.scss
+459 silly gunzTarPerm extractEntry sass/buttons.scss
+460 silly gunzTarPerm extractEntry sass/docs.scss
+461 silly gunzTarPerm extractEntry sass/forms.scss
+462 silly gunzTarPerm extractEntry sass/grid.scss
+463 silly gunzTarPerm extractEntry sass/icons.scss
+464 silly gunzTarPerm extractEntry sass/images.scss
+465 silly gunzTarPerm extractEntry sass/base.scss
+466 silly gunzTarPerm extractEntry sass/mixins.scss
+467 silly gunzTarPerm extractEntry sass/navs.scss
+468 silly gunzTarPerm extractEntry sass/normalize.scss
+469 silly gunzTarPerm extractEntry sass/photon.scss
+470 silly gunzTarPerm extractEntry sass/tables.scss
+471 silly gunzTarPerm extractEntry sass/tabs.scss
+472 silly gunzTarPerm extractEntry sass/utilities.scss
+473 silly gunzTarPerm extractEntry sass/variables.scss
+474 verbose write writing to /Users/administrator/Work/tasxs/node_modules/photon/package.json
+475 info preinstall photon@0.1.2
+476 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/photon/package.json
+477 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/photon/package.json
+478 silly install resolved []
+479 verbose about to build /Users/administrator/Work/tasxs/node_modules/photon
+480 info build /Users/administrator/Work/tasxs/node_modules/photon
+481 info linkStuff photon@0.1.2
+482 silly linkStuff photon@0.1.2 has /Users/administrator/Work/tasxs/node_modules as its parent node_modules
+483 verbose linkBins photon@0.1.2
+484 verbose linkMans photon@0.1.2
+485 verbose rebuildBundles photon@0.1.2
+486 info install photon@0.1.2
+487 info postinstall photon@0.1.2
+488 verbose unlock done using /Users/administrator/.npm/_locks/photon-cb92b234e1dbaf0d.lock for /Users/administrator/Work/tasxs/node_modules/photon
+489 http 200 https://registry.npmjs.org/element-class
+490 silly get cb [ 200,
+490 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+490 silly get     etag: '"32XXNR2Z4PRL428AJSJW6TXXH"',
+490 silly get     'content-type': 'application/json',
+490 silly get     'cache-control': 'max-age=300',
+490 silly get     'content-length': '8701',
+490 silly get     'accept-ranges': 'bytes',
+490 silly get     date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+490 silly get     via: '1.1 varnish',
+490 silly get     age: '0',
+490 silly get     connection: 'keep-alive',
+490 silly get     'x-served-by': 'cache-nrt6135-NRT',
+490 silly get     'x-cache': 'MISS',
+490 silly get     'x-cache-hits': '0',
+490 silly get     'x-timer': 'S1453692569.596498,VS0,VE710',
+490 silly get     vary: 'Accept' } ]
+491 verbose get saving element-class to /Users/administrator/.npm/registry.npmjs.org/element-class/.cache.json
+492 silly addNameRange number 2 { name: 'element-class', range: '>=0.2.0 <0.3.0', hasData: true }
+493 silly addNameRange versions [ 'element-class',
+493 silly addNameRange   [ '0.0.1', '0.0.2', '0.1.0', '0.1.1', '0.2.0', '0.2.1', '0.2.2' ] ]
+494 silly addNamed element-class@0.2.2
+495 verbose addNamed "0.2.2" is a plain semver version for element-class
+496 silly mapToRegistry name element-class
+497 silly mapToRegistry using default registry
+498 silly mapToRegistry registry https://registry.npmjs.org/
+499 silly mapToRegistry uri https://registry.npmjs.org/element-class
+500 verbose addRemoteTarball https://registry.npmjs.org/element-class/-/element-class-0.2.2.tgz not in flight; adding
+501 verbose addRemoteTarball [ 'https://registry.npmjs.org/element-class/-/element-class-0.2.2.tgz',
+501 verbose addRemoteTarball   '9d3bbd0767f9013ef8e1c8ebe722c1402a60050e' ]
+502 info retry fetch attempt 1 at 12:29:32
+503 info attempt registry request try #1 at 12:29:32
+504 http fetch GET https://registry.npmjs.org/element-class/-/element-class-0.2.2.tgz
+505 http fetch 200 https://registry.npmjs.org/element-class/-/element-class-0.2.2.tgz
+506 silly fetchAndShaCheck shasum 9d3bbd0767f9013ef8e1c8ebe722c1402a60050e
+507 verbose addTmpTarball /var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/registry.npmjs.org/element-class/-/element-class-0.2.2.tgz not in flight; adding
+508 verbose addTmpTarball already have metadata; skipping unpack for element-class@0.2.2
+509 silly cache afterAdd element-class@0.2.2
+510 verbose afterAdd /Users/administrator/.npm/element-class/0.2.2/package/package.json not in flight; writing
+511 verbose afterAdd /Users/administrator/.npm/element-class/0.2.2/package/package.json written
+512 silly install resolved [ { name: 'lodash.assign',
+512 silly install resolved     version: '3.2.0',
+512 silly install resolved     description: 'The modern build of lodash’s `_.assign` as a module.',
+512 silly install resolved     homepage: 'https://lodash.com/',
+512 silly install resolved     icon: 'https://lodash.com/icon.svg',
+512 silly install resolved     license: 'MIT',
+512 silly install resolved     keywords: [ 'lodash', 'lodash-modularized', 'stdlib', 'util' ],
+512 silly install resolved     author:
+512 silly install resolved      { name: 'John-David Dalton',
+512 silly install resolved        email: 'john.david.dalton@gmail.com',
+512 silly install resolved        url: 'http://allyoucanleet.com/' },
+512 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+512 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+512 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+512 silly install resolved     dependencies:
+512 silly install resolved      { 'lodash._baseassign': '^3.0.0',
+512 silly install resolved        'lodash._createassigner': '^3.0.0',
+512 silly install resolved        'lodash.keys': '^3.0.0' },
+512 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+512 silly install resolved     _id: 'lodash.assign@3.2.0',
+512 silly install resolved     _shasum: '3ce9f0234b4b2223e296b8fa0ac1fee8ebca64fa',
+512 silly install resolved     _from: 'lodash.assign@>=3.2.0 <4.0.0',
+512 silly install resolved     _npmVersion: '2.10.0',
+512 silly install resolved     _nodeVersion: '0.12.3',
+512 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+512 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+512 silly install resolved     dist:
+512 silly install resolved      { shasum: '3ce9f0234b4b2223e296b8fa0ac1fee8ebca64fa',
+512 silly install resolved        tarball: 'http://registry.npmjs.org/lodash.assign/-/lodash.assign-3.2.0.tgz' },
+512 silly install resolved     directories: {},
+512 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash.assign/-/lodash.assign-3.2.0.tgz',
+512 silly install resolved     readme: 'ERROR: No README data found!' },
+512 silly install resolved   { name: 'exenv',
+512 silly install resolved     version: '1.2.0',
+512 silly install resolved     description: 'React\'s ExecutionEnvironment module extracted for use in other packages & components',
+512 silly install resolved     main: 'index.js',
+512 silly install resolved     scripts: { test: 'echo "See React tests" && exit 0' },
+512 silly install resolved     repository: { type: 'git', url: 'https://github.com/JedWatson/exenv.git' },
+512 silly install resolved     keywords:
+512 silly install resolved      [ 'react',
+512 silly install resolved        'browser',
+512 silly install resolved        'server',
+512 silly install resolved        'environment',
+512 silly install resolved        'env',
+512 silly install resolved        'execution',
+512 silly install resolved        'executionenvironment' ],
+512 silly install resolved     author: { name: 'Jed Watson' },
+512 silly install resolved     license: 'BSD',
+512 silly install resolved     bugs: { url: 'https://github.com/JedWatson/exenv/issues' },
+512 silly install resolved     homepage: 'https://github.com/JedWatson/exenv',
+512 silly install resolved     gitHead: 'bf84d0a7782fd824a1d94ed612067b1e0d080d2e',
+512 silly install resolved     _id: 'exenv@1.2.0',
+512 silly install resolved     _shasum: '3835f127abf075bfe082d0aed4484057c78e3c89',
+512 silly install resolved     _from: 'exenv@1.2.0',
+512 silly install resolved     _npmVersion: '2.7.5',
+512 silly install resolved     _nodeVersion: '0.12.2',
+512 silly install resolved     _npmUser: { name: 'jedwatson', email: 'jed.watson@me.com' },
+512 silly install resolved     dist:
+512 silly install resolved      { shasum: '3835f127abf075bfe082d0aed4484057c78e3c89',
+512 silly install resolved        tarball: 'http://registry.npmjs.org/exenv/-/exenv-1.2.0.tgz' },
+512 silly install resolved     maintainers: [ [Object] ],
+512 silly install resolved     directories: {},
+512 silly install resolved     _resolved: 'https://registry.npmjs.org/exenv/-/exenv-1.2.0.tgz' },
+512 silly install resolved   { name: 'element-class',
+512 silly install resolved     description: 'add and remove classes from dom elements',
+512 silly install resolved     author: { name: 'Max Ogden', email: 'max@maxogden.com' },
+512 silly install resolved     repository:
+512 silly install resolved      { type: 'git',
+512 silly install resolved        url: 'git+ssh://git@github.com/maxogden/element-class.git' },
+512 silly install resolved     version: '0.2.2',
+512 silly install resolved     bugs: { url: 'https://github.com/maxogden/element-class/issues' },
+512 silly install resolved     homepage: 'https://github.com/maxogden/element-class',
+512 silly install resolved     main: 'index.js',
+512 silly install resolved     devDependencies: { tape: '^4.2.0' },
+512 silly install resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+512 silly install resolved     license: 'ISC',
+512 silly install resolved     testling: { files: 'test.js', browsers: [Object] },
+512 silly install resolved     gitHead: 'e61e8f8950dcfffd8ccde4310972a80053f7b75d',
+512 silly install resolved     _id: 'element-class@0.2.2',
+512 silly install resolved     _shasum: '9d3bbd0767f9013ef8e1c8ebe722c1402a60050e',
+512 silly install resolved     _from: 'element-class@>=0.2.0 <0.3.0',
+512 silly install resolved     _npmVersion: '2.11.3',
+512 silly install resolved     _nodeVersion: '0.12.7',
+512 silly install resolved     _npmUser: { name: 'maxogden', email: 'max@maxogden.com' },
+512 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+512 silly install resolved     dist:
+512 silly install resolved      { shasum: '9d3bbd0767f9013ef8e1c8ebe722c1402a60050e',
+512 silly install resolved        tarball: 'http://registry.npmjs.org/element-class/-/element-class-0.2.2.tgz' },
+512 silly install resolved     directories: {},
+512 silly install resolved     _resolved: 'https://registry.npmjs.org/element-class/-/element-class-0.2.2.tgz' } ]
+513 info install lodash.assign@3.2.0 into /Users/administrator/Work/tasxs/node_modules/react-modal
+514 info install exenv@1.2.0 into /Users/administrator/Work/tasxs/node_modules/react-modal
+515 info install element-class@0.2.2 into /Users/administrator/Work/tasxs/node_modules/react-modal
+516 info installOne lodash.assign@3.2.0
+517 verbose installOne of lodash.assign to /Users/administrator/Work/tasxs/node_modules/react-modal not in flight; installing
+518 info installOne exenv@1.2.0
+519 verbose installOne of exenv to /Users/administrator/Work/tasxs/node_modules/react-modal not in flight; installing
+520 info installOne element-class@0.2.2
+521 verbose installOne of element-class to /Users/administrator/Work/tasxs/node_modules/react-modal not in flight; installing
+522 verbose lock using /Users/administrator/.npm/_locks/lodash-assign-7690dd5a7bc5c167.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+523 silly install write writing lodash.assign 3.2.0 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+524 verbose lock using /Users/administrator/.npm/_locks/exenv-39d1aea74a7bb30b.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv
+525 verbose lock using /Users/administrator/.npm/_locks/element-class-39f9b3a3ca4ee1cd.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class
+526 silly install write writing exenv 1.2.0 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv
+527 silly install write writing element-class 0.2.2 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class
+528 verbose unbuild node_modules/react-modal/node_modules/lodash.assign
+529 verbose unbuild node_modules/react-modal/node_modules/exenv
+530 verbose unbuild node_modules/react-modal/node_modules/element-class
+531 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign is being purged from base /Users/administrator/Work/tasxs
+532 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+533 verbose tar unpack /Users/administrator/.npm/lodash.assign/3.2.0/package.tgz
+534 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+535 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign is being purged
+536 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+537 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv is being purged from base /Users/administrator/Work/tasxs
+538 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv
+539 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class is being purged from base /Users/administrator/Work/tasxs
+540 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class
+541 silly gunzTarPerm modes [ '755', '644' ]
+542 verbose tar unpack /Users/administrator/.npm/exenv/1.2.0/package.tgz
+543 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv
+544 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv is being purged
+545 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv
+546 verbose tar unpack /Users/administrator/.npm/element-class/0.2.2/package.tgz
+547 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class
+548 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class is being purged
+549 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class
+550 silly gunzTarPerm modes [ '755', '644' ]
+551 silly gunzTarPerm modes [ '755', '644' ]
+552 silly gunzTarPerm extractEntry package.json
+553 silly gunzTarPerm extractEntry package.json
+554 silly gunzTarPerm extractEntry package.json
+555 silly gunzTarPerm extractEntry README.md
+556 silly gunzTarPerm extractEntry index.js
+557 silly gunzTarPerm extractEntry README.md
+558 silly gunzTarPerm extractEntry LICENSE
+559 silly gunzTarPerm extractEntry .npmignore
+560 silly gunzTarPerm extractEntry index.js
+561 silly gunzTarPerm extractEntry LICENSE.txt
+562 silly gunzTarPerm extractEntry index.js
+563 silly gunzTarPerm extractEntry test.js
+564 silly gunzTarPerm extractEntry collaborators.md
+565 silly gunzTarPerm extractEntry readme.md
+566 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/package.json
+567 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv/package.json
+568 info preinstall lodash.assign@3.2.0
+569 info preinstall exenv@1.2.0
+570 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/package.json
+571 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv/package.json
+572 silly prepareForInstallMany adding lodash._baseassign@^3.0.0 from lodash.assign dependencies
+573 silly prepareForInstallMany adding lodash._createassigner@^3.0.0 from lodash.assign dependencies
+574 silly prepareForInstallMany adding lodash.keys@^3.0.0 from lodash.assign dependencies
+575 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/package.json
+576 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv/package.json
+577 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class/package.json
+578 silly cache add args [ 'lodash._baseassign@^3.0.0', null ]
+579 verbose cache add spec lodash._baseassign@^3.0.0
+580 silly cache add args [ 'lodash._createassigner@^3.0.0', null ]
+581 verbose cache add spec lodash._createassigner@^3.0.0
+582 silly cache add parsed spec Result {
+582 silly cache add   raw: 'lodash._baseassign@^3.0.0',
+582 silly cache add   scope: null,
+582 silly cache add   name: 'lodash._baseassign',
+582 silly cache add   rawSpec: '^3.0.0',
+582 silly cache add   spec: '>=3.0.0 <4.0.0',
+582 silly cache add   type: 'range' }
+583 silly addNamed lodash._baseassign@>=3.0.0 <4.0.0
+584 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash._baseassign
+585 silly addNameRange { name: 'lodash._baseassign',
+585 silly addNameRange   range: '>=3.0.0 <4.0.0',
+585 silly addNameRange   hasData: false }
+586 silly mapToRegistry name lodash._baseassign
+587 silly mapToRegistry using default registry
+588 silly mapToRegistry registry https://registry.npmjs.org/
+589 silly mapToRegistry uri https://registry.npmjs.org/lodash._baseassign
+590 verbose addNameRange registry:https://registry.npmjs.org/lodash._baseassign not in flight; fetching
+591 silly cache add parsed spec Result {
+591 silly cache add   raw: 'lodash._createassigner@^3.0.0',
+591 silly cache add   scope: null,
+591 silly cache add   name: 'lodash._createassigner',
+591 silly cache add   rawSpec: '^3.0.0',
+591 silly cache add   spec: '>=3.0.0 <4.0.0',
+591 silly cache add   type: 'range' }
+592 silly addNamed lodash._createassigner@>=3.0.0 <4.0.0
+593 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash._createassigner
+594 silly addNameRange { name: 'lodash._createassigner',
+594 silly addNameRange   range: '>=3.0.0 <4.0.0',
+594 silly addNameRange   hasData: false }
+595 silly mapToRegistry name lodash._createassigner
+596 silly mapToRegistry using default registry
+597 silly mapToRegistry registry https://registry.npmjs.org/
+598 silly mapToRegistry uri https://registry.npmjs.org/lodash._createassigner
+599 verbose addNameRange registry:https://registry.npmjs.org/lodash._createassigner not in flight; fetching
+600 silly cache add args [ 'lodash.keys@^3.0.0', null ]
+601 verbose cache add spec lodash.keys@^3.0.0
+602 silly cache add parsed spec Result {
+602 silly cache add   raw: 'lodash.keys@^3.0.0',
+602 silly cache add   scope: null,
+602 silly cache add   name: 'lodash.keys',
+602 silly cache add   rawSpec: '^3.0.0',
+602 silly cache add   spec: '>=3.0.0 <4.0.0',
+602 silly cache add   type: 'range' }
+603 silly addNamed lodash.keys@>=3.0.0 <4.0.0
+604 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash.keys
+605 silly addNameRange { name: 'lodash.keys', range: '>=3.0.0 <4.0.0', hasData: false }
+606 silly mapToRegistry name lodash.keys
+607 silly mapToRegistry using default registry
+608 silly mapToRegistry registry https://registry.npmjs.org/
+609 silly mapToRegistry uri https://registry.npmjs.org/lodash.keys
+610 verbose addNameRange registry:https://registry.npmjs.org/lodash.keys not in flight; fetching
+611 info preinstall element-class@0.2.2
+612 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class/package.json
+613 verbose request uri https://registry.npmjs.org/lodash._baseassign
+614 verbose request no auth needed
+615 info attempt registry request try #1 at 12:29:32
+616 verbose etag "7BL6B7FKZDZ47VD91B03KH2N1"
+617 http request GET https://registry.npmjs.org/lodash._baseassign
+618 verbose request uri https://registry.npmjs.org/lodash._createassigner
+619 verbose request no auth needed
+620 info attempt registry request try #1 at 12:29:32
+621 verbose etag "CQWTFITE6W94GAS2PZVA3DD9Z"
+622 http request GET https://registry.npmjs.org/lodash._createassigner
+623 verbose request uri https://registry.npmjs.org/lodash.keys
+624 verbose request no auth needed
+625 info attempt registry request try #1 at 12:29:32
+626 verbose etag "BHWBXZX3O23JHL6WV9C090MR5"
+627 http request GET https://registry.npmjs.org/lodash.keys
+628 silly install resolved []
+629 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv
+630 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv
+631 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class/package.json
+632 info linkStuff exenv@1.2.0
+633 silly linkStuff exenv@1.2.0 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules as its parent node_modules
+634 silly install resolved []
+635 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class
+636 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class
+637 verbose linkBins exenv@1.2.0
+638 verbose linkMans exenv@1.2.0
+639 verbose rebuildBundles exenv@1.2.0
+640 info install exenv@1.2.0
+641 http 304 https://registry.npmjs.org/lodash._baseassign
+642 silly get cb [ 304,
+642 silly get   { date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+642 silly get     via: '1.1 varnish',
+642 silly get     'cache-control': 'max-age=300',
+642 silly get     etag: '"7BL6B7FKZDZ47VD91B03KH2N1"',
+642 silly get     age: '51',
+642 silly get     connection: 'keep-alive',
+642 silly get     'x-served-by': 'cache-nrt6133-NRT',
+642 silly get     'x-cache': 'HIT',
+642 silly get     'x-cache-hits': '2',
+642 silly get     'x-timer': 'S1453692570.401922,VS0,VE0',
+642 silly get     vary: 'Accept' } ]
+643 verbose etag https://registry.npmjs.org/lodash._baseassign from cache
+644 verbose get saving lodash._baseassign to /Users/administrator/.npm/registry.npmjs.org/lodash._baseassign/.cache.json
+645 http 304 https://registry.npmjs.org/lodash._createassigner
+646 silly get cb [ 304,
+646 silly get   { date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+646 silly get     via: '1.1 varnish',
+646 silly get     'cache-control': 'max-age=300',
+646 silly get     etag: '"CQWTFITE6W94GAS2PZVA3DD9Z"',
+646 silly get     age: '180',
+646 silly get     connection: 'keep-alive',
+646 silly get     'x-served-by': 'cache-nrt6121-NRT',
+646 silly get     'x-cache': 'HIT',
+646 silly get     'x-cache-hits': '3',
+646 silly get     'x-timer': 'S1453692570.396003,VS0,VE0',
+646 silly get     vary: 'Accept' } ]
+647 verbose etag https://registry.npmjs.org/lodash._createassigner from cache
+648 verbose get saving lodash._createassigner to /Users/administrator/.npm/registry.npmjs.org/lodash._createassigner/.cache.json
+649 http 200 https://registry.npmjs.org/lodash.keys
+650 silly get cb [ 200,
+650 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+650 silly get     etag: '"5M33UGOMKHDS3FGM2G024J8SJ"',
+650 silly get     'content-type': 'application/json',
+650 silly get     'cache-control': 'max-age=300',
+650 silly get     'content-length': '33887',
+650 silly get     'accept-ranges': 'bytes',
+650 silly get     date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+650 silly get     via: '1.1 varnish',
+650 silly get     age: '256',
+650 silly get     connection: 'keep-alive',
+650 silly get     'x-served-by': 'cache-nrt6124-NRT',
+650 silly get     'x-cache': 'HIT',
+650 silly get     'x-cache-hits': '7',
+650 silly get     'x-timer': 'S1453692570.396291,VS0,VE0',
+650 silly get     vary: 'Accept' } ]
+651 verbose get saving lodash.keys to /Users/administrator/.npm/registry.npmjs.org/lodash.keys/.cache.json
+652 info postinstall exenv@1.2.0
+653 info linkStuff element-class@0.2.2
+654 silly linkStuff element-class@0.2.2 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules as its parent node_modules
+655 verbose unlock done using /Users/administrator/.npm/_locks/exenv-39d1aea74a7bb30b.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/exenv
+656 silly addNameRange number 2 { name: 'lodash._baseassign',
+656 silly addNameRange   range: '>=3.0.0 <4.0.0',
+656 silly addNameRange   hasData: true }
+657 silly addNameRange versions [ 'lodash._baseassign',
+657 silly addNameRange   [ '3.0.0', '3.0.1', '3.0.2', '3.1.0', '3.1.1', '3.2.0' ] ]
+658 silly addNamed lodash._baseassign@3.2.0
+659 verbose addNamed "3.2.0" is a plain semver version for lodash._baseassign
+660 silly addNameRange number 2 { name: 'lodash._createassigner',
+660 silly addNameRange   range: '>=3.0.0 <4.0.0',
+660 silly addNameRange   hasData: true }
+661 silly addNameRange versions [ 'lodash._createassigner',
+661 silly addNameRange   [ '3.0.0', '3.0.1', '3.1.0', '3.1.1' ] ]
+662 silly addNamed lodash._createassigner@3.1.1
+663 verbose addNamed "3.1.1" is a plain semver version for lodash._createassigner
+664 silly addNameRange number 2 { name: 'lodash.keys', range: '>=3.0.0 <4.0.0', hasData: true }
+665 silly addNameRange versions [ 'lodash.keys',
+665 silly addNameRange   [ '2.0.0',
+665 silly addNameRange     '2.1.0',
+665 silly addNameRange     '2.2.0',
+665 silly addNameRange     '2.2.1',
+665 silly addNameRange     '2.3.0',
+665 silly addNameRange     '2.4.0',
+665 silly addNameRange     '2.4.1',
+665 silly addNameRange     '3.0.0',
+665 silly addNameRange     '3.0.1',
+665 silly addNameRange     '3.0.2',
+665 silly addNameRange     '3.0.3',
+665 silly addNameRange     '3.0.4',
+665 silly addNameRange     '3.0.5',
+665 silly addNameRange     '3.0.6',
+665 silly addNameRange     '3.0.7',
+665 silly addNameRange     '3.1.0',
+665 silly addNameRange     '3.1.1',
+665 silly addNameRange     '3.1.2',
+665 silly addNameRange     '4.0.0' ] ]
+666 silly addNamed lodash.keys@3.1.2
+667 verbose addNamed "3.1.2" is a plain semver version for lodash.keys
+668 verbose linkBins element-class@0.2.2
+669 verbose linkMans element-class@0.2.2
+670 verbose rebuildBundles element-class@0.2.2
+671 info install element-class@0.2.2
+672 info postinstall element-class@0.2.2
+673 silly cache afterAdd lodash._createassigner@3.1.1
+674 verbose afterAdd /Users/administrator/.npm/lodash._createassigner/3.1.1/package/package.json not in flight; writing
+675 silly cache afterAdd lodash._baseassign@3.2.0
+676 verbose afterAdd /Users/administrator/.npm/lodash._baseassign/3.2.0/package/package.json not in flight; writing
+677 verbose unlock done using /Users/administrator/.npm/_locks/element-class-39f9b3a3ca4ee1cd.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/element-class
+678 silly cache afterAdd lodash.keys@3.1.2
+679 verbose afterAdd /Users/administrator/.npm/lodash.keys/3.1.2/package/package.json not in flight; writing
+680 verbose afterAdd /Users/administrator/.npm/lodash._baseassign/3.2.0/package/package.json written
+681 verbose afterAdd /Users/administrator/.npm/lodash._createassigner/3.1.1/package/package.json written
+682 verbose afterAdd /Users/administrator/.npm/lodash.keys/3.1.2/package/package.json written
+683 silly install resolved [ { name: 'lodash._baseassign',
+683 silly install resolved     version: '3.2.0',
+683 silly install resolved     description: 'The modern build of lodash’s internal `baseAssign` as a module.',
+683 silly install resolved     homepage: 'https://lodash.com/',
+683 silly install resolved     icon: 'https://lodash.com/icon.svg',
+683 silly install resolved     license: 'MIT',
+683 silly install resolved     author:
+683 silly install resolved      { name: 'John-David Dalton',
+683 silly install resolved        email: 'john.david.dalton@gmail.com',
+683 silly install resolved        url: 'http://allyoucanleet.com/' },
+683 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+683 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+683 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+683 silly install resolved     dependencies: { 'lodash._basecopy': '^3.0.0', 'lodash.keys': '^3.0.0' },
+683 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+683 silly install resolved     _id: 'lodash._baseassign@3.2.0',
+683 silly install resolved     _shasum: '8c38a099500f215ad09e59f1722fd0c52bfe0a4e',
+683 silly install resolved     _from: 'lodash._baseassign@>=3.0.0 <4.0.0',
+683 silly install resolved     _npmVersion: '2.10.0',
+683 silly install resolved     _nodeVersion: '0.12.3',
+683 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+683 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+683 silly install resolved     dist:
+683 silly install resolved      { shasum: '8c38a099500f215ad09e59f1722fd0c52bfe0a4e',
+683 silly install resolved        tarball: 'http://registry.npmjs.org/lodash._baseassign/-/lodash._baseassign-3.2.0.tgz' },
+683 silly install resolved     directories: {},
+683 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash._baseassign/-/lodash._baseassign-3.2.0.tgz',
+683 silly install resolved     readme: 'ERROR: No README data found!' },
+683 silly install resolved   { name: 'lodash._createassigner',
+683 silly install resolved     version: '3.1.1',
+683 silly install resolved     description: 'The modern build of lodash’s internal `createAssigner` as a module.',
+683 silly install resolved     homepage: 'https://lodash.com/',
+683 silly install resolved     icon: 'https://lodash.com/icon.svg',
+683 silly install resolved     license: 'MIT',
+683 silly install resolved     author:
+683 silly install resolved      { name: 'John-David Dalton',
+683 silly install resolved        email: 'john.david.dalton@gmail.com',
+683 silly install resolved        url: 'http://allyoucanleet.com/' },
+683 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+683 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+683 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+683 silly install resolved     dependencies:
+683 silly install resolved      { 'lodash._bindcallback': '^3.0.0',
+683 silly install resolved        'lodash._isiterateecall': '^3.0.0',
+683 silly install resolved        'lodash.restparam': '^3.0.0' },
+683 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+683 silly install resolved     _id: 'lodash._createassigner@3.1.1',
+683 silly install resolved     _shasum: '838a5bae2fdaca63ac22dee8e19fa4e6d6970b11',
+683 silly install resolved     _from: 'lodash._createassigner@>=3.0.0 <4.0.0',
+683 silly install resolved     _npmVersion: '2.10.0',
+683 silly install resolved     _nodeVersion: '0.12.3',
+683 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+683 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+683 silly install resolved     dist:
+683 silly install resolved      { shasum: '838a5bae2fdaca63ac22dee8e19fa4e6d6970b11',
+683 silly install resolved        tarball: 'http://registry.npmjs.org/lodash._createassigner/-/lodash._createassigner-3.1.1.tgz' },
+683 silly install resolved     directories: {},
+683 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash._createassigner/-/lodash._createassigner-3.1.1.tgz',
+683 silly install resolved     readme: 'ERROR: No README data found!' },
+683 silly install resolved   { name: 'lodash.keys',
+683 silly install resolved     version: '3.1.2',
+683 silly install resolved     description: 'The modern build of lodash’s `_.keys` as a module.',
+683 silly install resolved     homepage: 'https://lodash.com/',
+683 silly install resolved     icon: 'https://lodash.com/icon.svg',
+683 silly install resolved     license: 'MIT',
+683 silly install resolved     keywords: [ 'lodash', 'lodash-modularized', 'stdlib', 'util' ],
+683 silly install resolved     author:
+683 silly install resolved      { name: 'John-David Dalton',
+683 silly install resolved        email: 'john.david.dalton@gmail.com',
+683 silly install resolved        url: 'http://allyoucanleet.com/' },
+683 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+683 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+683 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+683 silly install resolved     dependencies:
+683 silly install resolved      { 'lodash._getnative': '^3.0.0',
+683 silly install resolved        'lodash.isarguments': '^3.0.0',
+683 silly install resolved        'lodash.isarray': '^3.0.0' },
+683 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+683 silly install resolved     _id: 'lodash.keys@3.1.2',
+683 silly install resolved     _shasum: '4dbc0472b156be50a0b286855d1bd0b0c656098a',
+683 silly install resolved     _from: 'lodash.keys@>=3.0.0 <4.0.0',
+683 silly install resolved     _npmVersion: '2.12.0',
+683 silly install resolved     _nodeVersion: '0.12.5',
+683 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+683 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+683 silly install resolved     dist:
+683 silly install resolved      { shasum: '4dbc0472b156be50a0b286855d1bd0b0c656098a',
+683 silly install resolved        tarball: 'http://registry.npmjs.org/lodash.keys/-/lodash.keys-3.1.2.tgz' },
+683 silly install resolved     directories: {},
+683 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash.keys/-/lodash.keys-3.1.2.tgz',
+683 silly install resolved     readme: 'ERROR: No README data found!' } ]
+684 info install lodash._baseassign@3.2.0 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+685 info install lodash._createassigner@3.1.1 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+686 info install lodash.keys@3.1.2 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+687 info installOne lodash._baseassign@3.2.0
+688 verbose installOne of lodash._baseassign to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign not in flight; installing
+689 info installOne lodash._createassigner@3.1.1
+690 verbose installOne of lodash._createassigner to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign not in flight; installing
+691 info installOne lodash.keys@3.1.2
+692 verbose installOne of lodash.keys to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign not in flight; installing
+693 verbose lock using /Users/administrator/.npm/_locks/lodash-baseassign-1a63dc1995460a2c.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+694 verbose lock using /Users/administrator/.npm/_locks/lodash-keys-348dd57e3df71a61.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+695 silly install write writing lodash._baseassign 3.2.0 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+696 silly install write writing lodash.keys 3.1.2 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+697 verbose lock using /Users/administrator/.npm/_locks/lodash-createassigner-185c4090ebc53803.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+698 silly install write writing lodash._createassigner 3.1.1 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+699 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+700 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+701 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+702 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign is being purged from base /Users/administrator/Work/tasxs
+703 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+704 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys is being purged from base /Users/administrator/Work/tasxs
+705 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+706 verbose tar unpack /Users/administrator/.npm/lodash._baseassign/3.2.0/package.tgz
+707 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+708 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign is being purged
+709 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+710 verbose tar unpack /Users/administrator/.npm/lodash.keys/3.1.2/package.tgz
+711 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+712 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys is being purged
+713 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+714 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner is being purged from base /Users/administrator/Work/tasxs
+715 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+716 silly gunzTarPerm modes [ '755', '644' ]
+717 silly gunzTarPerm modes [ '755', '644' ]
+718 verbose tar unpack /Users/administrator/.npm/lodash._createassigner/3.1.1/package.tgz
+719 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+720 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner is being purged
+721 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+722 silly gunzTarPerm modes [ '755', '644' ]
+723 silly gunzTarPerm extractEntry package.json
+724 silly gunzTarPerm extractEntry package.json
+725 silly gunzTarPerm extractEntry package.json
+726 silly gunzTarPerm extractEntry README.md
+727 silly gunzTarPerm extractEntry index.js
+728 silly gunzTarPerm extractEntry README.md
+729 silly gunzTarPerm extractEntry LICENSE
+730 silly gunzTarPerm extractEntry README.md
+731 silly gunzTarPerm extractEntry index.js
+732 silly gunzTarPerm extractEntry LICENSE.txt
+733 silly gunzTarPerm extractEntry index.js
+734 silly gunzTarPerm extractEntry LICENSE.txt
+735 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/package.json
+736 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/package.json
+737 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/package.json
+738 info preinstall lodash._createassigner@3.1.1
+739 info preinstall lodash._baseassign@3.2.0
+740 info preinstall lodash.keys@3.1.2
+741 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/package.json
+742 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/package.json
+743 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/package.json
+744 silly prepareForInstallMany adding lodash._bindcallback@^3.0.0 from lodash._createassigner dependencies
+745 silly prepareForInstallMany adding lodash._isiterateecall@^3.0.0 from lodash._createassigner dependencies
+746 silly prepareForInstallMany adding lodash.restparam@^3.0.0 from lodash._createassigner dependencies
+747 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/package.json
+748 silly prepareForInstallMany adding lodash._basecopy@^3.0.0 from lodash._baseassign dependencies
+749 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/package.json
+750 silly prepareForInstallMany adding lodash._getnative@^3.0.0 from lodash.keys dependencies
+751 silly prepareForInstallMany adding lodash.isarguments@^3.0.0 from lodash.keys dependencies
+752 silly prepareForInstallMany adding lodash.isarray@^3.0.0 from lodash.keys dependencies
+753 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/package.json
+754 silly cache add args [ 'lodash._bindcallback@^3.0.0', null ]
+755 verbose cache add spec lodash._bindcallback@^3.0.0
+756 silly cache add args [ 'lodash._isiterateecall@^3.0.0', null ]
+757 verbose cache add spec lodash._isiterateecall@^3.0.0
+758 silly cache add args [ 'lodash._basecopy@^3.0.0', null ]
+759 verbose cache add spec lodash._basecopy@^3.0.0
+760 silly cache add args [ 'lodash._getnative@^3.0.0', null ]
+761 verbose cache add spec lodash._getnative@^3.0.0
+762 silly cache add args [ 'lodash.isarguments@^3.0.0', null ]
+763 verbose cache add spec lodash.isarguments@^3.0.0
+764 silly cache add parsed spec Result {
+764 silly cache add   raw: 'lodash._bindcallback@^3.0.0',
+764 silly cache add   scope: null,
+764 silly cache add   name: 'lodash._bindcallback',
+764 silly cache add   rawSpec: '^3.0.0',
+764 silly cache add   spec: '>=3.0.0 <4.0.0',
+764 silly cache add   type: 'range' }
+765 silly addNamed lodash._bindcallback@>=3.0.0 <4.0.0
+766 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash._bindcallback
+767 silly addNameRange { name: 'lodash._bindcallback',
+767 silly addNameRange   range: '>=3.0.0 <4.0.0',
+767 silly addNameRange   hasData: false }
+768 silly mapToRegistry name lodash._bindcallback
+769 silly mapToRegistry using default registry
+770 silly mapToRegistry registry https://registry.npmjs.org/
+771 silly mapToRegistry uri https://registry.npmjs.org/lodash._bindcallback
+772 verbose addNameRange registry:https://registry.npmjs.org/lodash._bindcallback not in flight; fetching
+773 silly cache add parsed spec Result {
+773 silly cache add   raw: 'lodash._isiterateecall@^3.0.0',
+773 silly cache add   scope: null,
+773 silly cache add   name: 'lodash._isiterateecall',
+773 silly cache add   rawSpec: '^3.0.0',
+773 silly cache add   spec: '>=3.0.0 <4.0.0',
+773 silly cache add   type: 'range' }
+774 silly addNamed lodash._isiterateecall@>=3.0.0 <4.0.0
+775 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash._isiterateecall
+776 silly addNameRange { name: 'lodash._isiterateecall',
+776 silly addNameRange   range: '>=3.0.0 <4.0.0',
+776 silly addNameRange   hasData: false }
+777 silly mapToRegistry name lodash._isiterateecall
+778 silly mapToRegistry using default registry
+779 silly mapToRegistry registry https://registry.npmjs.org/
+780 silly mapToRegistry uri https://registry.npmjs.org/lodash._isiterateecall
+781 verbose addNameRange registry:https://registry.npmjs.org/lodash._isiterateecall not in flight; fetching
+782 silly cache add parsed spec Result {
+782 silly cache add   raw: 'lodash._basecopy@^3.0.0',
+782 silly cache add   scope: null,
+782 silly cache add   name: 'lodash._basecopy',
+782 silly cache add   rawSpec: '^3.0.0',
+782 silly cache add   spec: '>=3.0.0 <4.0.0',
+782 silly cache add   type: 'range' }
+783 silly addNamed lodash._basecopy@>=3.0.0 <4.0.0
+784 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash._basecopy
+785 silly addNameRange { name: 'lodash._basecopy',
+785 silly addNameRange   range: '>=3.0.0 <4.0.0',
+785 silly addNameRange   hasData: false }
+786 silly mapToRegistry name lodash._basecopy
+787 silly mapToRegistry using default registry
+788 silly mapToRegistry registry https://registry.npmjs.org/
+789 silly mapToRegistry uri https://registry.npmjs.org/lodash._basecopy
+790 verbose addNameRange registry:https://registry.npmjs.org/lodash._basecopy not in flight; fetching
+791 silly cache add parsed spec Result {
+791 silly cache add   raw: 'lodash._getnative@^3.0.0',
+791 silly cache add   scope: null,
+791 silly cache add   name: 'lodash._getnative',
+791 silly cache add   rawSpec: '^3.0.0',
+791 silly cache add   spec: '>=3.0.0 <4.0.0',
+791 silly cache add   type: 'range' }
+792 silly addNamed lodash._getnative@>=3.0.0 <4.0.0
+793 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash._getnative
+794 silly addNameRange { name: 'lodash._getnative',
+794 silly addNameRange   range: '>=3.0.0 <4.0.0',
+794 silly addNameRange   hasData: false }
+795 silly mapToRegistry name lodash._getnative
+796 silly mapToRegistry using default registry
+797 silly mapToRegistry registry https://registry.npmjs.org/
+798 silly mapToRegistry uri https://registry.npmjs.org/lodash._getnative
+799 verbose addNameRange registry:https://registry.npmjs.org/lodash._getnative not in flight; fetching
+800 silly cache add parsed spec Result {
+800 silly cache add   raw: 'lodash.isarguments@^3.0.0',
+800 silly cache add   scope: null,
+800 silly cache add   name: 'lodash.isarguments',
+800 silly cache add   rawSpec: '^3.0.0',
+800 silly cache add   spec: '>=3.0.0 <4.0.0',
+800 silly cache add   type: 'range' }
+801 silly addNamed lodash.isarguments@>=3.0.0 <4.0.0
+802 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash.isarguments
+803 silly addNameRange { name: 'lodash.isarguments',
+803 silly addNameRange   range: '>=3.0.0 <4.0.0',
+803 silly addNameRange   hasData: false }
+804 silly mapToRegistry name lodash.isarguments
+805 silly mapToRegistry using default registry
+806 silly mapToRegistry registry https://registry.npmjs.org/
+807 silly mapToRegistry uri https://registry.npmjs.org/lodash.isarguments
+808 verbose addNameRange registry:https://registry.npmjs.org/lodash.isarguments not in flight; fetching
+809 silly cache add args [ 'lodash.restparam@^3.0.0', null ]
+810 verbose cache add spec lodash.restparam@^3.0.0
+811 silly cache add args [ 'lodash.isarray@^3.0.0', null ]
+812 verbose cache add spec lodash.isarray@^3.0.0
+813 silly cache add parsed spec Result {
+813 silly cache add   raw: 'lodash.restparam@^3.0.0',
+813 silly cache add   scope: null,
+813 silly cache add   name: 'lodash.restparam',
+813 silly cache add   rawSpec: '^3.0.0',
+813 silly cache add   spec: '>=3.0.0 <4.0.0',
+813 silly cache add   type: 'range' }
+814 silly addNamed lodash.restparam@>=3.0.0 <4.0.0
+815 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash.restparam
+816 silly addNameRange { name: 'lodash.restparam',
+816 silly addNameRange   range: '>=3.0.0 <4.0.0',
+816 silly addNameRange   hasData: false }
+817 silly mapToRegistry name lodash.restparam
+818 silly mapToRegistry using default registry
+819 silly mapToRegistry registry https://registry.npmjs.org/
+820 silly mapToRegistry uri https://registry.npmjs.org/lodash.restparam
+821 verbose addNameRange registry:https://registry.npmjs.org/lodash.restparam not in flight; fetching
+822 silly cache add parsed spec Result {
+822 silly cache add   raw: 'lodash.isarray@^3.0.0',
+822 silly cache add   scope: null,
+822 silly cache add   name: 'lodash.isarray',
+822 silly cache add   rawSpec: '^3.0.0',
+822 silly cache add   spec: '>=3.0.0 <4.0.0',
+822 silly cache add   type: 'range' }
+823 silly addNamed lodash.isarray@>=3.0.0 <4.0.0
+824 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for lodash.isarray
+825 silly addNameRange { name: 'lodash.isarray',
+825 silly addNameRange   range: '>=3.0.0 <4.0.0',
+825 silly addNameRange   hasData: false }
+826 silly mapToRegistry name lodash.isarray
+827 silly mapToRegistry using default registry
+828 silly mapToRegistry registry https://registry.npmjs.org/
+829 silly mapToRegistry uri https://registry.npmjs.org/lodash.isarray
+830 verbose addNameRange registry:https://registry.npmjs.org/lodash.isarray not in flight; fetching
+831 verbose request uri https://registry.npmjs.org/lodash._bindcallback
+832 verbose request no auth needed
+833 info attempt registry request try #1 at 12:29:32
+834 verbose etag "4QCDH20MPKBVT8L2LY3OLQAXP"
+835 http request GET https://registry.npmjs.org/lodash._bindcallback
+836 verbose request uri https://registry.npmjs.org/lodash._isiterateecall
+837 verbose request no auth needed
+838 info attempt registry request try #1 at 12:29:32
+839 verbose etag "5T12YB3BV3DYI9G8QK957PADV"
+840 http request GET https://registry.npmjs.org/lodash._isiterateecall
+841 verbose request uri https://registry.npmjs.org/lodash._getnative
+842 verbose request no auth needed
+843 info attempt registry request try #1 at 12:29:32
+844 verbose etag "3SVNLKSR8B1QV2CE7Y4X2OE9J"
+845 http request GET https://registry.npmjs.org/lodash._getnative
+846 verbose request uri https://registry.npmjs.org/lodash._basecopy
+847 verbose request no auth needed
+848 info attempt registry request try #1 at 12:29:32
+849 verbose etag "9W88239PMDC1S83XDN4XKIKI"
+850 http request GET https://registry.npmjs.org/lodash._basecopy
+851 verbose request uri https://registry.npmjs.org/lodash.isarguments
+852 verbose request no auth needed
+853 info attempt registry request try #1 at 12:29:32
+854 verbose etag "7BP9EN0G0JXGZMS3SMYJ5W6B6"
+855 http request GET https://registry.npmjs.org/lodash.isarguments
+856 verbose request uri https://registry.npmjs.org/lodash.restparam
+857 verbose request no auth needed
+858 info attempt registry request try #1 at 12:29:32
+859 verbose etag "1659M1VRENH47KDVLN4NUNM18"
+860 http request GET https://registry.npmjs.org/lodash.restparam
+861 verbose request uri https://registry.npmjs.org/lodash.isarray
+862 verbose request no auth needed
+863 info attempt registry request try #1 at 12:29:32
+864 verbose etag "C8AVM98J3SQHX6MF2JJH3SJIZ"
+865 http request GET https://registry.npmjs.org/lodash.isarray
+866 http 304 https://registry.npmjs.org/lodash._isiterateecall
+867 silly get cb [ 304,
+867 silly get   { date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+867 silly get     via: '1.1 varnish',
+867 silly get     'cache-control': 'max-age=300',
+867 silly get     etag: '"5T12YB3BV3DYI9G8QK957PADV"',
+867 silly get     age: '124',
+867 silly get     connection: 'keep-alive',
+867 silly get     'x-served-by': 'cache-nrt6127-NRT',
+867 silly get     'x-cache': 'HIT',
+867 silly get     'x-cache-hits': '3',
+867 silly get     'x-timer': 'S1453692570.489493,VS0,VE0',
+867 silly get     vary: 'Accept' } ]
+868 verbose etag https://registry.npmjs.org/lodash._isiterateecall from cache
+869 verbose get saving lodash._isiterateecall to /Users/administrator/.npm/registry.npmjs.org/lodash._isiterateecall/.cache.json
+870 http 304 https://registry.npmjs.org/lodash._bindcallback
+871 silly get cb [ 304,
+871 silly get   { date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+871 silly get     via: '1.1 varnish',
+871 silly get     'cache-control': 'max-age=300',
+871 silly get     etag: '"4QCDH20MPKBVT8L2LY3OLQAXP"',
+871 silly get     age: '39',
+871 silly get     connection: 'keep-alive',
+871 silly get     'x-served-by': 'cache-nrt6123-NRT',
+871 silly get     'x-cache': 'HIT',
+871 silly get     'x-cache-hits': '1',
+871 silly get     'x-timer': 'S1453692570.496624,VS0,VE0',
+871 silly get     vary: 'Accept' } ]
+872 verbose etag https://registry.npmjs.org/lodash._bindcallback from cache
+873 verbose get saving lodash._bindcallback to /Users/administrator/.npm/registry.npmjs.org/lodash._bindcallback/.cache.json
+874 http 304 https://registry.npmjs.org/lodash._getnative
+875 silly get cb [ 304,
+875 silly get   { date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+875 silly get     via: '1.1 varnish',
+875 silly get     'cache-control': 'max-age=300',
+875 silly get     etag: '"3SVNLKSR8B1QV2CE7Y4X2OE9J"',
+875 silly get     age: '246',
+875 silly get     connection: 'keep-alive',
+875 silly get     'x-served-by': 'cache-nrt6123-NRT',
+875 silly get     'x-cache': 'HIT',
+875 silly get     'x-cache-hits': '4',
+875 silly get     'x-timer': 'S1453692570.496933,VS0,VE0',
+875 silly get     vary: 'Accept' } ]
+876 verbose etag https://registry.npmjs.org/lodash._getnative from cache
+877 verbose get saving lodash._getnative to /Users/administrator/.npm/registry.npmjs.org/lodash._getnative/.cache.json
+878 http 304 https://registry.npmjs.org/lodash.restparam
+879 silly get cb [ 304,
+879 silly get   { date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+879 silly get     via: '1.1 varnish',
+879 silly get     'cache-control': 'max-age=300',
+879 silly get     etag: '"1659M1VRENH47KDVLN4NUNM18"',
+879 silly get     age: '129',
+879 silly get     connection: 'keep-alive',
+879 silly get     'x-served-by': 'cache-nrt6122-NRT',
+879 silly get     'x-cache': 'HIT',
+879 silly get     'x-cache-hits': '305',
+879 silly get     'x-timer': 'S1453692570.500453,VS0,VE0',
+879 silly get     vary: 'Accept' } ]
+880 verbose etag https://registry.npmjs.org/lodash.restparam from cache
+881 verbose get saving lodash.restparam to /Users/administrator/.npm/registry.npmjs.org/lodash.restparam/.cache.json
+882 http 304 https://registry.npmjs.org/lodash._basecopy
+883 silly get cb [ 304,
+883 silly get   { date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+883 silly get     via: '1.1 varnish',
+883 silly get     'cache-control': 'max-age=300',
+883 silly get     etag: '"9W88239PMDC1S83XDN4XKIKI"',
+883 silly get     age: '85',
+883 silly get     connection: 'keep-alive',
+883 silly get     'x-served-by': 'cache-nrt6123-NRT',
+883 silly get     'x-cache': 'HIT',
+883 silly get     'x-cache-hits': '1',
+883 silly get     'x-timer': 'S1453692570.499436,VS0,VE0',
+883 silly get     vary: 'Accept' } ]
+884 verbose etag https://registry.npmjs.org/lodash._basecopy from cache
+885 verbose get saving lodash._basecopy to /Users/administrator/.npm/registry.npmjs.org/lodash._basecopy/.cache.json
+886 silly addNameRange number 2 { name: 'lodash._getnative',
+886 silly addNameRange   range: '>=3.0.0 <4.0.0',
+886 silly addNameRange   hasData: true }
+887 silly addNameRange versions [ 'lodash._getnative', [ '3.9.0', '3.9.1' ] ]
+888 silly addNamed lodash._getnative@3.9.1
+889 verbose addNamed "3.9.1" is a plain semver version for lodash._getnative
+890 silly addNameRange number 2 { name: 'lodash._bindcallback',
+890 silly addNameRange   range: '>=3.0.0 <4.0.0',
+890 silly addNameRange   hasData: true }
+891 silly addNameRange versions [ 'lodash._bindcallback', [ '3.0.0', '3.0.1' ] ]
+892 silly addNamed lodash._bindcallback@3.0.1
+893 verbose addNamed "3.0.1" is a plain semver version for lodash._bindcallback
+894 silly addNameRange number 2 { name: 'lodash._isiterateecall',
+894 silly addNameRange   range: '>=3.0.0 <4.0.0',
+894 silly addNameRange   hasData: true }
+895 silly addNameRange versions [ 'lodash._isiterateecall',
+895 silly addNameRange   [ '3.0.0',
+895 silly addNameRange     '3.0.1',
+895 silly addNameRange     '3.0.2',
+895 silly addNameRange     '3.0.3',
+895 silly addNameRange     '3.0.4',
+895 silly addNameRange     '3.0.5',
+895 silly addNameRange     '3.0.6',
+895 silly addNameRange     '3.0.7',
+895 silly addNameRange     '3.0.8',
+895 silly addNameRange     '3.0.9' ] ]
+896 silly addNamed lodash._isiterateecall@3.0.9
+897 verbose addNamed "3.0.9" is a plain semver version for lodash._isiterateecall
+898 http 200 https://registry.npmjs.org/lodash.isarguments
+899 silly get cb [ 200,
+899 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+899 silly get     etag: '"AKNON75A7VPXYRIYS2FCC723T"',
+899 silly get     'content-type': 'application/json',
+899 silly get     'cache-control': 'max-age=300',
+899 silly get     'content-length': '22270',
+899 silly get     'accept-ranges': 'bytes',
+899 silly get     date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+899 silly get     via: '1.1 varnish',
+899 silly get     age: '246',
+899 silly get     connection: 'keep-alive',
+899 silly get     'x-served-by': 'cache-nrt6131-NRT',
+899 silly get     'x-cache': 'HIT',
+899 silly get     'x-cache-hits': '8',
+899 silly get     'x-timer': 'S1453692570.498227,VS0,VE0',
+899 silly get     vary: 'Accept' } ]
+900 verbose get saving lodash.isarguments to /Users/administrator/.npm/registry.npmjs.org/lodash.isarguments/.cache.json
+901 http 200 https://registry.npmjs.org/lodash.isarray
+902 silly get cb [ 200,
+902 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+902 silly get     etag: '"DD13L05CGB0BXKMJO8EVTLF3F"',
+902 silly get     'content-type': 'application/json',
+902 silly get     'cache-control': 'max-age=300',
+902 silly get     'content-length': '22297',
+902 silly get     'accept-ranges': 'bytes',
+902 silly get     date: 'Mon, 25 Jan 2016 03:29:30 GMT',
+902 silly get     via: '1.1 varnish',
+902 silly get     age: '246',
+902 silly get     connection: 'keep-alive',
+902 silly get     'x-served-by': 'cache-nrt6129-NRT',
+902 silly get     'x-cache': 'HIT',
+902 silly get     'x-cache-hits': '6',
+902 silly get     'x-timer': 'S1453692570.497248,VS0,VE0',
+902 silly get     vary: 'Accept' } ]
+903 verbose get saving lodash.isarray to /Users/administrator/.npm/registry.npmjs.org/lodash.isarray/.cache.json
+904 silly addNameRange number 2 { name: 'lodash.restparam',
+904 silly addNameRange   range: '>=3.0.0 <4.0.0',
+904 silly addNameRange   hasData: true }
+905 silly addNameRange versions [ 'lodash.restparam', [ '3.6.0', '3.6.1' ] ]
+906 silly addNamed lodash.restparam@3.6.1
+907 verbose addNamed "3.6.1" is a plain semver version for lodash.restparam
+908 silly cache afterAdd lodash._bindcallback@3.0.1
+909 verbose afterAdd /Users/administrator/.npm/lodash._bindcallback/3.0.1/package/package.json not in flight; writing
+910 silly addNameRange number 2 { name: 'lodash._basecopy',
+910 silly addNameRange   range: '>=3.0.0 <4.0.0',
+910 silly addNameRange   hasData: true }
+911 silly addNameRange versions [ 'lodash._basecopy', [ '3.0.0', '3.0.1' ] ]
+912 silly addNamed lodash._basecopy@3.0.1
+913 verbose addNamed "3.0.1" is a plain semver version for lodash._basecopy
+914 silly cache afterAdd lodash._getnative@3.9.1
+915 verbose afterAdd /Users/administrator/.npm/lodash._getnative/3.9.1/package/package.json not in flight; writing
+916 silly cache afterAdd lodash._isiterateecall@3.0.9
+917 verbose afterAdd /Users/administrator/.npm/lodash._isiterateecall/3.0.9/package/package.json not in flight; writing
+918 silly addNameRange number 2 { name: 'lodash.isarguments',
+918 silly addNameRange   range: '>=3.0.0 <4.0.0',
+918 silly addNameRange   hasData: true }
+919 silly addNameRange versions [ 'lodash.isarguments',
+919 silly addNameRange   [ '2.0.0',
+919 silly addNameRange     '2.1.0',
+919 silly addNameRange     '2.2.0',
+919 silly addNameRange     '2.2.1',
+919 silly addNameRange     '2.3.0',
+919 silly addNameRange     '2.4.0',
+919 silly addNameRange     '2.4.1',
+919 silly addNameRange     '3.0.0',
+919 silly addNameRange     '3.0.1',
+919 silly addNameRange     '3.0.2',
+919 silly addNameRange     '3.0.3',
+919 silly addNameRange     '3.0.4',
+919 silly addNameRange     '3.0.5' ] ]
+920 silly addNamed lodash.isarguments@3.0.5
+921 verbose addNamed "3.0.5" is a plain semver version for lodash.isarguments
+922 silly cache afterAdd lodash.restparam@3.6.1
+923 verbose afterAdd /Users/administrator/.npm/lodash.restparam/3.6.1/package/package.json not in flight; writing
+924 silly mapToRegistry name lodash.isarguments
+925 silly mapToRegistry using default registry
+926 silly mapToRegistry registry https://registry.npmjs.org/
+927 silly mapToRegistry uri https://registry.npmjs.org/lodash.isarguments
+928 verbose addRemoteTarball https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.0.5.tgz not in flight; adding
+929 verbose addRemoteTarball [ 'https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.0.5.tgz',
+929 verbose addRemoteTarball   'd5fdffdb83569fd77344aeb4a54abb89482728e5' ]
+930 silly addNameRange number 2 { name: 'lodash.isarray',
+930 silly addNameRange   range: '>=3.0.0 <4.0.0',
+930 silly addNameRange   hasData: true }
+931 silly addNameRange versions [ 'lodash.isarray',
+931 silly addNameRange   [ '2.0.0',
+931 silly addNameRange     '2.1.0',
+931 silly addNameRange     '2.2.0',
+931 silly addNameRange     '2.2.1',
+931 silly addNameRange     '2.3.0',
+931 silly addNameRange     '2.4.0',
+931 silly addNameRange     '2.4.1',
+931 silly addNameRange     '3.0.0',
+931 silly addNameRange     '3.0.1',
+931 silly addNameRange     '3.0.2',
+931 silly addNameRange     '3.0.3',
+931 silly addNameRange     '3.0.4',
+931 silly addNameRange     '4.0.0' ] ]
+932 silly addNamed lodash.isarray@3.0.4
+933 verbose addNamed "3.0.4" is a plain semver version for lodash.isarray
+934 verbose afterAdd /Users/administrator/.npm/lodash._bindcallback/3.0.1/package/package.json written
+935 verbose afterAdd /Users/administrator/.npm/lodash._getnative/3.9.1/package/package.json written
+936 verbose afterAdd /Users/administrator/.npm/lodash._isiterateecall/3.0.9/package/package.json written
+937 silly cache afterAdd lodash._basecopy@3.0.1
+938 verbose afterAdd /Users/administrator/.npm/lodash._basecopy/3.0.1/package/package.json not in flight; writing
+939 info retry fetch attempt 1 at 12:29:32
+940 info attempt registry request try #1 at 12:29:32
+941 http fetch GET https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.0.5.tgz
+942 verbose afterAdd /Users/administrator/.npm/lodash.restparam/3.6.1/package/package.json written
+943 silly install resolved [ { name: 'lodash._bindcallback',
+943 silly install resolved     version: '3.0.1',
+943 silly install resolved     description: 'The modern build of lodash’s internal `bindCallback` as a module.',
+943 silly install resolved     homepage: 'https://lodash.com/',
+943 silly install resolved     icon: 'https://lodash.com/icon.svg',
+943 silly install resolved     license: 'MIT',
+943 silly install resolved     author:
+943 silly install resolved      { name: 'John-David Dalton',
+943 silly install resolved        email: 'john.david.dalton@gmail.com',
+943 silly install resolved        url: 'http://allyoucanleet.com/' },
+943 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+943 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+943 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+943 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+943 silly install resolved     _id: 'lodash._bindcallback@3.0.1',
+943 silly install resolved     _shasum: 'e531c27644cf8b57a99e17ed95b35c748789392e',
+943 silly install resolved     _from: 'lodash._bindcallback@>=3.0.0 <4.0.0',
+943 silly install resolved     _npmVersion: '2.7.6',
+943 silly install resolved     _nodeVersion: '0.12.2',
+943 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+943 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+943 silly install resolved     dist:
+943 silly install resolved      { shasum: 'e531c27644cf8b57a99e17ed95b35c748789392e',
+943 silly install resolved        tarball: 'http://registry.npmjs.org/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz' },
+943 silly install resolved     directories: {},
+943 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz',
+943 silly install resolved     readme: 'ERROR: No README data found!' },
+943 silly install resolved   { name: 'lodash._isiterateecall',
+943 silly install resolved     version: '3.0.9',
+943 silly install resolved     description: 'The modern build of lodash’s internal `isIterateeCall` as a module.',
+943 silly install resolved     homepage: 'https://lodash.com/',
+943 silly install resolved     icon: 'https://lodash.com/icon.svg',
+943 silly install resolved     license: 'MIT',
+943 silly install resolved     author:
+943 silly install resolved      { name: 'John-David Dalton',
+943 silly install resolved        email: 'john.david.dalton@gmail.com',
+943 silly install resolved        url: 'http://allyoucanleet.com/' },
+943 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+943 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+943 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+943 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+943 silly install resolved     _id: 'lodash._isiterateecall@3.0.9',
+943 silly install resolved     _shasum: '5203ad7ba425fae842460e696db9cf3e6aac057c',
+943 silly install resolved     _from: 'lodash._isiterateecall@>=3.0.0 <4.0.0',
+943 silly install resolved     _npmVersion: '2.10.1',
+943 silly install resolved     _nodeVersion: '2.0.2',
+943 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+943 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+943 silly install resolved     dist:
+943 silly install resolved      { shasum: '5203ad7ba425fae842460e696db9cf3e6aac057c',
+943 silly install resolved        tarball: 'http://registry.npmjs.org/lodash._isiterateecall/-/lodash._isiterateecall-3.0.9.tgz' },
+943 silly install resolved     directories: {},
+943 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash._isiterateecall/-/lodash._isiterateecall-3.0.9.tgz',
+943 silly install resolved     readme: 'ERROR: No README data found!' },
+943 silly install resolved   { name: 'lodash.restparam',
+943 silly install resolved     version: '3.6.1',
+943 silly install resolved     description: 'The modern build of lodash’s `_.restParam` as a module.',
+943 silly install resolved     homepage: 'https://lodash.com/',
+943 silly install resolved     icon: 'https://lodash.com/icon.svg',
+943 silly install resolved     license: 'MIT',
+943 silly install resolved     keywords: [ 'lodash', 'lodash-modularized', 'stdlib', 'util' ],
+943 silly install resolved     author:
+943 silly install resolved      { name: 'John-David Dalton',
+943 silly install resolved        email: 'john.david.dalton@gmail.com',
+943 silly install resolved        url: 'http://allyoucanleet.com/' },
+943 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+943 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+943 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+943 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+943 silly install resolved     _id: 'lodash.restparam@3.6.1',
+943 silly install resolved     _shasum: '936a4e309ef330a7645ed4145986c85ae5b20805',
+943 silly install resolved     _from: 'lodash.restparam@>=3.0.0 <4.0.0',
+943 silly install resolved     _npmVersion: '2.7.6',
+943 silly install resolved     _nodeVersion: '0.12.2',
+943 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+943 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+943 silly install resolved     dist:
+943 silly install resolved      { shasum: '936a4e309ef330a7645ed4145986c85ae5b20805',
+943 silly install resolved        tarball: 'http://registry.npmjs.org/lodash.restparam/-/lodash.restparam-3.6.1.tgz' },
+943 silly install resolved     directories: {},
+943 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash.restparam/-/lodash.restparam-3.6.1.tgz',
+943 silly install resolved     readme: 'ERROR: No README data found!' } ]
+944 info install lodash._bindcallback@3.0.1 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+945 info install lodash._isiterateecall@3.0.9 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+946 info install lodash.restparam@3.6.1 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+947 info installOne lodash._bindcallback@3.0.1
+948 verbose installOne of lodash._bindcallback to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner not in flight; installing
+949 info installOne lodash._isiterateecall@3.0.9
+950 verbose installOne of lodash._isiterateecall to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner not in flight; installing
+951 info installOne lodash.restparam@3.6.1
+952 verbose installOne of lodash.restparam to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner not in flight; installing
+953 silly cache afterAdd lodash.isarray@3.0.4
+954 verbose afterAdd /Users/administrator/.npm/lodash.isarray/3.0.4/package/package.json not in flight; writing
+955 verbose lock using /Users/administrator/.npm/_locks/lodash-bindcallback-84c2431c78fa26fe.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+956 verbose lock using /Users/administrator/.npm/_locks/lodash-isiterateecall-a4a6b39ba3e1a65b.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+957 verbose lock using /Users/administrator/.npm/_locks/lodash-restparam-7b4a8c37e40aeea5.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+958 silly install write writing lodash._bindcallback 3.0.1 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+959 silly install write writing lodash._isiterateecall 3.0.9 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+960 silly install write writing lodash.restparam 3.6.1 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+961 verbose afterAdd /Users/administrator/.npm/lodash._basecopy/3.0.1/package/package.json written
+962 silly install resolved [ { name: 'lodash._basecopy',
+962 silly install resolved     version: '3.0.1',
+962 silly install resolved     description: 'The modern build of lodash’s internal `baseCopy` as a module.',
+962 silly install resolved     homepage: 'https://lodash.com/',
+962 silly install resolved     icon: 'https://lodash.com/icon.svg',
+962 silly install resolved     license: 'MIT',
+962 silly install resolved     author:
+962 silly install resolved      { name: 'John-David Dalton',
+962 silly install resolved        email: 'john.david.dalton@gmail.com',
+962 silly install resolved        url: 'http://allyoucanleet.com/' },
+962 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+962 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+962 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+962 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+962 silly install resolved     _id: 'lodash._basecopy@3.0.1',
+962 silly install resolved     _shasum: '8da0e6a876cf344c0ad8a54882111dd3c5c7ca36',
+962 silly install resolved     _from: 'lodash._basecopy@>=3.0.0 <4.0.0',
+962 silly install resolved     _npmVersion: '2.7.6',
+962 silly install resolved     _nodeVersion: '0.12.2',
+962 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+962 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+962 silly install resolved     dist:
+962 silly install resolved      { shasum: '8da0e6a876cf344c0ad8a54882111dd3c5c7ca36',
+962 silly install resolved        tarball: 'http://registry.npmjs.org/lodash._basecopy/-/lodash._basecopy-3.0.1.tgz' },
+962 silly install resolved     directories: {},
+962 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash._basecopy/-/lodash._basecopy-3.0.1.tgz',
+962 silly install resolved     readme: 'ERROR: No README data found!' } ]
+963 info install lodash._basecopy@3.0.1 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+964 info installOne lodash._basecopy@3.0.1
+965 verbose installOne of lodash._basecopy to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign not in flight; installing
+966 verbose afterAdd /Users/administrator/.npm/lodash.isarray/3.0.4/package/package.json written
+967 verbose lock using /Users/administrator/.npm/_locks/lodash-basecopy-7361a05bfef8ac60.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+968 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+969 silly install write writing lodash._basecopy 3.0.1 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+970 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+971 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+972 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback is being purged from base /Users/administrator/Work/tasxs
+973 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+974 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall is being purged from base /Users/administrator/Work/tasxs
+975 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+976 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam is being purged from base /Users/administrator/Work/tasxs
+977 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+978 verbose tar unpack /Users/administrator/.npm/lodash._bindcallback/3.0.1/package.tgz
+979 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+980 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback is being purged
+981 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+982 verbose tar unpack /Users/administrator/.npm/lodash._isiterateecall/3.0.9/package.tgz
+983 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+984 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall is being purged
+985 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+986 verbose tar unpack /Users/administrator/.npm/lodash.restparam/3.6.1/package.tgz
+987 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+988 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam is being purged
+989 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+990 silly gunzTarPerm modes [ '755', '644' ]
+991 silly gunzTarPerm modes [ '755', '644' ]
+992 silly gunzTarPerm modes [ '755', '644' ]
+993 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+994 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy is being purged from base /Users/administrator/Work/tasxs
+995 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+996 verbose tar unpack /Users/administrator/.npm/lodash._basecopy/3.0.1/package.tgz
+997 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+998 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy is being purged
+999 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+1000 http fetch 200 https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.0.5.tgz
+1001 silly gunzTarPerm extractEntry package.json
+1002 silly gunzTarPerm modes [ '755', '644' ]
+1003 silly gunzTarPerm extractEntry package.json
+1004 silly gunzTarPerm extractEntry package.json
+1005 silly fetchAndShaCheck shasum d5fdffdb83569fd77344aeb4a54abb89482728e5
+1006 silly gunzTarPerm extractEntry README.md
+1007 silly gunzTarPerm extractEntry index.js
+1008 verbose addTmpTarball /var/folders/7n/_j9wyl2j44n68bpghtycq6zh0000gn/T/npm-6677-44a02b72/registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.0.5.tgz not in flight; adding
+1009 verbose addTmpTarball already have metadata; skipping unpack for lodash.isarguments@3.0.5
+1010 silly gunzTarPerm extractEntry package.json
+1011 silly gunzTarPerm extractEntry README.md
+1012 silly gunzTarPerm extractEntry index.js
+1013 silly gunzTarPerm extractEntry README.md
+1014 silly gunzTarPerm extractEntry index.js
+1015 silly gunzTarPerm extractEntry README.md
+1016 silly gunzTarPerm extractEntry index.js
+1017 silly gunzTarPerm extractEntry LICENSE.txt
+1018 silly gunzTarPerm extractEntry LICENSE.txt
+1019 silly gunzTarPerm extractEntry LICENSE.txt
+1020 silly cache afterAdd lodash.isarguments@3.0.5
+1021 verbose afterAdd /Users/administrator/.npm/lodash.isarguments/3.0.5/package/package.json not in flight; writing
+1022 silly gunzTarPerm extractEntry LICENSE.txt
+1023 verbose afterAdd /Users/administrator/.npm/lodash.isarguments/3.0.5/package/package.json written
+1024 silly install resolved [ { name: 'lodash._getnative',
+1024 silly install resolved     version: '3.9.1',
+1024 silly install resolved     description: 'The modern build of lodash’s internal `getNative` as a module.',
+1024 silly install resolved     homepage: 'https://lodash.com/',
+1024 silly install resolved     icon: 'https://lodash.com/icon.svg',
+1024 silly install resolved     license: 'MIT',
+1024 silly install resolved     author:
+1024 silly install resolved      { name: 'John-David Dalton',
+1024 silly install resolved        email: 'john.david.dalton@gmail.com',
+1024 silly install resolved        url: 'http://allyoucanleet.com/' },
+1024 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+1024 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+1024 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+1024 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+1024 silly install resolved     _id: 'lodash._getnative@3.9.1',
+1024 silly install resolved     _shasum: '570bc7dede46d61cdcde687d65d3eecbaa3aaff5',
+1024 silly install resolved     _from: 'lodash._getnative@>=3.0.0 <4.0.0',
+1024 silly install resolved     _npmVersion: '2.12.0',
+1024 silly install resolved     _nodeVersion: '0.12.5',
+1024 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+1024 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+1024 silly install resolved     dist:
+1024 silly install resolved      { shasum: '570bc7dede46d61cdcde687d65d3eecbaa3aaff5',
+1024 silly install resolved        tarball: 'http://registry.npmjs.org/lodash._getnative/-/lodash._getnative-3.9.1.tgz' },
+1024 silly install resolved     directories: {},
+1024 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash._getnative/-/lodash._getnative-3.9.1.tgz',
+1024 silly install resolved     readme: 'ERROR: No README data found!' },
+1024 silly install resolved   { name: 'lodash.isarray',
+1024 silly install resolved     version: '3.0.4',
+1024 silly install resolved     description: 'The modern build of lodash’s `_.isArray` as a module.',
+1024 silly install resolved     homepage: 'https://lodash.com/',
+1024 silly install resolved     icon: 'https://lodash.com/icon.svg',
+1024 silly install resolved     license: 'MIT',
+1024 silly install resolved     keywords: [ 'lodash', 'lodash-modularized', 'stdlib', 'util' ],
+1024 silly install resolved     author:
+1024 silly install resolved      { name: 'John-David Dalton',
+1024 silly install resolved        email: 'john.david.dalton@gmail.com',
+1024 silly install resolved        url: 'http://allyoucanleet.com/' },
+1024 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+1024 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+1024 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+1024 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+1024 silly install resolved     _id: 'lodash.isarray@3.0.4',
+1024 silly install resolved     _shasum: '79e4eb88c36a8122af86f844aa9bcd851b5fbb55',
+1024 silly install resolved     _from: 'lodash.isarray@>=3.0.0 <4.0.0',
+1024 silly install resolved     _npmVersion: '2.12.0',
+1024 silly install resolved     _nodeVersion: '0.12.5',
+1024 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+1024 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+1024 silly install resolved     dist:
+1024 silly install resolved      { shasum: '79e4eb88c36a8122af86f844aa9bcd851b5fbb55',
+1024 silly install resolved        tarball: 'http://registry.npmjs.org/lodash.isarray/-/lodash.isarray-3.0.4.tgz' },
+1024 silly install resolved     directories: {},
+1024 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash.isarray/-/lodash.isarray-3.0.4.tgz',
+1024 silly install resolved     readme: 'ERROR: No README data found!' },
+1024 silly install resolved   { name: 'lodash.isarguments',
+1024 silly install resolved     version: '3.0.5',
+1024 silly install resolved     description: 'The lodash method `_.isArguments` exported as a module.',
+1024 silly install resolved     homepage: 'https://lodash.com/',
+1024 silly install resolved     icon: 'https://lodash.com/icon.svg',
+1024 silly install resolved     license: 'MIT',
+1024 silly install resolved     keywords: [ 'lodash', 'lodash-modularized', 'stdlib', 'util', 'isarguments' ],
+1024 silly install resolved     author:
+1024 silly install resolved      { name: 'John-David Dalton',
+1024 silly install resolved        email: 'john.david.dalton@gmail.com',
+1024 silly install resolved        url: 'http://allyoucanleet.com/' },
+1024 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+1024 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/lodash/lodash.git' },
+1024 silly install resolved     scripts: { test: 'echo "See https://travis-ci.org/lodash/lodash-cli for testing details."' },
+1024 silly install resolved     bugs: { url: 'https://github.com/lodash/lodash/issues' },
+1024 silly install resolved     _id: 'lodash.isarguments@3.0.5',
+1024 silly install resolved     _shasum: 'd5fdffdb83569fd77344aeb4a54abb89482728e5',
+1024 silly install resolved     _from: 'lodash.isarguments@>=3.0.0 <4.0.0',
+1024 silly install resolved     _npmVersion: '2.14.15',
+1024 silly install resolved     _nodeVersion: '5.4.0',
+1024 silly install resolved     _npmUser: { name: 'jdalton', email: 'john.david.dalton@gmail.com' },
+1024 silly install resolved     dist:
+1024 silly install resolved      { shasum: 'd5fdffdb83569fd77344aeb4a54abb89482728e5',
+1024 silly install resolved        tarball: 'http://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.0.5.tgz' },
+1024 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+1024 silly install resolved     directories: {},
+1024 silly install resolved     _resolved: 'https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.0.5.tgz' } ]
+1025 info install lodash._getnative@3.9.1 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+1026 info install lodash.isarray@3.0.4 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+1027 info install lodash.isarguments@3.0.5 into /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+1028 info installOne lodash._getnative@3.9.1
+1029 verbose installOne of lodash._getnative to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys not in flight; installing
+1030 info installOne lodash.isarray@3.0.4
+1031 verbose installOne of lodash.isarray to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys not in flight; installing
+1032 info installOne lodash.isarguments@3.0.5
+1033 verbose installOne of lodash.isarguments to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys not in flight; installing
+1034 verbose lock using /Users/administrator/.npm/_locks/lodash-getnative-88a442f6f1ee20c2.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1035 verbose lock using /Users/administrator/.npm/_locks/lodash-isarguments-bf1a6ce6d8ade1a9.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1036 silly install write writing lodash._getnative 3.9.1 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1037 verbose lock using /Users/administrator/.npm/_locks/lodash-isarray-8e1de9de5a7b8cda.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1038 silly install write writing lodash.isarguments 3.0.5 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1039 silly install write writing lodash.isarray 3.0.4 to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1040 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1041 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1042 verbose unbuild node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1043 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative is being purged from base /Users/administrator/Work/tasxs
+1044 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1045 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments is being purged from base /Users/administrator/Work/tasxs
+1046 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1047 verbose tar unpack /Users/administrator/.npm/lodash._getnative/3.9.1/package.tgz
+1048 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1049 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative is being purged
+1050 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1051 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray is being purged from base /Users/administrator/Work/tasxs
+1052 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1053 verbose tar unpack /Users/administrator/.npm/lodash.isarguments/3.0.5/package.tgz
+1054 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1055 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments is being purged
+1056 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1057 silly gunzTarPerm modes [ '755', '644' ]
+1058 verbose tar unpack /Users/administrator/.npm/lodash.isarray/3.0.4/package.tgz
+1059 verbose tar unpacking to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1060 silly gentlyRm /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray is being purged
+1061 verbose gentlyRm don't care about contents; nuking /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1062 silly gunzTarPerm modes [ '755', '644' ]
+1063 silly gunzTarPerm modes [ '755', '644' ]
+1064 silly gunzTarPerm extractEntry package.json
+1065 silly gunzTarPerm extractEntry package.json
+1066 silly gunzTarPerm extractEntry package.json
+1067 silly gunzTarPerm extractEntry README.md
+1068 silly gunzTarPerm extractEntry LICENSE
+1069 silly gunzTarPerm extractEntry README.md
+1070 silly gunzTarPerm extractEntry LICENSE
+1071 silly gunzTarPerm extractEntry README.md
+1072 silly gunzTarPerm extractEntry LICENSE
+1073 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback/package.json
+1074 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam/package.json
+1075 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall/package.json
+1076 info preinstall lodash._bindcallback@3.0.1
+1077 info preinstall lodash.restparam@3.6.1
+1078 silly gunzTarPerm extractEntry index.js
+1079 silly gunzTarPerm extractEntry index.js
+1080 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy/package.json
+1081 info preinstall lodash._isiterateecall@3.0.9
+1082 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback/package.json
+1083 silly gunzTarPerm extractEntry index.js
+1084 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam/package.json
+1085 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall/package.json
+1086 info preinstall lodash._basecopy@3.0.1
+1087 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback/package.json
+1088 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy/package.json
+1089 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam/package.json
+1090 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall/package.json
+1091 silly install resolved []
+1092 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+1093 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+1094 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy/package.json
+1095 silly install resolved []
+1096 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+1097 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+1098 silly install resolved []
+1099 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+1100 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+1101 info linkStuff lodash._bindcallback@3.0.1
+1102 silly linkStuff lodash._bindcallback@3.0.1 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules as its parent node_modules
+1103 info linkStuff lodash.restparam@3.6.1
+1104 silly linkStuff lodash.restparam@3.6.1 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules as its parent node_modules
+1105 silly install resolved []
+1106 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+1107 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+1108 info linkStuff lodash._isiterateecall@3.0.9
+1109 silly linkStuff lodash._isiterateecall@3.0.9 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules as its parent node_modules
+1110 info linkStuff lodash._basecopy@3.0.1
+1111 silly linkStuff lodash._basecopy@3.0.1 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules as its parent node_modules
+1112 verbose linkBins lodash._bindcallback@3.0.1
+1113 verbose linkMans lodash._bindcallback@3.0.1
+1114 verbose rebuildBundles lodash._bindcallback@3.0.1
+1115 verbose linkBins lodash.restparam@3.6.1
+1116 verbose linkMans lodash.restparam@3.6.1
+1117 verbose rebuildBundles lodash.restparam@3.6.1
+1118 info install lodash._bindcallback@3.0.1
+1119 info install lodash.restparam@3.6.1
+1120 verbose linkBins lodash._isiterateecall@3.0.9
+1121 verbose linkMans lodash._isiterateecall@3.0.9
+1122 verbose rebuildBundles lodash._isiterateecall@3.0.9
+1123 info install lodash._isiterateecall@3.0.9
+1124 info postinstall lodash._bindcallback@3.0.1
+1125 info postinstall lodash.restparam@3.6.1
+1126 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments/package.json
+1127 info postinstall lodash._isiterateecall@3.0.9
+1128 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative/package.json
+1129 verbose linkBins lodash._basecopy@3.0.1
+1130 verbose linkMans lodash._basecopy@3.0.1
+1131 verbose rebuildBundles lodash._basecopy@3.0.1
+1132 verbose write writing to /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray/package.json
+1133 verbose unlock done using /Users/administrator/.npm/_locks/lodash-bindcallback-84c2431c78fa26fe.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._bindcallback
+1134 verbose unlock done using /Users/administrator/.npm/_locks/lodash-restparam-7b4a8c37e40aeea5.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash.restparam
+1135 info install lodash._basecopy@3.0.1
+1136 verbose unlock done using /Users/administrator/.npm/_locks/lodash-isiterateecall-a4a6b39ba3e1a65b.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner/node_modules/lodash._isiterateecall
+1137 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+1138 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+1139 info preinstall lodash.isarguments@3.0.5
+1140 info postinstall lodash._basecopy@3.0.1
+1141 info preinstall lodash._getnative@3.9.1
+1142 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments/package.json
+1143 info preinstall lodash.isarray@3.0.4
+1144 verbose unlock done using /Users/administrator/.npm/_locks/lodash-basecopy-7361a05bfef8ac60.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign/node_modules/lodash._basecopy
+1145 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+1146 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+1147 info linkStuff lodash._createassigner@3.1.1
+1148 silly linkStuff lodash._createassigner@3.1.1 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules as its parent node_modules
+1149 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative/package.json
+1150 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray/package.json
+1151 info linkStuff lodash._baseassign@3.2.0
+1152 silly linkStuff lodash._baseassign@3.2.0 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules as its parent node_modules
+1153 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative/package.json
+1154 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray/package.json
+1155 verbose readDependencies loading dependencies from /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments/package.json
+1156 verbose linkBins lodash._createassigner@3.1.1
+1157 verbose linkMans lodash._createassigner@3.1.1
+1158 verbose rebuildBundles lodash._createassigner@3.1.1
+1159 silly install resolved []
+1160 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1161 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1162 silly install resolved []
+1163 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1164 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1165 verbose rebuildBundles [ 'lodash._bindcallback',
+1165 verbose rebuildBundles   'lodash._isiterateecall',
+1165 verbose rebuildBundles   'lodash.restparam' ]
+1166 info install lodash._createassigner@3.1.1
+1167 info postinstall lodash._createassigner@3.1.1
+1168 verbose linkBins lodash._baseassign@3.2.0
+1169 verbose linkMans lodash._baseassign@3.2.0
+1170 verbose rebuildBundles lodash._baseassign@3.2.0
+1171 info linkStuff lodash._getnative@3.9.1
+1172 silly linkStuff lodash._getnative@3.9.1 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules as its parent node_modules
+1173 info linkStuff lodash.isarray@3.0.4
+1174 silly linkStuff lodash.isarray@3.0.4 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules as its parent node_modules
+1175 verbose rebuildBundles [ 'lodash._basecopy' ]
+1176 info install lodash._baseassign@3.2.0
+1177 verbose unlock done using /Users/administrator/.npm/_locks/lodash-createassigner-185c4090ebc53803.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._createassigner
+1178 info postinstall lodash._baseassign@3.2.0
+1179 silly install resolved []
+1180 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1181 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1182 verbose unlock done using /Users/administrator/.npm/_locks/lodash-baseassign-1a63dc1995460a2c.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash._baseassign
+1183 verbose linkBins lodash._getnative@3.9.1
+1184 verbose linkMans lodash._getnative@3.9.1
+1185 verbose rebuildBundles lodash._getnative@3.9.1
+1186 verbose linkBins lodash.isarray@3.0.4
+1187 verbose linkMans lodash.isarray@3.0.4
+1188 verbose rebuildBundles lodash.isarray@3.0.4
+1189 info install lodash._getnative@3.9.1
+1190 info install lodash.isarray@3.0.4
+1191 info linkStuff lodash.isarguments@3.0.5
+1192 silly linkStuff lodash.isarguments@3.0.5 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules as its parent node_modules
+1193 info postinstall lodash._getnative@3.9.1
+1194 info postinstall lodash.isarray@3.0.4
+1195 verbose unlock done using /Users/administrator/.npm/_locks/lodash-getnative-88a442f6f1ee20c2.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash._getnative
+1196 verbose unlock done using /Users/administrator/.npm/_locks/lodash-isarray-8e1de9de5a7b8cda.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarray
+1197 verbose linkBins lodash.isarguments@3.0.5
+1198 verbose linkMans lodash.isarguments@3.0.5
+1199 verbose rebuildBundles lodash.isarguments@3.0.5
+1200 info install lodash.isarguments@3.0.5
+1201 info postinstall lodash.isarguments@3.0.5
+1202 verbose unlock done using /Users/administrator/.npm/_locks/lodash-isarguments-bf1a6ce6d8ade1a9.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys/node_modules/lodash.isarguments
+1203 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+1204 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+1205 info linkStuff lodash.keys@3.1.2
+1206 silly linkStuff lodash.keys@3.1.2 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules as its parent node_modules
+1207 verbose linkBins lodash.keys@3.1.2
+1208 verbose linkMans lodash.keys@3.1.2
+1209 verbose rebuildBundles lodash.keys@3.1.2
+1210 verbose rebuildBundles [ 'lodash._getnative', 'lodash.isarguments', 'lodash.isarray' ]
+1211 info install lodash.keys@3.1.2
+1212 info postinstall lodash.keys@3.1.2
+1213 verbose unlock done using /Users/administrator/.npm/_locks/lodash-keys-348dd57e3df71a61.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign/node_modules/lodash.keys
+1214 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+1215 info build /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+1216 info linkStuff lodash.assign@3.2.0
+1217 silly linkStuff lodash.assign@3.2.0 has /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules as its parent node_modules
+1218 verbose linkBins lodash.assign@3.2.0
+1219 verbose linkMans lodash.assign@3.2.0
+1220 verbose rebuildBundles lodash.assign@3.2.0
+1221 verbose rebuildBundles [ 'lodash._baseassign', 'lodash._createassigner', 'lodash.keys' ]
+1222 info install lodash.assign@3.2.0
+1223 info postinstall lodash.assign@3.2.0
+1224 verbose unlock done using /Users/administrator/.npm/_locks/lodash-assign-7690dd5a7bc5c167.lock for /Users/administrator/Work/tasxs/node_modules/react-modal/node_modules/lodash.assign
+1225 verbose about to build /Users/administrator/Work/tasxs/node_modules/react-modal
+1226 info build /Users/administrator/Work/tasxs/node_modules/react-modal
+1227 info linkStuff react-modal@0.6.1
+1228 silly linkStuff react-modal@0.6.1 has /Users/administrator/Work/tasxs/node_modules as its parent node_modules
+1229 verbose linkBins react-modal@0.6.1
+1230 verbose linkMans react-modal@0.6.1
+1231 verbose rebuildBundles react-modal@0.6.1
+1232 verbose rebuildBundles [ 'element-class', 'exenv', 'lodash.assign' ]
+1233 info install react-modal@0.6.1
+1234 info postinstall react-modal@0.6.1
+1235 verbose unlock done using /Users/administrator/.npm/_locks/react-modal-7f8ea0c3aa5c8501.lock for /Users/administrator/Work/tasxs/node_modules/react-modal
+1236 info build /Users/administrator/Work/tasxs
+1237 info linkStuff tasxs@0.0.0
+1238 silly linkStuff tasxs@0.0.0 has /Users/administrator/Work as its parent node_modules
+1239 verbose linkBins tasxs@0.0.0
+1240 verbose linkMans tasxs@0.0.0
+1241 verbose rebuildBundles tasxs@0.0.0
+1242 verbose rebuildBundles [ '.bin',
+1242 verbose rebuildBundles   'babel',
+1242 verbose rebuildBundles   'babel-plugin-transform-react-jsx',
+1242 verbose rebuildBundles   'babel-register',
+1242 verbose rebuildBundles   'electron-debug',
+1242 verbose rebuildBundles   'electron-packager',
+1242 verbose rebuildBundles   'electron-prebuilt',
+1242 verbose rebuildBundles   'install',
+1242 verbose rebuildBundles   'npm',
+1242 verbose rebuildBundles   'photon',
+1242 verbose rebuildBundles   'react',
+1242 verbose rebuildBundles   'react-dom',
+1242 verbose rebuildBundles   'react-intl',
+1242 verbose rebuildBundles   'react-modal',
+1242 verbose rebuildBundles   'xo' ]
+1243 verbose rebuild bundle /Users/administrator/Work/tasxs/node_modules/react-intl
+1244 info build /Users/administrator/Work/tasxs/node_modules/react-intl
+1245 info preinstall react-intl@1.2.2
+1246 info linkStuff react-intl@1.2.2
+1247 silly linkStuff react-intl@1.2.2 has /Users/administrator/Work/tasxs/node_modules as its parent node_modules
+1248 verbose linkBins react-intl@1.2.2
+1249 verbose linkMans react-intl@1.2.2
+1250 verbose rebuildBundles react-intl@1.2.2
+1251 verbose rebuildBundles [ 'intl-format-cache',
+1251 verbose rebuildBundles   'intl-messageformat',
+1251 verbose rebuildBundles   'intl-relativeformat',
+1251 verbose rebuildBundles   'react' ]
+1252 info install react-intl@1.2.2
+1253 info postinstall react-intl@1.2.2
+1254 info install tasxs@0.0.0
+1255 info postinstall tasxs@0.0.0
+1256 info prepublish tasxs@0.0.0
+1257 verbose validateInstall loading /Users/administrator/Work/tasxs/package.json for validation
+1258 verbose stack Error: The package react@0.14.3 does not satisfy its siblings' peerDependencies requirements!
+1258 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+1258 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+1258 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+1258 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+1258 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+1258 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+1258 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+1258 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+1258 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+1258 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+1259 verbose cwd /Users/administrator/Work/tasxs
+1260 error Darwin 15.2.0
+1261 error argv "/usr/local/Cellar/node/4.1.1/bin/node" "/usr/local/bin/npm" "install"
+1262 error node v4.1.1
+1263 error npm  v2.14.4
+1264 error code EPEERINVALID
+1265 error peerinvalid The package react@0.14.3 does not satisfy its siblings' peerDependencies requirements!
+1265 error peerinvalid Peer react-dom@0.14.6 wants react@^0.14.6
+1265 error peerinvalid Peer react-modal@0.6.1 wants react@^0.14.0
+1266 verbose exit [ 1, true ]

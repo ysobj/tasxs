@@ -124,15 +124,13 @@ var DateBar = React.createClass({
 });
 var Tasks = React.createClass({
   getInitialState: function(e){
-    return {targetDate: today, modalIsOpen: false};
+    return {targetDate: today};
   },
   handleChangeTargetDate: function(e){
     this.setState({targetDate: e})
   },
   render: function() {
     return <section className="main">
-      <button onClick={this.openModal}>Open Modal</button>
-
             <DateBar targetDate={this.state.targetDate} onChangeTargetDate={this.handleChangeTargetDate}/>
             <TaskList targetDate={this.state.targetDate} />
       </section>;
