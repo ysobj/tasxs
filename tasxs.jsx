@@ -98,6 +98,10 @@ var DateBar = React.createClass({
     var before = this.addDay(this.props.targetDate, -1);
     var after = this.addDay(this.props.targetDate);
     return <div className="tab-group">
+        <div className="tab-item tab-item-fixed" onClick={this.props.onChangeToRepeatMode}>
+          <span></span>
+          $$
+        </div>
         <div className="tab-item tab-item-fixed" onClick={this.prevWeek}>
           <span></span>
           &lt;&lt;
@@ -124,15 +128,45 @@ var DateBar = React.createClass({
 });
 var Tasks = React.createClass({
   getInitialState: function(e){
-    return {targetDate: today};
+    return {
+      targetDate: today,
+      mode: 'daily'
+    };
   },
   handleChangeTargetDate: function(e){
-    this.setState({targetDate: e})
+    this.setState({
+      targetDate: e,
+      mode: 'daily'
+    })
+  },
+  handleChangeToRepeatMode: function(){
+    this.setState({mode: 'repeat'});
   },
   render: function() {
+    if(this.state.mode === 'repeat'){
+      return this.renderRepeatTask();
+    }else{
+      return this.renderDailyTask();
+    }
+  },
+  renderDailyTask: function(){
     return <section className="main">
-            <DateBar targetDate={this.state.targetDate} onChangeTargetDate={this.handleChangeTargetDate}/>
+            <DateBar
+              targetDate={this.state.targetDate}
+              onChangeTargetDate={this.handleChangeTargetDate}
+              onChangeToRepeatMode={this.handleChangeToRepeatMode}
+            />
             <TaskList targetDate={this.state.targetDate} />
+      </section>;
+  },
+  renderRepeatTask: function(){
+    return <section className="main">
+            <DateBar
+              targetDate={this.state.targetDate}
+              onChangeTargetDate={this.handleChangeTargetDate}
+              onChangeToRepeatMode={this.handleChangeToRepeatMode}
+            />
+           <div>repeat!repeat!repeat!</div>
       </section>;
   }
 });
