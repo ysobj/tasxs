@@ -19,7 +19,7 @@ var TaskList = React.createClass({
   getInitialState: function(){
     return {
       taskList : tasklogic.readFromFile(this.props.targetDate),
-      isOpen: false
+      modalIsOpen: false
     };
   },
   componentWillReceiveProps: function(nextProps){
