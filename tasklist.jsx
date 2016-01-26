@@ -18,16 +18,16 @@ const customStyles = {
 var TaskList = React.createClass({
   getInitialState: function(){
     return {
-      taskList : tasklogic.readFromFile(this.props.targetDate),
+      taskList : tasklogic.readFromFile(this.props.targetDate,this.props.mode),
       modalIsOpen: false
     };
   },
   componentWillReceiveProps: function(nextProps){
     if(this.props.targetDate){
-      tasklogic.writeToFile(this.props.targetDate, this.state.taskList);
+      tasklogic.writeToFile(this.props.targetDate, this.state.taskList, this.props.mode);
     }
     this.setState({
-      taskList : tasklogic.readFromFile(nextProps.targetDate)
+      taskList : tasklogic.readFromFile(nextProps.targetDate, this.props.mode)
     });
   },
   handleOnChangeFocus: function(e){
@@ -69,7 +69,7 @@ var TaskList = React.createClass({
     var taskList = this.state.taskList.map(function(data,i){
       return (data.taskId == e.taskId) ? e : data;
     });
-    tasklogic.writeToFile(this.props.targetDate, this.state.taskList);
+    tasklogic.writeToFile(this.props.targetDate, this.state.taskList, this.props.mode);
     this.setState({taskList: taskList});
   },
   calcElapsed: function(){
@@ -99,7 +99,16 @@ var TaskList = React.createClass({
       taskList: taskList
     });
   },
-  render: function() {
+  render: function(){
+    if(this.props.mode === 'repeat'){
+      return this.renderRepeatTask();
+    }
+    return this.renderDailyTask();
+  },
+  renderRepeatTask: function(){
+    return <div>repeat!</div>;
+  },
+  renderDailyTask: function() {
     var startingPoint,label;
     if(this.props.targetDate.getTime() === today.getTime()){
       startingPoint = new Date();

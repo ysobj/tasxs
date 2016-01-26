@@ -20,31 +20,14 @@ var Tasks = React.createClass({
   handleChangeToRepeatMode: function(){
     this.setState({mode: 'repeat'});
   },
-  render: function() {
-    if(this.state.mode === 'repeat'){
-      return this.renderRepeatTask();
-    }else{
-      return this.renderDailyTask();
-    }
-  },
-  renderDailyTask: function(){
+  render: function(){
     return <section className="main">
             <DateBar
               targetDate={this.state.targetDate}
               onChangeTargetDate={this.handleChangeTargetDate}
               onChangeToRepeatMode={this.handleChangeToRepeatMode}
             />
-            <TaskList targetDate={this.state.targetDate} />
-      </section>;
-  },
-  renderRepeatTask: function(){
-    return <section className="main">
-            <DateBar
-              targetDate={this.state.targetDate}
-              onChangeTargetDate={this.handleChangeTargetDate}
-              onChangeToRepeatMode={this.handleChangeToRepeatMode}
-            />
-           <div>repeat!repeat!repeat!</div>
+            <TaskList targetDate={this.state.targetDate} mode={this.state.mode}/>
       </section>;
   }
 });
