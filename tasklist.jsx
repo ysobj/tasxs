@@ -138,14 +138,8 @@ var TaskList = React.createClass({
           />
           );
     };
-    return <div>
-        <div>
-          <span>{label}</span><span>{utils.formatTime(startingPoint)}</span>
-          <span>finish</span><span>{finishStr}</span>
-        </div>
-        <table>
-          <thead>
-            <tr>
+    var createTaskHeader = function(mode){
+      return (<tr>
               <th></th>
               <th>task</th>
               <th>type</th>
@@ -153,7 +147,21 @@ var TaskList = React.createClass({
               <th>actual</th>
               <th>from</th>
               <th>to</th>
-            </tr>
+            </tr>);
+    };
+    var createInformationHeader = function(mode){
+      return (
+        <div>
+          <span>{label}</span><span>{utils.formatTime(startingPoint)}</span>
+          <span>finish</span><span>{finishStr}</span>
+        </div>
+      );
+    };
+    return <div>
+        {createInformationHeader()}
+        <table>
+          <thead>
+            {createTaskHeader()}
           </thead>
           <tbody>
             {this.state.taskList.map(createTask,this)}
