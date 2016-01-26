@@ -1,9 +1,9 @@
 "use strict";
 var React = require("react");
 var Modal = require('react-modal');
-var fs = require("fs");
 var utils = require('./utils');
 var Task = require('./task');
+var tasklogic = require('./tasklogic');
 var today = utils.getMidnight(new Date());
 const customStyles = {
   content : {
@@ -18,43 +18,17 @@ const customStyles = {
 var TaskList = React.createClass({
   getInitialState: function(){
     return {
-      taskList : this.getTaskListFromFile(this.props.targetDate),
+      taskList : tasklogic.readFromFile(this.props.targetDate),
       isOpen: false
     };
   },
   componentWillReceiveProps: function(nextProps){
     if(this.props.targetDate){
-      this.writeToFile();
+      tasklogic.writeToFile(this.props.targetDate, this.state.taskList);
     }
     this.setState({
-      taskList : this.getTaskListFromFile(nextProps.targetDate)
+      taskList : tasklogic.readFromFile(nextProps.targetDate)
     });
-  },
-  writeToFile: function(){
-    var fileName = this.createFileName(this.props.targetDate);
-    if(this.state.taskList.length === 0){
-      fs.access(fileName, fs.F_OK, function(err){
-        if(!err){
-          fs.unlink(fileName,function(){});
-        }
-      });
-    }else{
-      fs.writeFileSync(fileName,JSON.stringify(this.state.taskList),'utf-8');
-    }
-  },
-  getTaskListFromFile: function(date){
-    var taskList;
-    try{
-      taskList = JSON.parse(fs.readFileSync(this.createFileName(date),'utf-8'));
-    }catch(e){
-      taskList = [];
-    }
-    taskList.forEach(function(e){
-      e.fromDate = e.fromDate != null ? new Date(e.fromDate) : null;
-      e.toDate = e.toDate != null ? new Date(e.toDate) : null;
-      e.focused = false;
-    });
-    return taskList;
   },
   handleOnChangeFocus: function(e){
     var taskList = this.state.taskList.map(function(data,i){
@@ -95,16 +69,8 @@ var TaskList = React.createClass({
     var taskList = this.state.taskList.map(function(data,i){
       return (data.taskId == e.taskId) ? e : data;
     });
-    this.writeToFile();
+    tasklogic.writeToFile(this.props.targetDate, this.state.taskList);
     this.setState({taskList: taskList});
-  },
-  createFileName: function(date){
-     var fileName = 'taskList';
-     fileName += date.getFullYear();
-     fileName += ("0" + (date.getMonth() + 1)).slice(-2);
-     fileName += ("0" + date.getDate()).slice(-2);
-     fileName += ".json";
-     return fileName;
   },
   calcElapsed: function(){
     var elapsed = 0;
