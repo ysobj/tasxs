@@ -58,6 +58,7 @@ var TaskList = React.createClass({
       }
     });
     taskId++;
+    taskId += parseInt(utils.getDateString(this.props.targetDate),10) * 1000;
     taskList.push({
       taskId: taskId,
       type: 'テスト',

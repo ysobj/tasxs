@@ -38,9 +38,7 @@ var tasklogic = {
        return 'repeatTask.json';
      }
      var fileName = 'dailyTask';
-     fileName += date.getFullYear();
-     fileName += ("0" + (date.getMonth() + 1)).slice(-2);
-     fileName += ("0" + date.getDate()).slice(-2);
+     fileName += utils.getDateString(date);
      fileName += ".json";
      return fileName;
   }

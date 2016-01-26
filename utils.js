@@ -33,6 +33,12 @@ var utils = {
       return null;
     }
     return tmp;
+  },
+  getDateString: function(date){
+     var fileName = date.getFullYear();
+     fileName += ("0" + (date.getMonth() + 1)).slice(-2);
+     fileName += ("0" + date.getDate()).slice(-2);
+     return fileName;
   }
 };
 module.exports = utils;
