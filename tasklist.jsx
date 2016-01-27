@@ -51,14 +51,13 @@ var TaskList = React.createClass({
   },
   handleCreate: function(e){
     var taskList = this.state.taskList;
-    var taskId = 0;
+    var taskId = parseInt(utils.getDateString(this.props.targetDate),10) * 1000;
     taskList.forEach(function(e){
       if(taskId < e.taskId){
         taskId = e.taskId;
       }
     });
     taskId++;
-    taskId += parseInt(utils.getDateString(this.props.targetDate),10) * 1000;
     taskList.push({
       taskId: taskId,
       type: 'テスト',
