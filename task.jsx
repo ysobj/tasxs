@@ -42,17 +42,10 @@ var Task = React.createClass({
   handleOnClick: function(){
     this.props.onChangeFocus(this);
   },
-  handleChangeDesc: function(e){
-    this.setState({desc: e.target.value});
-  },
-  handleChangeFromDateStr: function(e){
-    this.setState({fromDateStr: e.target.value});
-  },
-  handleChangeToDateStr: function(e){
-    this.setState({toDateStr: e.target.value});
-  },
-  handleChangeEstimate: function(e){
-    this.setState({estimate: e.target.value})
+  handleChange: function(e){
+    var obj = {};
+    obj[e.target.name] = e.target.value;
+    this.setState(obj);
   },
   calcElapsed: function(fromDate,toDate){
     if(fromDate == null || toDate == null){
@@ -96,12 +89,12 @@ var Task = React.createClass({
     return(
           <tr onContextMenu={this.handleOnContextMenu}>
             <td><input type="checkbox" disabled/></td>
-            <td><input className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChangeDesc} onBlur={this.handleOnBlur}/></td>
+            <td><input name="desc" className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChange} onBlur={this.handleOnBlur}/></td>
             <td><select><option>作業</option></select></td>
-            <td><input className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChangeEstimate}/></td>
+            <td><input name="estimate" className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChange}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
-            <td><input className="timeInput" ref="fromDateInput" type="text" value={data.fromDateStr} onChange={this.handleChangeFromDateStr} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
-            <td><input className="timeInput" ref="toDateInput" type="text" value={data.toDateStr} onChange={this.handleChangeToDateStr} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
+            <td><input name="fromDateStr" className="timeInput" ref="fromDateInput" type="text" value={data.fromDateStr} onChange={this.handleChange} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
+            <td><input name="toDateStr" className="timeInput" ref="toDateInput" type="text" value={data.toDateStr} onChange={this.handleChange} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
           </tr>
      );
   },
