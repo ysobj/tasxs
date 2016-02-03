@@ -2,6 +2,29 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 var utils = require('./utils');
+var DragSource = require('react-dnd').DragSource;
+var taskSource = {
+  beginDrag: function(props){
+    var ret = {
+      taskId: props.taskId
+    };
+    console.log('beginDrag',ret);
+    return ret;
+  },
+  endDrag: function(props, monitor, component){
+    var item = monitor.getItem();
+    var dropResult = monitor.getDropResult();
+    console.log('endDrag', item);
+    console.log('endDrag', dropResult);
+  }
+};
+function collect(connect, monitor){
+  return {
+    connectDragSource: connect.dragSource(),
+    connectDragPreview: connect.dragPreview(),
+    isDragging: monitor.isDragging()
+  };
+}
 var Task = React.createClass({
   componentWillReceiveProps: function(nextProps){
     var fromDate = nextProps.fromDate;
@@ -86,9 +109,10 @@ var Task = React.createClass({
     this.props.onContextMenu(this.state.taskId);
   },
   renderFocused : function(data,elapsed,actualClassName){
+    var connectDragSource = this.props.connectDragSource;
     return(
           <tr onContextMenu={this.handleOnContextMenu}>
-            <td><input type="checkbox" disabled/></td>
+            <td>{connectDragSource(<input type="checkbox" disabled/>)}</td>
             <td><input name="desc" className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChange} onBlur={this.handleOnBlur}/></td>
             <td><select><option>作業</option></select></td>
             <td><input name="estimate" className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChange}/></td>
@@ -99,9 +123,15 @@ var Task = React.createClass({
      );
   },
   renderUnfocused: function(data,elapsed,actualClassName){
+    var connectDragSource = this.props.connectDragSource;
+    var isDragging = this.props.isDragging;
+    var rowClassName = '';
+    if(isDragging){
+      rowClassName = 'inactive';
+    }
     return (
-          <tr onClick={this.handleOnClick}>
-            <td><input type="checkbox" disabled/></td>
+          <tr className={rowClassName} onClick={this.handleOnClick}>
+            <td>{connectDragSource(<input type="checkbox" disabled/>)}</td>
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>
@@ -130,17 +160,23 @@ var Task = React.createClass({
     }
   },
   render : function() {
+    var isDragging = this.props.isDragging;
+    var connectDragPreview = this.props.connectDragPreview;
+    console.log('connectDragPreview', connectDragPreview);
+    console.log('isDragging', isDragging);
     var data = this.state;
     var elapsed = this.calcElapsed(data.fromDate,data.toDate);
     var actualClassName = '' ;
     if(data.estimate < elapsed){
       actualClassName = 'overtime';
     }
+    var rendered;
     if(data.focused){
-      return this.renderFocused(data,elapsed,actualClassName);
+      rendered = this.renderFocused(data,elapsed,actualClassName);
     }else{
-      return this.renderUnfocused(data,elapsed,actualClassName);
+      rendered = this.renderUnfocused(data,elapsed,actualClassName);
     }
+    return connectDragPreview(rendered);
   }
 });
-module.exports = Task;
+module.exports = DragSource('task', taskSource, collect)(Task);

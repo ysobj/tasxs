@@ -4,6 +4,8 @@ var Modal = require('react-modal');
 var utils = require('./utils');
 var Task = require('./task');
 var tasklogic = require('./tasklogic');
+var DragDropContext = require('react-dnd').DragDropContext;
+var HTML5Backend = require('react-dnd-html5-backend');
 var today = utils.getMidnight(new Date());
 const customStyles = {
   content : {
@@ -179,4 +181,4 @@ var TaskList = React.createClass({
       </div>;
   }
 });
-module.exports = TaskList;
+module.exports = DragDropContext(HTML5Backend)(TaskList);
