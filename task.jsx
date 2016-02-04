@@ -109,10 +109,9 @@ var Task = React.createClass({
     this.props.onContextMenu(this.state.taskId);
   },
   renderFocused : function(data,elapsed,actualClassName){
-    var connectDragSource = this.props.connectDragSource;
     return(
           <tr onContextMenu={this.handleOnContextMenu}>
-            <td>{connectDragSource(<input type="checkbox" disabled/>)}</td>
+            <td><input type="checkbox" disabled/></td>
             <td><input name="desc" className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChange} onBlur={this.handleOnBlur}/></td>
             <td><select><option>作業</option></select></td>
             <td><input name="estimate" className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChange}/></td>
@@ -130,8 +129,8 @@ var Task = React.createClass({
       rowClassName = 'inactive';
     }
     return (
-          <tr className={rowClassName} onClick={this.handleOnClick}>
-            <td>{connectDragSource(<input type="checkbox" disabled/>)}</td>
+          <tr className={rowClassName} onDoubleClick={this.handleOnClick}>
+            <td><input type="checkbox" disabled/></td>
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>
@@ -159,9 +158,10 @@ var Task = React.createClass({
       }
     }
   },
-  render : function() {
+  render: function() {
     var isDragging = this.props.isDragging;
     var connectDragPreview = this.props.connectDragPreview;
+    var connectDragSource = this.props.connectDragSource;
     console.log('connectDragPreview', connectDragPreview);
     console.log('isDragging', isDragging);
     var data = this.state;
@@ -176,7 +176,7 @@ var Task = React.createClass({
     }else{
       rendered = this.renderUnfocused(data,elapsed,actualClassName);
     }
-    return connectDragPreview(rendered);
+    return connectDragPreview(connectDragSource(rendered));
   }
 });
 module.exports = DragSource('task', taskSource, collect)(Task);
