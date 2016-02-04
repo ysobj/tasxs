@@ -3,26 +3,39 @@ var React = require("react");
 var ReactDOM = require("react-dom");
 var utils = require('./utils');
 var DragSource = require('react-dnd').DragSource;
+var DropTarget = require('react-dnd').DropTarget;
 var taskSource = {
   beginDrag: function(props){
     var ret = {
       taskId: props.taskId
     };
-    console.log('beginDrag',ret);
     return ret;
   },
   endDrag: function(props, monitor, component){
     var item = monitor.getItem();
     var dropResult = monitor.getDropResult();
-    console.log('endDrag', item);
-    console.log('endDrag', dropResult);
   }
 };
-function collect(connect, monitor){
+var taskTarget = {
+  canDrop: function(props){
+    return true;
+  },
+  drop: function(props){
+    console.log('dropped!',props);
+  },
+};
+function collectSource(connect, monitor){
   return {
     connectDragSource: connect.dragSource(),
     connectDragPreview: connect.dragPreview(),
     isDragging: monitor.isDragging()
+  };
+}
+function collectTarget(connect, monitor){
+  return {
+    connectDropTarget: connect.dropTarget(),
+    isOver: monitor.isOver(),
+    canDrop: monitor.canDrop()
   };
 }
 var Task = React.createClass({
@@ -162,8 +175,7 @@ var Task = React.createClass({
     var isDragging = this.props.isDragging;
     var connectDragPreview = this.props.connectDragPreview;
     var connectDragSource = this.props.connectDragSource;
-    console.log('connectDragPreview', connectDragPreview);
-    console.log('isDragging', isDragging);
+    var connectDropTarget = this.props.connectDropTarget;
     var data = this.state;
     var elapsed = this.calcElapsed(data.fromDate,data.toDate);
     var actualClassName = '' ;
@@ -176,7 +188,8 @@ var Task = React.createClass({
     }else{
       rendered = this.renderUnfocused(data,elapsed,actualClassName);
     }
-    return connectDragPreview(connectDragSource(rendered));
+    return connectDragPreview(connectDropTarget(connectDragSource(rendered)));
   }
 });
-module.exports = DragSource('task', taskSource, collect)(Task);
+Task = DropTarget('task', taskTarget, collectTarget)(Task);
+module.exports = DragSource('task', taskSource, collectSource)(Task);
