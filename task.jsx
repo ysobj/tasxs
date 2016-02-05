@@ -14,14 +14,15 @@ var taskSource = {
   endDrag: function(props, monitor, component){
     var item = monitor.getItem();
     var dropResult = monitor.getDropResult();
+    console.log('endDrag',dropResult);
   }
 };
 var taskTarget = {
   canDrop: function(props){
     return true;
   },
-  drop: function(props){
-    console.log('dropped!',props);
+  drop: function(props,monitor,component){
+    props.onChangeOrder(props, monitor.getItem());
   },
 };
 function collectSource(connect, monitor){

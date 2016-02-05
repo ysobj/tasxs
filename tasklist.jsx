@@ -74,6 +74,18 @@ var TaskList = React.createClass({
     tasklogic.writeToFile(this.props.targetDate, this.state.taskList, this.props.mode);
     this.setState({taskList: taskList});
   },
+  handleChangeOrder: function(base, obj){
+    var taskList = this.state.taskList;
+    var index = taskList.findIndex(function(cmp){
+      return cmp.taskId == obj.taskId;
+    });
+    var tmp = taskList.splice(index);
+    index = taskList.findIndex(function(cmp){
+      return cmp.taskId == base.taskId;
+    });
+    taskList.splice(index,0,tmp);
+    this.setState({taskList: taskList});
+  },
   calcElapsed: function(){
     var elapsed = 0;
     this.state.taskList.forEach(function(e){
@@ -127,6 +139,7 @@ var TaskList = React.createClass({
                 onUpdateTimeFrom={this.handleOnUpdateTimeFrom.bind(this,i)}
                 onUpdate={this.handleUpdate}
                 onContextMenu={this.openModal}
+                onChangeOrder={this.handleChangeOrder}
             order={i}
             key={data.taskId}
             taskId={data.taskId}
