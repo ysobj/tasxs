@@ -79,11 +79,15 @@ var TaskList = React.createClass({
     var index = taskList.findIndex(function(cmp){
       return cmp.taskId == obj.taskId;
     });
-    var tmp = taskList.splice(index);
+    var tmp = taskList.splice(index,1);
     index = taskList.findIndex(function(cmp){
       return cmp.taskId == base.taskId;
     });
-    taskList.splice(index,0,tmp);
+    taskList.splice(index,0,tmp[0]);
+    taskList.forEach(function(currentValue,index){
+      currentValue['order'] = index;
+    });
+    tasklogic.writeToFile(this.props.targetDate, taskList, this.props.mode);
     this.setState({taskList: taskList});
   },
   calcElapsed: function(){
