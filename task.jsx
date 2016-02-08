@@ -14,7 +14,6 @@ var taskSource = {
   endDrag: function(props, monitor, component){
     var item = monitor.getItem();
     var dropResult = monitor.getDropResult();
-    console.log('endDrag',dropResult);
   }
 };
 var taskTarget = {
