@@ -29,7 +29,7 @@ var TaskList = React.createClass({
       tasklogic.writeToFile(this.props.targetDate, this.state.taskList, this.props.mode);
     }
     this.setState({
-      taskList : tasklogic.readFromFile(nextProps.targetDate, this.props.mode)
+      taskList : tasklogic.readFromFile(nextProps.targetDate, nextProps.mode)
     });
   },
   handleOnChangeFocus: function(e){
@@ -124,7 +124,7 @@ var TaskList = React.createClass({
     return this.renderDailyTask();
   },
   renderRepeatTask: function(){
-    return <div>repeat!</div>;
+    return this.renderDailyTask();
   },
   renderDailyTask: function() {
     var startingPoint,label;

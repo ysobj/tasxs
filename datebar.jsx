@@ -31,7 +31,10 @@ var DateBar = React.createClass({
       this.addDay(this.props.targetDate,-7)
     );
   },
-  formatDate: function(date){
+  formatLabel: function(date,mode){
+     if(mode === 'repeat'){
+       return "Repeat";
+     }
      if(date.getTime() === today.getTime()){
        return "Today";
      }
@@ -49,6 +52,7 @@ var DateBar = React.createClass({
   render: function(){
     var before = this.addDay(this.props.targetDate, -1);
     var after = this.addDay(this.props.targetDate);
+    var mode = this.props.mode;
     return <div className="tab-group">
         <div className="tab-item tab-item-fixed" onClick={this.props.onChangeToRepeatMode}>
           <span></span>
@@ -60,15 +64,15 @@ var DateBar = React.createClass({
         </div>
         <div className="tab-item" onClick={this.prev}>
           <span></span>
-          {this.formatDate(before)}
+          {this.formatLabel(before)}
         </div>
         <div className="tab-item active">
           <span></span>
-          {this.formatDate(this.props.targetDate)}
+          {this.formatLabel(this.props.targetDate,mode)}
         </div>
         <div className="tab-item" onClick={this.next}>
           <span></span>
-          {this.formatDate(after)}
+          {this.formatLabel(after)}
         </div>
         <div className="tab-item tab-item-fixed" onClick={this.nextWeek}>
           <span></span>

@@ -24,6 +24,7 @@ var Tasks = React.createClass({
     return <section className="main">
             <DateBar
               targetDate={this.state.targetDate}
+              mode={this.state.mode}
               onChangeTargetDate={this.handleChangeTargetDate}
               onChangeToRepeatMode={this.handleChangeToRepeatMode}
             />
