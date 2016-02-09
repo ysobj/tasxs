@@ -124,7 +124,6 @@ var Task = React.createClass({
   renderFocused : function(data,elapsed,actualClassName){
     return(
           <tr onContextMenu={this.handleOnContextMenu}>
-            <td><input type="checkbox" disabled/></td>
             <td><input name="desc" className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChange} onBlur={this.handleOnBlur}/></td>
             <td><select><option>作業</option></select></td>
             <td><input name="estimate" className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChange}/></td>
@@ -143,7 +142,6 @@ var Task = React.createClass({
     }
     return (
           <tr className={rowClassName} onDoubleClick={this.handleOnClick}>
-            <td><input type="checkbox" disabled/></td>
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>
