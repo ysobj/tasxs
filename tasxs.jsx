@@ -18,7 +18,10 @@ var Tasks = React.createClass({
     })
   },
   handleChangeToRepeatMode: function(){
-    this.setState({mode: 'repeat'});
+    this.setState({
+      mode: 'repeat',
+      targetDate: new Date(0)
+    });
   },
   render: function(){
     return <section className="main">

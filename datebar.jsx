@@ -5,6 +5,38 @@ var today = utils.getMidnight(new Date());
 var yesterday = utils.getMidnight(new Date(today.getTime()-1));
 var tomorrow = utils.getMidnight(new Date(today.getTime()+86400000));
 var DateBar = React.createClass({
+  getInitialState: function(){
+    var targetDate = this.props.targetDate;
+    var mode = this.props.mode;
+    var base = (mode === 'repeat') ? today : targetDate;
+    return {
+      targetDate: targetDate,
+      before: this.calcBefore(targetDate,mode),
+      after: this.calcAfter(targetDate,mode),
+      mode: mode,
+      base: base
+    };
+  },
+  componentWillReceiveProps: function(nextProps){
+    var targetDate = nextProps.targetDate;
+    var mode = nextProps.mode;
+    var base = (mode === 'repeat') ? today : targetDate;
+    this.setState({
+      targetDate: targetDate,
+      before: this.calcBefore(targetDate,mode),
+      after: this.calcAfter(targetDate,mode),
+      mode: mode,
+      base: base
+    });
+  },
+  calcBefore: function(targetDate,mode){
+    return (mode === 'repeat') ? 
+      yesterday : this.addDay(targetDate, -1);
+  },
+  calcAfter: function(targetDate,mode){
+    return (mode === 'repeat') ?
+      tomorrow : this.addDay(targetDate);
+  },
   addDay: function(date,amount){
     if(!amount){
       amount = 1;
@@ -13,22 +45,22 @@ var DateBar = React.createClass({
   },
   next: function(){
     this.props.onChangeTargetDate(
-      this.addDay(this.props.targetDate)
+      this.addDay(this.state.base)
     );
   },
   nextWeek: function(){
     this.props.onChangeTargetDate(
-      this.addDay(this.props.targetDate,7)
+      this.addDay(this.state.base,7)
     );
   },
   prev: function(){
     this.props.onChangeTargetDate(
-      this.addDay(this.props.targetDate,-1)
+      this.addDay(this.state.base,-1)
     );
   },
   prevWeek: function(){
     this.props.onChangeTargetDate(
-      this.addDay(this.props.targetDate,-7)
+      this.addDay(this.state.base,-7)
     );
   },
   formatLabel: function(date,mode){
@@ -50,8 +82,6 @@ var DateBar = React.createClass({
      return str;
   },
   render: function(){
-    var before = this.addDay(this.props.targetDate, -1);
-    var after = this.addDay(this.props.targetDate);
     var mode = this.props.mode;
     return <div className="tab-group">
         <div className="tab-item tab-item-fixed" onClick={this.props.onChangeToRepeatMode}>
@@ -64,15 +94,15 @@ var DateBar = React.createClass({
         </div>
         <div className="tab-item" onClick={this.prev}>
           <span></span>
-          {this.formatLabel(before)}
+          {this.formatLabel(this.state.before)}
         </div>
         <div className="tab-item active">
           <span></span>
-          {this.formatLabel(this.props.targetDate,mode)}
+          {this.formatLabel(this.state.targetDate,mode)}
         </div>
         <div className="tab-item" onClick={this.next}>
           <span></span>
-          {this.formatLabel(after)}
+          {this.formatLabel(this.state.after)}
         </div>
         <div className="tab-item tab-item-fixed" onClick={this.nextWeek}>
           <span></span>
