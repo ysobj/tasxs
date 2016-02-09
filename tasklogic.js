@@ -24,7 +24,16 @@ var tasklogic = {
     try{
       taskList = JSON.parse(fs.readFileSync(tasklogic.createFileName(prefix, date),'utf-8'));
     }catch(e){
-      taskList = [];
+      if(mode !== 'repeat'){
+        prefix = tasklogic.getPrefix('repeat');
+        try{
+          taskList = JSON.parse(fs.readFileSync(tasklogic.createFileName(prefix, date),'utf-8'));
+        }catch(e){
+          taskList = [];
+        }
+      }else{
+        taskList = [];
+      }
     }
     taskList.forEach(function(e){
       e.fromDate = e.fromDate != null ? new Date(e.fromDate) : null;

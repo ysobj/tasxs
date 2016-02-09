@@ -63,7 +63,8 @@ var TaskList = React.createClass({
     taskList.push({
       taskId: taskId,
       type: 'テスト',
-      focused: false
+      focused: false,
+      mode: this.props.mode
     });
     this.setState({taskList: taskList});
   },
