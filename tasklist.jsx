@@ -159,7 +159,6 @@ var TaskList = React.createClass({
     };
     var createTaskHeader = function(mode){
       return (<tr>
-              <th></th>
               <th>task</th>
               <th>type</th>
               <th>estimate</th>

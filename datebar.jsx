@@ -8,7 +8,7 @@ var DateBar = React.createClass({
   getInitialState: function(){
     var targetDate = this.props.targetDate;
     var mode = this.props.mode;
-    var base = (mode === 'repeat') ? today : targetDate;
+    var base = (mode === 'daily') ? targetDate: today;
     return {
       targetDate: targetDate,
       before: this.calcBefore(targetDate,mode),
@@ -20,7 +20,7 @@ var DateBar = React.createClass({
   componentWillReceiveProps: function(nextProps){
     var targetDate = nextProps.targetDate;
     var mode = nextProps.mode;
-    var base = (mode === 'repeat') ? today : targetDate;
+    var base = (mode === 'daily') ? targetDate: today;
     this.setState({
       targetDate: targetDate,
       before: this.calcBefore(targetDate,mode),
@@ -30,12 +30,12 @@ var DateBar = React.createClass({
     });
   },
   calcBefore: function(targetDate,mode){
-    return (mode === 'repeat') ? 
-      yesterday : this.addDay(targetDate, -1);
+    return (mode === 'daily') ? 
+      this.addDay(targetDate, -1): yesterday;
   },
   calcAfter: function(targetDate,mode){
-    return (mode === 'repeat') ?
-      tomorrow : this.addDay(targetDate);
+    return (mode === 'daily') ?
+      this.addDay(targetDate): tomorrow;
   },
   addDay: function(date,amount){
     if(!amount){
@@ -66,6 +66,9 @@ var DateBar = React.createClass({
   formatLabel: function(date,mode){
      if(mode === 'repeat'){
        return "Repeat";
+     }
+     if(mode === 'type'){
+       return "Type";
      }
      if(date.getTime() === today.getTime()){
        return "Today";
@@ -107,6 +110,10 @@ var DateBar = React.createClass({
         <div className="tab-item tab-item-fixed" onClick={this.nextWeek}>
           <span></span>
           &gt;&gt;
+        </div>
+        <div className="tab-item tab-item-fixed" onClick={this.props.onChangeToTypeMode}>
+          <span></span>
+          ##
         </div>
       </div>;
 
