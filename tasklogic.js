@@ -5,6 +5,17 @@ var tasklogic = {
   getPrefix: function(mode){
     return mode === 'repeat' ? 'repeatTask' : 'dailyTask';
   },
+  writeTypeToFile: function(obj){
+    fs.writeFileSync('typelist.json',JSON.stringify(taskList),'utf-8');
+  },
+  readTypeFromFile: function(){
+    try{
+      var obj = JSON.parse(fs.readFileSync('typelist.json','utf-8'));
+      return obj;
+    }catch(e){
+      return {};
+    }
+  },
   writeToFile: function(targetDate, taskList, mode){
     var prefix = tasklogic.getPrefix(mode);
     var fileName = tasklogic.createFileName(prefix, targetDate);

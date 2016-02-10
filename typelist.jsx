@@ -8,18 +8,13 @@ var TypeList = React.createClass({
     return {
     };
   },
-  /*
-  componentWillReceiveProps: function(nextProps){
-    if(this.props.targetDate){
-      tasklogic.writeToFile(this.props.targetDate, this.state.taskList, this.props.mode);
-    }
-    this.setState({
-      taskList : tasklogic.readFromFile(nextProps.targetDate, nextProps.mode)
-    });
+  save: function(){
   },
-  */
   render: function(){
-    return <div>type list</div>;
+    return <div>
+      <textarea />
+      <button onClick={this.save}>Save</button>
+    </div>;
   },
 });
 module.exports = TypeList;
