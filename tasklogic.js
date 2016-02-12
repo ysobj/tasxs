@@ -6,14 +6,16 @@ var tasklogic = {
     return mode === 'repeat' ? 'repeatTask' : 'dailyTask';
   },
   writeTypeToFile: function(obj){
-    fs.writeFileSync('typelist.json',JSON.stringify(taskList),'utf-8');
+    fs.writeFileSync('tasksTypelist.json',obj,'utf-8');
   },
   readTypeFromFile: function(){
     try{
-      var obj = JSON.parse(fs.readFileSync('typelist.json','utf-8'));
+      var obj = fs.readFileSync('tasksTypelist.json','utf-8');
+      console.log('r1',obj);
       return obj;
     }catch(e){
-      return {};
+      console.log('r2',obj);
+      return "";
     }
   },
   writeToFile: function(targetDate, taskList, mode){
