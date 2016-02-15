@@ -122,10 +122,17 @@ var Task = React.createClass({
     this.props.onContextMenu(this.state.taskId);
   },
   renderFocused : function(data,elapsed,actualClassName){
+    var createTypeOptions = function(data){
+      return <option value={data.value}>{data.label}</option>;
+    };
     return(
           <tr onContextMenu={this.handleOnContextMenu}>
             <td><input name="desc" className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChange} onBlur={this.handleOnBlur}/></td>
-            <td><select><option>作業</option></select></td>
+            <td>
+              <select name="type" value={data.type} onChange={this.handleChange}>
+                {this.props.taskTypeList.map(createTypeOptions)}
+              </select>
+            </td>
             <td><input name="estimate" className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChange}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
             <td><input name="fromDateStr" className="timeInput" ref="fromDateInput" type="text" value={data.fromDateStr} onChange={this.handleChange} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
