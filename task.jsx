@@ -123,13 +123,13 @@ var Task = React.createClass({
   },
   renderFocused : function(data,elapsed,actualClassName){
     var createTypeOptions = function(data){
-      return <option value={data.value}>{data.label}</option>;
+      return <option key={data.value} value={data.value}>{data.label}</option>;
     };
     return(
           <tr onContextMenu={this.handleOnContextMenu}>
             <td><input name="desc" className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChange} onBlur={this.handleOnBlur}/></td>
             <td>
-              <select name="type" value={data.type} onChange={this.handleChange}>
+              <select name="type" value={data.type} onBlur={this.handleOnBlur} onChange={this.handleChange}>
                 {this.props.taskTypeList.map(createTypeOptions)}
               </select>
             </td>

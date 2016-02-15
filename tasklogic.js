@@ -9,7 +9,6 @@ var tasklogic = {
     fs.writeFileSync('tasksTypelist.json',obj,'utf-8');
   },
   readTypeFromFile: function(){
-      console.log(obj);
     try{
       var obj = fs.readFileSync('tasksTypelist.json','utf-8');
       return obj;
