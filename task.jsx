@@ -152,7 +152,7 @@ var Task = React.createClass({
     });
 
     var style = {
-      backgroundColor: arr[0].color
+      backgroundColor: arr[0] ? arr[0].color :'white'
     };
     return (
           <tr style={style} className={rowClassName} onDoubleClick={this.handleOnClick}>
