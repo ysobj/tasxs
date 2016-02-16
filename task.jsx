@@ -147,8 +147,15 @@ var Task = React.createClass({
     if(isDragging){
       rowClassName = 'inactive';
     }
+    var arr = this.props.taskTypeList.filter(function(element){
+        return element.value === data.type;
+    });
+
+    var style = {
+      backgroundColor: arr[0].color
+    };
     return (
-          <tr className={rowClassName} onDoubleClick={this.handleOnClick}>
+          <tr style={style} className={rowClassName} onDoubleClick={this.handleOnClick}>
             <td>{data.desc}</td>
             <td>{data.type}</td>
             <td>{data.estimate}</td>

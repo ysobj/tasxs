@@ -1,18 +1,42 @@
 [
  {
   "label":"作業",
-  "value":"作業"
+  "value":"作業",
+  "color":"LightCyan"
  },
  {
   "label":"レビュー",
-  "value":"レビュー"
+  "value":"レビュー",
+  "color":"Thistle"
  },
  {
   "label":"設計",
-  "value":"設計"
+  "value":"設計",
+  "color":"Moccasin"
+ },
+ {
+  "label":"問合せ対応",
+  "value":"問合せ対応",
+  "color":"PaleGreen"
+ },
+ {
+  "label":"ミーティング",
+  "value":"ミーティング",
+  "color":"LightYellow"
+ },
+ {
+  "label":"その他",
+  "value":"その他",
+  "color":"Khaki"
+ },
+ {
+  "label":"プロジェクト管理",
+  "value":"プロジェクト管理",
+  "color":"Silver"
  },
  {
   "label":"コーディング",
-  "value":"コーディング"
+  "value":"コーディング",
+  "color":"Plum"
  }
 ]
