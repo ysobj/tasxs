@@ -34,8 +34,17 @@ header h1 {
   width: 45px;
 }
 .descInput{
-  width: 250px;
+  width: 100%;
 }
 .inactive{
   background-color: lightgray;
+}
+.small_column{
+  width: 50px;
+}
+.middle_column{
+  width: 150px;
+}
+.large_column{
+  width: 500px;
 }

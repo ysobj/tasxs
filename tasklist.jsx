@@ -162,12 +162,12 @@ var TaskList = React.createClass({
     };
     var createTaskHeader = function(mode){
       return (<tr>
-              <th>task</th>
-              <th>type</th>
-              <th>estimate</th>
-              <th>actual</th>
-              <th>from</th>
-              <th>to</th>
+              <th className="large_column">task</th>
+              <th className="middle_column">type</th>
+              <th className="small_column">estimate</th>
+              <th className="small_column">actual</th>
+              <th className="small_column">from</th>
+              <th className="small_column">to</th>
             </tr>);
     };
     var createInformationHeader = function(mode){
