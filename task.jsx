@@ -144,31 +144,12 @@ var Task = React.createClass({
                 {this.props.taskTypeList.map(createTypeOptions)}
               </select>
             </td>
-            <td><input name="estimate" className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChange}/></td>
+            <td><input name="estimate" className="timeInput" ref="estimateInput" type="text" value={data.estimate} onChange={this.handleChange} onBlur={this.handleOnBlur}/></td>
             <td><span className={actualClassName}>{elapsed}</span></td>
             <td><input name="fromDateStr" className="timeInput" ref="fromDateInput" type="text" value={data.fromDateStr} onChange={this.handleChange} onKeyDown={this.handleOnKeyDownAtFromDate} onBlur={this.handleOnBlur}/></td>
             <td><input name="toDateStr" className="timeInput" ref="toDateInput" type="text" value={data.toDateStr} onChange={this.handleChange} onKeyDown={this.handleOnKeyDownAtToDate} onBlur={this.handleOnBlur}/></td>
           </tr>
      );
-  },
-  renderUnfocused: function(data,elapsed,actualClassName){
-    var connectDragSource = this.props.connectDragSource;
-    var isDragging = this.props.isDragging;
-    var rowClassName = '';
-    if(isDragging){
-      rowClassName = 'inactive';
-    }
-    var style = this.createStyle(data);
-    return (
-          <tr style={style} className={rowClassName} onDoubleClick={this.handleOnClick}>
-            <td>{data.desc}</td>
-            <td>{data.type}</td>
-            <td>{data.estimate}</td>
-            <td><span className={actualClassName}>{elapsed}</span></td>
-            <td>{utils.formatTime(data.fromDate)}</td>
-            <td>{utils.formatTime(data.toDate)}</td>
-          </tr>
-        );
   },
   componentDidUpdate: function(e){
     if(this.props.focused){
@@ -199,12 +180,7 @@ var Task = React.createClass({
     if(data.estimate < elapsed){
       actualClassName = 'overtime';
     }
-    var rendered;
-    if(data.focused){
-      rendered = this.renderFocused(data,elapsed,actualClassName);
-    }else{
-      rendered = this.renderUnfocused(data,elapsed,actualClassName);
-    }
+    var rendered = this.renderFocused(data,elapsed,actualClassName);
     return connectDragPreview(connectDropTarget(connectDragSource(rendered)));
   }
 });
