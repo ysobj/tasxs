@@ -121,12 +121,23 @@ var Task = React.createClass({
   handleOnContextMenu: function(){
     this.props.onContextMenu(this.state.taskId);
   },
+  createStyle: function(data){
+    var arr = this.props.taskTypeList.filter(function(element){
+        return element.value === data.type;
+    });
+
+    var style = {
+      backgroundColor: arr[0] ? arr[0].color :'white'
+    };
+    return style;
+  },
   renderFocused : function(data,elapsed,actualClassName){
     var createTypeOptions = function(data){
       return <option key={data.value} value={data.value}>{data.label}</option>;
     };
+    var style = this.createStyle(data);
     return(
-          <tr onContextMenu={this.handleOnContextMenu}>
+          <tr style={style} onContextMenu={this.handleOnContextMenu}>
             <td><input name="desc" className="descInput" ref="descInput" type="text" value={data.desc} onChange={this.handleChange} onBlur={this.handleOnBlur}/></td>
             <td>
               <select name="type" value={data.type} onBlur={this.handleOnBlur} onChange={this.handleChange}>
@@ -147,13 +158,7 @@ var Task = React.createClass({
     if(isDragging){
       rowClassName = 'inactive';
     }
-    var arr = this.props.taskTypeList.filter(function(element){
-        return element.value === data.type;
-    });
-
-    var style = {
-      backgroundColor: arr[0] ? arr[0].color :'white'
-    };
+    var style = this.createStyle(data);
     return (
           <tr style={style} className={rowClassName} onDoubleClick={this.handleOnClick}>
             <td>{data.desc}</td>
