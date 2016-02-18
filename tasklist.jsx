@@ -21,7 +21,6 @@ var TaskList = React.createClass({
   getInitialState: function(){
     var initialState = {
       taskList : tasklogic.readFromFile(this.props.targetDate,this.props.mode),
-      taskTypeList : JSON.parse(tasklogic.readTypeFromFile()),
       modalIsOpen: false
     };
     return initialState;
@@ -156,7 +155,7 @@ var TaskList = React.createClass({
             fromDate={data.fromDate}
             toDate={data.toDate}
             focused={data.focused}
-            taskTypeList={this.state.taskTypeList}
+            taskTypeList={this.props.taskTypeList}
           />
           );
     };

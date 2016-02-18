@@ -4,12 +4,15 @@ var utils = require('./utils');
 var DateBar = require('./datebar');
 var TaskList = require('./tasklist');
 var TypeList = require('./typelist');
+var TaskStats = require('./taskstats');
+var tasklogic = require('./tasklogic');
 var today = utils.getMidnight(new Date());
 var Tasks = React.createClass({
   getInitialState: function(e){
     return {
       targetDate: today,
-      mode: 'daily'
+      mode: 'daily',
+      taskTypeList : JSON.parse(tasklogic.readTypeFromFile()),
     };
   },
   handleChangeTargetDate: function(e){
@@ -35,7 +38,7 @@ var Tasks = React.createClass({
     if(this.state.mode === 'type'){
       mainArea = <TypeList />;
     }else{
-      mainArea = <TaskList targetDate={this.state.targetDate} mode={this.state.mode}/>;
+      mainArea = <div><TaskList targetDate={this.state.targetDate} mode={this.state.mode} taskTypeList={this.state.taskTypeList}  /><TaskStats taskTypeList={this.state.taskTypeList} /></div>;
     }
     return <section className="main">
             <DateBar
