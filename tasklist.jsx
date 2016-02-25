@@ -1,6 +1,6 @@
 "use strict";
 var React = require("react");
-var Modal = require('react-modal');
+var TaskModal = require('./taskmodal');
 var utils = require('./utils');
 var Task = require('./task');
 var tasklogic = require('./tasklogic');
@@ -102,13 +102,11 @@ var TaskList = React.createClass({
     return elapsed;
   },
   openModal: function(e){
+    console.log('openModal');
     this.setState({
       modalIsOpen: true,
       targetTaskId: e
     });
-  },
-  closeModal: function() {
-    this.setState({modalIsOpen: false});
   },
   deleteTask: function() {
     var taskList = this.state.taskList.filter(function(task){
@@ -188,15 +186,12 @@ var TaskList = React.createClass({
             <tr><td><button onClick={this.handleCreate}>create</button></td></tr>
           </tbody>
         </table>
-        <Modal
+        <TaskModal
           isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          style={customStyles} >
-
-          <h2>削除しますか?</h2>
-          <button onClick={this.closeModal}>Cancel</button>
-          <button onClick={this.deleteTask}>DELETE</button>
-        </Modal>
+          style={customStyles} 
+          deleteTask={this.deleteTask}
+          >
+        </TaskModal>
       </div>;
   }
 });
