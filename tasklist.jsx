@@ -102,65 +102,71 @@ var TaskList = React.createClass({
     return elapsed;
   },
   openModal: function(e){
-    console.log('openModal');
     this.setState({
       modalIsOpen: true,
       targetTaskId: e
     });
   },
-  deleteTask: function() {
-    var taskList = this.state.taskList.filter(function(task){
-      return task.taskId != this.state.targetTaskId;
-    },this);
+  closeModal: function(e){
     this.setState({
       modalIsOpen: false,
-      taskList: taskList
+      targetTaskId: e
     });
   },
-  render: function(){
-    if(this.props.mode === 'repeat'){
-      return this.renderRepeatTask();
-    }
-    return this.renderDailyTask();
-  },
-  renderRepeatTask: function(){
-    return this.renderDailyTask();
-  },
-  renderDailyTask: function() {
-    var startingPoint,label;
-    if(this.props.targetDate.getTime() === today.getTime()){
-      startingPoint = new Date();
-      label = 'now';
-    }else{
-      startingPoint = new Date(this.props.targetDate.getTime() + 630 * 60 * 1000);
-      label = 'base';
-    }
-    var nowStr = utils.formatTime(startingPoint);
-    var finishStr = utils.formatTime( new Date( startingPoint.getTime() + (this.calcElapsed() * 1000 * 60)));
-    var createTask = function(data,i){
-      return (
-          <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
-                onUpdateTimeFrom={this.handleOnUpdateTimeFrom.bind(this,i)}
-                onUpdate={this.handleUpdate}
-                onContextMenu={this.openModal}
-                onChangeOrder={this.handleChangeOrder}
-            order={i}
-            key={data.taskId}
-            taskId={data.taskId}
-            desc={data.desc}
-            type={data.type}
-            estimate={data.estimate}
-            fromDate={data.fromDate}
-            toDate={data.toDate}
-            focused={data.focused}
-            taskTypeList={this.props.taskTypeList}
-          />
-          );
-    };
-    var createTaskHeader = function(mode){
-      return (<tr>
-              <th className="large_column">task</th>
-              <th className="middle_column">type</th>
+    deleteTask: function() {
+      var taskList = this.state.taskList.filter(function(task){
+        return task.taskId != this.state.targetTaskId;
+      },this);
+      tasklogic.writeToFile(this.props.targetDate, taskList, this.props.mode);
+      this.setState({
+        modalIsOpen: false,
+        taskList: taskList
+      });
+    },
+    render: function(){
+      if(this.props.mode === 'repeat'){
+        return this.renderRepeatTask();
+      }
+      return this.renderDailyTask();
+    },
+    renderRepeatTask: function(){
+      return this.renderDailyTask();
+    },
+    renderDailyTask: function() {
+      var startingPoint,label;
+      if(this.props.targetDate.getTime() === today.getTime()){
+        startingPoint = new Date();
+        label = 'now';
+      }else{
+        startingPoint = new Date(this.props.targetDate.getTime() + 630 * 60 * 1000);
+        label = 'base';
+      }
+      var nowStr = utils.formatTime(startingPoint);
+      var finishStr = utils.formatTime( new Date( startingPoint.getTime() + (this.calcElapsed() * 1000 * 60)));
+      var createTask = function(data,i){
+        return (
+            <Task onChangeFocus={this.handleOnChangeFocus.bind(this,i)}
+                  onUpdateTimeFrom={this.handleOnUpdateTimeFrom.bind(this,i)}
+                  onUpdate={this.handleUpdate}
+                  onContextMenu={this.openModal}
+                  onChangeOrder={this.handleChangeOrder}
+              order={i}
+              key={data.taskId}
+              taskId={data.taskId}
+              desc={data.desc}
+              type={data.type}
+              estimate={data.estimate}
+              fromDate={data.fromDate}
+              toDate={data.toDate}
+              focused={data.focused}
+              taskTypeList={this.props.taskTypeList}
+            />
+            );
+      };
+      var createTaskHeader = function(mode){
+        return (<tr>
+                <th className="large_column">task</th>
+                <th className="middle_column">type</th>
               <th className="small_column">estimate</th>
               <th className="small_column">actual</th>
               <th className="small_column">from</th>
@@ -190,6 +196,7 @@ var TaskList = React.createClass({
           isOpen={this.state.modalIsOpen}
           style={customStyles} 
           deleteTask={this.deleteTask}
+          closeModal={this.closeModal}
           >
         </TaskModal>
       </div>;
