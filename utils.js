@@ -39,6 +39,12 @@ var utils = {
      fileName += ("0" + (date.getMonth() + 1)).slice(-2);
      fileName += ("0" + date.getDate()).slice(-2);
      return fileName;
+  },
+  addDay: function(date,amount){
+    if(!amount){
+      amount = 1;
+    }
+    return new Date(date.getTime() + 86400000 * amount);
   }
 };
 module.exports = utils;

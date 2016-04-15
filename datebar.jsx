@@ -38,10 +38,7 @@ var DateBar = React.createClass({
       this.addDay(targetDate): tomorrow;
   },
   addDay: function(date,amount){
-    if(!amount){
-      amount = 1;
-    }
-    return new Date(date.getTime() + 86400000 * amount);
+    return utils.addDay(date,amount);
   },
   next: function(){
     this.props.onChangeTargetDate(

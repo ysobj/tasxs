@@ -10,9 +10,9 @@ var TaskModal = React.createClass({
           onRequestClose={this.closeModal}
           style={this.props.style} >
 
-          <h2>削除しますか</h2>
-          <button onClick={this.props.closeModal}>Cancel</button>
           <button onClick={this.props.deleteTask}>DELETE</button>
+          <button onClick={this.props.moveTaskToNextDay}>move task to next day</button>
+          <button onClick={this.props.closeModal}>Cancel</button>
         </Modal> ;
   },
 });

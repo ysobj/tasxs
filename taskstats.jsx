@@ -9,6 +9,7 @@ var TaskStats = React.createClass({
     var taskList = tasklogic.readFromFile(this.props.targetDate,this.props.mode);
     var stat = {};
     taskList.map(function(data){
+      console.log(data);
       if(stat[data.type] == null){
         stat[data.type] = 0;
       }

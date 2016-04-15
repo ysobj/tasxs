@@ -113,6 +113,26 @@ var TaskList = React.createClass({
       targetTaskId: e
     });
   },
+    moveTaskToNextDay: function(){
+      if(this.props.mode !== 'daily'){
+        return;
+      }
+      var taskList = this.state.taskList.filter(function(task){
+        return task.taskId != this.state.targetTaskId;
+      },this);
+      var movingTask = this.state.taskList.filter(function(task){
+        return task.taskId == this.state.targetTaskId;
+      },this);
+      tasklogic.writeToFile(this.props.targetDate, taskList, this.props.mode);
+      var nextDay = utils.addDay(this.props.targetDate);
+      var nextDaysTaskList = tasklogic.readFromFile(nextDay,this.props.mode);
+      nextDaysTaskList.push(movingTask[0]);
+      tasklogic.writeToFile(nextDay, nextDaysTaskList, this.props.mode);
+      this.setState({
+        modalIsOpen: false,
+        taskList: taskList
+      });
+    },
     deleteTask: function() {
       var taskList = this.state.taskList.filter(function(task){
         return task.taskId != this.state.targetTaskId;
@@ -196,6 +216,7 @@ var TaskList = React.createClass({
           isOpen={this.state.modalIsOpen}
           style={customStyles} 
           deleteTask={this.deleteTask}
+          moveTaskToNextDay={this.moveTaskToNextDay}
           closeModal={this.closeModal}
           >
         </TaskModal>
