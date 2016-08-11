@@ -36,9 +36,9 @@ var Tasks = React.createClass({
   render: function(){
     var mainArea;
     if(this.state.mode === 'type'){
-      mainArea = <TypeList />;
+      mainArea = <TypeList className="mainArea" />;
     }else{
-      mainArea = <div><TaskList targetDate={this.state.targetDate} mode={this.state.mode} taskTypeList={this.state.taskTypeList}  /><TaskStats targetDate={this.state.targetDate} taskTypeList={this.state.taskTypeList} mode={this.state.mode} /></div>;
+      mainArea = <div className="mainArea"><TaskList targetDate={this.state.targetDate} mode={this.state.mode} taskTypeList={this.state.taskTypeList}  /><TaskStats targetDate={this.state.targetDate} taskTypeList={this.state.taskTypeList} mode={this.state.mode} /></div>;
     }
     return <section className="main">
             <DateBar
