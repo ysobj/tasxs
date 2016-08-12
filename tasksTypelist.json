@@ -38,5 +38,10 @@
   "label":"コーディング",
   "value":"コーディング",
   "color":"Plum"
+ },
+ {
+  "label":"環境構築",
+  "value":"環境構築",
+  "color":"LightBlue"
  }
 ]
