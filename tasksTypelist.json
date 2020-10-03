@@ -5,6 +5,11 @@
   "color":"LightCyan"
  },
  {
+  "label":"重要",
+  "value":"重要",
+  "color":"Crimson"
+ },
+ {
   "label":"レビュー",
   "value":"レビュー",
   "color":"Thistle"
@@ -43,5 +48,26 @@
   "label":"環境構築",
   "value":"環境構築",
   "color":"LightBlue"
+ },
+ {
+   "label":"FA2",
+   "value":"FA2",
+   "color":"Lavenderblush"
+ },
+ {
+   "label":"障害対応",
+   "value":"障害対応",
+   "color":"LightSalmon"
+ },
+ {
+   "label":"案件対応",
+   "value":"案件対応",
+   "color":"LightPink"
+ },
+ {
+  "label":"休憩",
+  "value":"休憩",
+  "color":"Aquamarine"
  }
+
 ]

@@ -18,7 +18,14 @@ var utils = {
     if(str == null){
       return null;
     }
-    var tmp = str.split(":");
+    var tmp;
+    if(str.indexOf(":") > -1){
+      tmp = str.split(":");
+    }else{
+      tmp = [];
+      tmp[0] = str.substr(0,2);
+      tmp[1] = str.substr(2,2);
+    }
     return utils.getDateFromHourAndMinute(tmp[0],tmp[1],midnight);
   },
   getDateFromHourAndMinute: function(hour, minute, midnight){

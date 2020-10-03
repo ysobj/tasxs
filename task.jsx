@@ -127,7 +127,7 @@ var Task = React.createClass({
     });
 
     var style = {
-      backgroundColor: arr[0] ? arr[0].color :'white'
+      backgroundColor: arr[0] ? arr[0].color :'LightCyan'
     };
     return style;
   },
