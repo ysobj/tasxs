@@ -1,4 +1,7 @@
 node_modules
+node-tar-extract
+data
+conf
 /dist
 *swp
 repeatTask*json
