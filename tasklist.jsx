@@ -152,15 +152,34 @@ var TaskList = React.createClass({
     renderRepeatTask: function(){
       return this.renderDailyTask();
     },
+    isToday: function() {
+      return (this.props.targetDate.getTime() === today.getTime());
+    },
+    calcStartingPoint: function(){
+      if(this.isToday()){
+        return new Date();
+      }
+      var elapsed = 0;
+      const tomorrow = new Date(this.props.targetDate.getTime() + (24 * 60 * 60 * 1000));
+      let earliest = tomorrow;
+      this.state.taskList.forEach(function(task){
+        if(task.fromDate != null && task.fromDate.getTime() < earliest.getTime()){
+	  earliest = task.fromDate;
+        }
+      });
+      if(earliest.getTime() === tomorrow.getTime()){
+        return new Date(this.props.targetDate.getTime() + 630 * 60 * 1000);
+      }
+      return earliest;
+    },
     renderDailyTask: function() {
       var startingPoint,label;
-      if(this.props.targetDate.getTime() === today.getTime()){
-        startingPoint = new Date();
+      if(this.isToday()){
         label = 'now';
       }else{
-        startingPoint = new Date(this.props.targetDate.getTime() + 630 * 60 * 1000);
         label = 'base';
       }
+      startingPoint = this.calcStartingPoint();
       var nowStr = utils.formatTime(startingPoint);
       var finishStr = utils.formatTime( new Date( startingPoint.getTime() + (this.calcElapsed() * 1000 * 60)));
       var createTask = function(data,i){
