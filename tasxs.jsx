@@ -12,7 +12,7 @@ var Tasks = React.createClass({
     return {
       targetDate: today,
       mode: 'daily',
-      taskTypeList : JSON.parse(tasklogic.readTypeFromFile()),
+      taskTypeList: JSON.parse(tasklogic.readTypeFromFile()),
     };
   },
   handleChangeTargetDate: function(e){
@@ -38,18 +38,21 @@ var Tasks = React.createClass({
     if(this.state.mode === 'type'){
       mainArea = <TypeList className="mainArea" />;
     }else{
-      mainArea = <div className="mainArea"><TaskList targetDate={this.state.targetDate} mode={this.state.mode} taskTypeList={this.state.taskTypeList}  /><TaskStats targetDate={this.state.targetDate} taskTypeList={this.state.taskTypeList} mode={this.state.mode} /></div>;
+      mainArea = (<div className="mainArea">
+        <TaskList targetDate={this.state.targetDate} mode={this.state.mode} taskTypeList={this.state.taskTypeList} />
+        <TaskStats targetDate={this.state.targetDate} taskTypeList={this.state.taskTypeList} mode={this.state.mode} />
+      </div>);
     }
     return <section className="main">
-            <DateBar
-              targetDate={this.state.targetDate}
-              mode={this.state.mode}
-              onChangeTargetDate={this.handleChangeTargetDate}
-              onChangeToRepeatMode={this.handleChangeToRepeatMode}
-              onChangeToTypeMode={this.handleChangeToTypeMode}
-            />
-            {mainArea}
-      </section>;
+      <DateBar
+        targetDate={this.state.targetDate}
+        mode={this.state.mode}
+        onChangeTargetDate={this.handleChangeTargetDate}
+        onChangeToRepeatMode={this.handleChangeToRepeatMode}
+        onChangeToTypeMode={this.handleChangeToTypeMode}
+      />
+      {mainArea}
+    </section>;
   }
 });
 module.exports = Tasks;
